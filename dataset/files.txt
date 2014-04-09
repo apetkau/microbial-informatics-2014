@@ -1,16 +1,16 @@
-2010EL-1749	SRR773655	http://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR773/SRR773655/SRR773655.sra	SINGLE
-2010EL-1796	SRR771582	http://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR771/SRR771582/SRR771582.sra	SINGLE
-2010EL-1798	SRR074109	http://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR074/SRR074109/SRR074109.sra	SINGLE
-2011EL-2317	SRR773175	http://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR773/SRR773175/SRR773175.sra	SINGLE
-2012V-1001	SRR892331	http://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR892/SRR892331/SRR892331.sra	SINGLE
-3554-08	SRR774919	http://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR774/SRR774919/SRR774919.sra	SINGLE
-C6706	SRR774920	http://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR774/SRR774920/SRR774920.sra	SINGLE
-VC-10	SRR308707	http://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR308/SRR308707/SRR308707.sra	PAIRED
-VC-14	SRR308715	http://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR308/SRR308715/SRR308715.sra	PAIRED
-VC-15	SRR308716	http://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR308/SRR308716/SRR308716.sra	PAIRED
-VC-18	SRR308721	http://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR308/SRR308721/SRR308721.sra	PAIRED
-VC-19	SRR308722	http://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR308/SRR308722/SRR308722.sra	PAIRED
-VC-1	SRR308665	http://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR308/SRR308665/SRR308665.sra	PAIRED
-VC-25	SRR308726	http://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR308/SRR308726/SRR308726.sra	PAIRED
-VC-26	SRR308727	http://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR308/SRR308727/SRR308727.sra	PAIRED
-VC-6	SRR308703	http://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR308/SRR308703/SRR308703.sra	PAIRED
+2010EL-1749	SRR773655	SINGLE
+2010EL-1796	SRR771582	SINGLE
+2010EL-1798	SRR074109	SINGLE
+2011EL-2317	SRR773175	SINGLE
+2012V-1001	SRR892331	SINGLE
+3554-08	SRR774919	SINGLE
+C6706	SRR774920	SINGLE
+VC-10	SRR308707	PAIRED
+VC-14	SRR308715	PAIRED
+VC-15	SRR308716	PAIRED
+VC-18	SRR308721	PAIRED
+VC-19	SRR308722	PAIRED
+VC-1	SRR308665	PAIRED
+VC-25	SRR308726	PAIRED
+VC-26	SRR308727	PAIRED
+VC-6	SRR308703	PAIRED

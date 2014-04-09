@@ -15,29 +15,25 @@ while(my $line = <STDIN>)
 	chomp $line;
 	my @parts = split(/\t/,$line);
 
-	my $sra_dir = "$script_dir/sra";
 	my $files_dir = "$script_dir/files";
-	my $sra_url = $parts[2];
-	my $sra_file = "$sra_dir/".$parts[1].".sra";
-	my $real_name = "$files_dir/".$parts[0].".sra";
-	my $wget_sra = "wget $sra_url -O $sra_file 2>&1";
+	my $name = $parts[0];
+	my $sra_run = $parts[1];
+	my $layout = $parts[2];
+	chdir $files_dir;
 
-	if (-e $sra_file)
+	my $command = "fastq-dump -A $name ";
+	$command .= ($layout eq 'PAIRED') ? '--split-files' : '';
+	$command .= " $sra_run";
+
+	print $command."\n";
+	if (system($command) == 0)
 	{
-		print "Skipping $sra_file ...\n";
+		print "Failed for $name\n";
 	}
 	else
 	{
-		if(system($wget_sra) != 0)
-		{
-			print STDERR "Failed $line\n";
-		}
-		else
-		{
-			print STDERR "Success $line\n";
-			symlink($sra_file,$real_name);
-		}
-
-		sleep 3;
+		print "Success for $name\n";
 	}
+
+	sleep 3;
 }
