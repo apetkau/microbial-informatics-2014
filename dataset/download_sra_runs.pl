@@ -26,7 +26,7 @@ while(my $line = <STDIN>)
 	$command .= " $sra_run";
 
 	print $command."\n";
-	if (system($command) == 0)
+	if (system($command) != 0)
 	{
 		print "Failed for $name\n";
 	}
