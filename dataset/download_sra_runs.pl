@@ -21,7 +21,7 @@ while(my $line = <STDIN>)
 	my $layout = $parts[2];
 	chdir $files_dir;
 
-	my $command = "fastq-dump -A $name ";
+	my $command = "fastq-dump --qual-filter-1 -F --defline-qual + -A $name ";
 	$command .= ($layout eq 'PAIRED') ? '--split-files' : '';
 	$command .= " $sra_run";
 
