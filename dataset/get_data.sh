@@ -17,6 +17,22 @@ for i in files/*.fastq; do b=`basename $i`; ./seqtk/seqtk sample -s 101 $i 60000
 mkdir assemblies
 perl assemble-genomes.pl < files.txt
 
+# Pull out contigs
+mkdir logs
+mv assemblies/*.{out,err} logs/
+mkdir contigs
+for i in assemblies/*; do b=`basename $i`; cp $i/contigs.fasta contigs/$b.fasta; done
+
+# annotate contigs with prokka 1.8: http://www.vicbioinformatics.com/software.prokka.shtml
+mkdir annotations
+mkdir tmp
+cd tmp # deal with many temp files building up
+for i in ../contigs/*.fasta; do b=`basename $i .fasta`; qsub -o ../logs/$b-prokka.out -e ../logs/$b-prokka.err -cwd -V -b yes prokka --outdir ../annotations/$b --prefix $b --locustag $b $i; sleep 2; done
+
+# copy annotations to annotations/
+cp annotations/*/*.faa annotations/
+cp annotations/*/*.ffn annotations/
+
 ##########################
 # Core SNP Pipeline data #
 ##########################
@@ -29,5 +45,5 @@ for i in files-reduced/*.fastq; do b=`basename $i`; ./extract_reads_for_coverage
 rm files-cov-10/*_2.fastq
 prename 's/_1\.fastq/\.fastq/' files-cov-10/*_1.fastq
 
-# tar up reduced fastq files
-tar -cvvzf files-cov-10.tar.gz files-cov-10/*
+# tar up reduced fastq files and reference file
+tar -cvvzf core-snp-pipeline-data.tar.gz files-cov-10/* reference/*
