@@ -29,9 +29,10 @@ mkdir tmp
 cd tmp # deal with many temp files building up
 for i in ../contigs/*.fasta; do b=`basename $i .fasta`; qsub -o ../logs/$b-prokka.out -e ../logs/$b-prokka.err -cwd -V -b yes prokka --outdir ../annotations/$b --prefix $b --locustag $b $i; sleep 2; done
 
-# copy annotations to annotations/
+# copy annotations to annotations/ and create tar file
 cp annotations/*/*.faa annotations/
 cp annotations/*/*.ffn annotations/
+tar -cvvzf annotations-cholera.tar.gz annotations/
 
 ##########################
 # Core SNP Pipeline data #
