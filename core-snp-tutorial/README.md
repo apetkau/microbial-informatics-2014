@@ -1,15 +1,15 @@
 Core SNP Phylogenomics
 ======================
 
-This document walks through how to run the [core phylogenomics pipeline](https://github.com/apetkau/core-phylogenomics) and generating a set of SNPs and a phylogenetic tree based on whole genome sequencing data.  This tutorial assumes you have have the pipeline installed and that you have some familiarity with working on the command line in Linux.
+This document walks through how to run the [core phylogenomics pipeline](https://github.com/apetkau/core-phylogenomics) to generate a set of SNPs and a phylogenetic tree based on whole genome sequencing data.  This tutorial assumes you have have the pipeline installed and that you have some familiarity with working on the command line in Linux.
 
 Step 1: Obtaining input data
 ----------------------------
 
 The input data to the core phylogenomics pipeline consists of a reference genome (in FASTA format) and a set of sequencing reads (in FASTQ format).  This data can be obtained with the following commands:
 
-	$ wget http://url-to-data/core-snp-input.tar.gz
-	$ tar -xvf core-snp-input.tar.gz
+	$ wget http://url-to-data/core-snp-pipeline-data.tar.gz
+	$ tar -xvf core-snp-pipeline-data.tar.gz
 
 This will download and extract the data into two directories.  The first directory **reference/** contains the reference genome.  In this case, it is the concatenated chromosomes of V. cholerae 2010EL-1786, which can also be obtained from http://www.ncbi.nlm.nih.gov/nuccore/NC_016445.1 and http://www.ncbi.nlm.nih.gov/nuccore/NC_016446.1.  This file looks like:
 
@@ -22,11 +22,20 @@ This will download and extract the data into two directories.  The first directo
 	TGAGCCCATTGAGCGGTACTTGTTGCAATAACGCTTGGATTTCAGTCCCGTCTGGGAGGGTTAAATTTGG
 	...
 
-The second directory, fastq, contains the sequencing reads for all the other samples we will use to build a phylogenetic tree in FASTQ format.  These were downloaded from NCBI's [Sequence Read Archive](http://www.ncbi.nlm.nih.gov/sra/) and were reduced to 10x coverage for the purposes of this tutorial.  The directory looks like:
+The second directory, __files-cov-10/__, contains the sequencing reads for all the other samples we will use to build a phylogenetic tree in FASTQ format.  These were downloaded from NCBI's [Sequence Read Archive](http://www.ncbi.nlm.nih.gov/sra/) and were reduced to 10x coverage for the purposes of this tutorial.  The directory looks like:
 
-	$ ls fastq/
+	$ ls files-cov-10/
+	2010EL-1749.fastq  2010EL-1798.fastq  2012V-1001.fastq  C6706.fastq  VC-14.fastq  VC-18.fastq  VC-1.fastq   VC-26.fastq
+	2010EL-1796.fastq  2011EL-2317.fastq  3554-08.fastq     VC-10.fastq  VC-15.fastq  VC-19.fastq  VC-25.fastq  VC-6.fastq
 
-	$ head fastq/file.fastq
+	$ head files-cov-10/2010EL-1749.fastq
+	@HWUSI-EAS109E_0007_FC62MZGAAXX:6:89:1741:2665
+	TGAAAATGTGATCAATGAAGGGTTTTAGCAATTAAC
+	+
+	egfggggggggggggdfccefffffcdfccffaffg
+	...
+
+For information on exactly how these files were generated please see [get_data.sh](../dataset/get_data.sh).
 
 Step 2: Running the Core SNP pipeline
 -------------------------------------
@@ -37,28 +46,19 @@ The reference mapping method can be run using the __--mode mapping__ parameter. 
 
 	%YAML 1.1
 	---
-	min_coverage: 5
+	min_coverage: 2
 	freebayes_params: '--pvar 0 --ploidy 1 --left-align-indels --min-mapping-quality 30 --min-base-quality 30 --min-alternate-fraction 0.75'
 	smalt_index: '-k 13 -s 6'
-	smalt_map: '-n 24 -f samsoft -r -1 -y 0.5'
-	vcf2pseudo_numcpus: 4
-	vcf2core_numcpus: 24
-	trim_clean_params: '--numcpus 4 --min_quality 20 --bases_to_trim 10 --min_avg_quality 25 --min_length 36 -p 1'
-	drmaa_params:
-	    general: "-V"
-	    vcf2pseudoalign: "-pe smp 4"
-	    vcf2core: "-pe smp 24"
-	    trimClean: "-pe smp 4"
+	smalt_map: '-n 1 -f samsoft -r -1'
 
-The main parameter you will want to change here is the __min_coverage__ parameter which defines the minimum coverage in a particular position to be included within the results.  For this tutorial we will leave the minimum coverage at 5 since the mean coverage for the downloaded data was 10.  For other data sets with different mean coverage values this number could be adjusted.
+The main parameter you will want to keep an eye on here is the __min_coverage__ parameter which defines the minimum coverage in a particular position to be included within the results.  For this tutorial we will leave the minimum coverage at 2 since the mean coverage for the downloaded data was 10.  For other data sets with different mean coverage values this number could be adjusted.
 
 In order to run the pipeline, the following command can be used:
 
-	$ snp_phylogenomics_control --mode mapping --input-dir fastq/ --reference reference/2010EL-1786.fasta --output out1 --config mapping.conf
-	
-	Running core SNP phylogenomic pipeline on Tue Dec  3 12:18:02 CST 2013
-	Core Pipeline git Commit: 3e93c5c1ef436ab6878789d330d343c47562a7a9
-	vcf2pseudoalign git Commit: e81ab24e52dc2b8de85c9beed8c2ced8f478d795
+	$ snp_phylogenomics_control --mode mapping --input-dir files-cov-10/ --reference reference/2010EL-1786.fasta --output output-10 --config mapping.conf
+	Running core SNP phylogenomic pipeline on Fri Apr 11 11:31:37 CDT 2014
+	Core Pipeline git Commit: fa13fcc7d3a6e14fffa1082d6a1f05d3512e53a4
+	vcf2pseudoalign git Commit: a2c73962ac48310c289b700976715c2d319d3227
 	
 	Parameters:
 	...
@@ -68,74 +68,53 @@ When finished, you should expect to see the following output:
 	================
 	= Output Files =
 	================
-	tree: /home/course/aaron/core-phylogenomics-tutorial/tutorial1_out/phylogeny/pseudoalign.phy_phyml_tree.txt
-	matrix: /home/course/aaron/core-phylogenomics-tutorial/tutorial1_out/pseudoalign/matrix.csv
-	pseudoalignment: /home/course/aaron/core-phylogenomics-tutorial/tutorial1_out/pseudoalign/pseudoalign.phy
+	tree: /home/aaron/Projects/MicrobialInformatics2014/core-snp-tutorial/output-10/phylogeny/pseudoalign.phy_phyml_tree.txt
+	matrix: /home/aaron/Projects/MicrobialInformatics2014/core-snp-tutorial/output-10/pseudoalign/matrix.csv
+	pseudoalignment: /home/aaron/Projects/MicrobialInformatics2014/core-snp-tutorial/output-10/pseudoalign/pseudoalign.phy
 	stage: mapping-final took 0.00 minutes to complete
-	pipeline took 6.18 minutes to complete
+	pipeline took 6.95 minutes to complete
 
-The main file you will want to check out include __tutorial1_out/phylogeny/pseudoalign.phy_phyml_tree.txt__, which is the computed phylogenetic tree.  This can be opened up using [FigTree](http://tree.bio.ed.ac.uk/software/figtree/) and should look similar to below.
+The main file you will want to check out is __output-10/phylogeny/pseudoalign.phy_phyml_tree.txt__, which is the computed phylogenetic tree.  This can be opened up using [FigTree](http://tree.bio.ed.ac.uk/software/figtree/) and should look similar to below.
 
-![tutorial1_tree.png](tutorial1_tree.png)
+![output-10-tree.jpg](output-10-tree.jpg)
 
-Also, the file __tutorial1_out/pseudoalign/matrix.csv__ which contains a matrix of core SNP distances among all the input isolates.
+Also, the file __output-10/pseudoalign/matrix.csv__ which contains a matrix of core SNP distances among all the input isolates.
 
-	$ column -t tutorial1_out/pseudoalign/matrix.csv
-	strain     08-5578  08-5578-0  08-5578-2  08-5578-4  08-5578-1  08-5578-3
-	08-5578    0        98         98         98         0          0
-	08-5578-0  98       0          49         0          98         98
-	08-5578-2  98       49         0          49         98         98
-	08-5578-4  98       0          49         0          98         98
-	08-5578-1  0        98         98         98         0          0
-	08-5578-3  0        98         98         98         0          0
-	
+	$ column -t output-10/pseudoalign/matrix.csv
+	strain       2012V-1001  C6706  2010EL-1749  VC-6  VC-19  2010EL-1786  VC-18  2011EL-2317  VC-1  VC-10  VC-14  VC-15  VC-26  VC-25  2010EL-1796  2010EL-1798  3554-08
+	2012V-1001   0           278    15           38    36     27           27     26           78    78     26     26     26     25     24           24           30
+	C6706        278         0      271          270   268    267          267    266          266   266    266    266    266    265    264          264          262
+	2010EL-1749  15          271    0            31    29     20           20     19           71    71     19     19     19     18     17           17           23
+	VC-6         38          270    31           0     2      27           27     26           70    70     26     26     26     25     24           24           22
+	VC-19        36          268    29           2     0      25           25     24           68    68     24     24     24     23     22           22           20
+	2010EL-1786  27          267    20           27    25     0            16     5            67    67     5      15     5      4      3            3            19
+	VC-18        27          267    20           27    25     16           0      15           67    67     15     1      15     14     13           13           19
+	2011EL-2317  26          266    19           26    24     5            15     0            66    66     4      14     4      3      2            2            18
+	VC-1         78          266    71           70    68     67           67     66           0     0      66     66     66     65     64           64           62
+	VC-10        78          266    71           70    68     67           67     66           0     0      66     66     66     65     64           64           62
+	VC-14        26          266    19           26    24     5            15     4            66    66     0      14     2      1      2            2            18
+	VC-15        26          266    19           26    24     15           1      14           66    66     14     0      14     13     12           12           18
+	VC-26        26          266    19           26    24     5            15     4            66    66     2      14     0      1      2            2            18
+	VC-25        25          265    18           25    23     4            14     3            65    65     1      13     1      0      1            1            17
+	2010EL-1796  24          264    17           24    22     3            13     2            64    64     2      12     2      1      0            0            16
+	2010EL-1798  24          264    17           24    22     3            13     2            64    64     2      12     2      1      0            0            16
+	3554-08      30          262    23           22    20     19           19     18           62    62     18     18     18     17     16           16           0
 
-Also, the file __tutorial1_out/pseudoalign/pseudoalign-positions.tsv__ which includes every variant that was used by the pipeline for genetating the phylogenetic tree as well as those that were filtered out.
+Also, the file __output-10/pseudoalign/pseudoalign-positions.tsv__ which includes every variant that was used by the pipeline for genetating the phylogenetic tree as well as those that were filtered out.
 
-	$ head tutorial1_out/pseudoalign/pseudoalign-positions.tsv | column -t
-	#Chromosome                    Position  Status  Reference  08-5578-0  08-5578-1  08-5578-2  08-5578-3  08-5578-4
-	gi|284800255|ref|NC_013766.1|  77005     valid   T          C          T          G          T          C
-	gi|284800255|ref|NC_013766.1|  156056    valid   T          C          T          G          T          C
-	gi|284800255|ref|NC_013766.1|  163917    valid   T          C          T          G          T          C
-	gi|284800255|ref|NC_013766.1|  177102    valid   A          G          A          T          A          G
-	gi|284800255|ref|NC_013766.1|  197161    valid   G          A          G          C          G          A
-	gi|284800255|ref|NC_013766.1|  198617    valid   T          C          T          G          T          C
-	gi|284800255|ref|NC_013766.1|  222201    valid   A          G          A          T          A          G
-	gi|284800255|ref|NC_013766.1|  253430    valid   G          C          G          C          G          C
-	gi|284800255|ref|NC_013766.1|  289669    valid   G          C          G          C          G          C
+	$ head output-10/pseudoalign/pseudoalign-positions.tsv | column -t
+	#Chromosome                    Position  Status             Reference  2010EL-1749  2010EL-1796  2010EL-1798  2011EL-2317  2012V-1001  3554-08  C6706  VC-1  VC-10  VC-14  VC-15  VC-18  VC-19  VC-25  VC-26  VC-6
+	gi|360034408|ref|NC_016445.1|  17885     valid              T          T            T            T            T            T           T        G      T     T      T      T      T      T      T      T      T
+	gi|360034408|ref|NC_016445.1|  24001     filtered-coverage  T          T            T            -            T            T           T        G      T     T      T      T      T      T      T      T      T
+	...
 	
 This file contains a list of all variants detected by the pipeline, one per line.  Each variant is given a status, with 'valid' indicating that the variants at that position were used for further analysis.
 
 A quick method to count the total number of 'valid' variants used to generate the phylogenetic tree and SNP matrix is with the following command:
 
-	$ grep -c -P "\tvalid\t" tutorial1_out/pseudoalign/pseudoalign-positions.tsv
-	98
-
-Since this file is in the exact same format as the variants table used to define the mutations in our simulated data we can check how many of the variants introduced were identified properly by the pipeline.  This can be accomplished with the __diff__ command below:
-
-	$ diff tutorial1_mutations.tsv tutorial1_out/pseudoalign/pseudoalign-positions.tsv
-	62d61
-	< gi|284800255|ref|NC_013766.1|	1817903	valid	T	G	T	G	T	G
-	93d91
-	< gi|284800255|ref|NC_013766.1|	2786700	valid	C	T	C	A	C	T
-
-This indicates that the core SNP pipeline is missing two of the variants that were introduced, one at position 1817903 and another at position 2786700.
-
-Alternatively, to get a brief count of the number of differences, you can use the __scripts/compare_positions.pl__ script.
-
-	$ perl scripts/compare_positions.pl tutorial1_mutations.tsv tutorial1_out/pseudoalign/pseudoalign-positions.tsv | column -t
-	tutorial1_mutations.tsv  tutorial1_out/pseudoalign/pseudoalign-positions.tsv  Intersection  Unique-tutorial1_mutations.tsv  Unique-tutorial1_out/pseudoalign/pseudoalign-positions.tsv
-	100                      98                                                   98            2                               0
-
-This prints the number of positions found within each file, as well as the intersection and unique positions.  This indicates that pipeline is missing 2 of the original set of positions from _tutorial1_mutations.tsv_.  Note: we pipe the output through __column -t__ to line up columns correctly.
+	$ grep --count -P "\tvalid\t" output-10/pseudoalign/pseudoalign-positions.tsv
+	358
 
 Questions
 =========
 
-1. The reference mapping alignment BAM files for each genome are located within __tutorial1_out/bam__.  Load one of these files up using software such as [Tablet](http://bioinf.scri.ac.uk/tablet/) and examine the two missing positions 1817903 and 2786700.  What do you notice about these positions?
-
-2. For this tutorial the mean coverage simulated was 30x, and our minimum SNP detection coverage was 5x.  Try changing the minimum coverage to 15x and 25x within the file __mapping.conf__ and re-running the pipeline.  Compare the differences in the number of SNPs detected.  How does the number of SNPs detected change as the minimum coverage increases?
-
-3. All the fastq files we generated were simulated with 100 bp reads.  Adjust the read length using the __--len__ parameter in the __scripts/generate_genomes.pl__ script to 50x and 200x.  What difference does this make to the number of SNPs detected?
-
-[Answers](Tutorial1Answers.md)
