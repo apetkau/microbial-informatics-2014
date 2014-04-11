@@ -49,7 +49,7 @@ The reference mapping method can be run using the __--mode mapping__ parameter. 
 	min_coverage: 2
 	freebayes_params: '--pvar 0 --ploidy 1 --left-align-indels --min-mapping-quality 30 --min-base-quality 30 --min-alternate-fraction 0.75'
 	smalt_index: '-k 13 -s 6'
-	smalt_map: '-n 1 -f samsoft -r -1'
+	smalt_map: '-n 1 -f samsoft -r -1 -y 0.5'
 
 The main parameter you will want to keep an eye on here is the __min_coverage__ parameter which defines the minimum coverage in a particular position to be included within the results.  For this tutorial we will leave the minimum coverage at 2 since the mean coverage for the downloaded data was 10.  For other data sets with different mean coverage values this number could be adjusted.
 
@@ -82,23 +82,23 @@ Also, the file __output-10/pseudoalign/matrix.csv__ which contains a matrix of c
 
 	$ column -t output-10/pseudoalign/matrix.csv
 	strain       2012V-1001  C6706  2010EL-1749  VC-6  VC-19  2010EL-1786  VC-18  2011EL-2317  VC-1  VC-10  VC-14  VC-15  VC-26  VC-25  2010EL-1796  2010EL-1798  3554-08
-	2012V-1001   0           278    15           38    36     27           27     26           78    78     26     26     26     25     24           24           30
-	C6706        278         0      271          270   268    267          267    266          266   266    266    266    266    265    264          264          262
-	2010EL-1749  15          271    0            31    29     20           20     19           71    71     19     19     19     18     17           17           23
-	VC-6         38          270    31           0     2      27           27     26           70    70     26     26     26     25     24           24           22
-	VC-19        36          268    29           2     0      25           25     24           68    68     24     24     24     23     22           22           20
-	2010EL-1786  27          267    20           27    25     0            16     5            67    67     5      15     5      4      3            3            19
-	VC-18        27          267    20           27    25     16           0      15           67    67     15     1      15     14     13           13           19
-	2011EL-2317  26          266    19           26    24     5            15     0            66    66     4      14     4      3      2            2            18
-	VC-1         78          266    71           70    68     67           67     66           0     0      66     66     66     65     64           64           62
-	VC-10        78          266    71           70    68     67           67     66           0     0      66     66     66     65     64           64           62
-	VC-14        26          266    19           26    24     5            15     4            66    66     0      14     2      1      2            2            18
-	VC-15        26          266    19           26    24     15           1      14           66    66     14     0      14     13     12           12           18
-	VC-26        26          266    19           26    24     5            15     4            66    66     2      14     0      1      2            2            18
-	VC-25        25          265    18           25    23     4            14     3            65    65     1      13     1      0      1            1            17
-	2010EL-1796  24          264    17           24    22     3            13     2            64    64     2      12     2      1      0            0            16
-	2010EL-1798  24          264    17           24    22     3            13     2            64    64     2      12     2      1      0            0            16
-	3554-08      30          262    23           22    20     19           19     18           62    62     18     18     18     17     16           16           0
+	2012V-1001   0           280    15           38    36     27           27     26           78    78     26     26     26     25     24           24           30
+	C6706        280         0      273          272   270    269          269    268          268   268    268    268    268    267    266          266          264
+	2010EL-1749  15          273    0            31    29     20           20     19           71    71     19     19     19     18     17           17           23
+	VC-6         38          272    31           0     2      27           27     26           70    70     26     26     26     25     24           24           22
+	VC-19        36          270    29           2     0      25           25     24           68    68     24     24     24     23     22           22           20
+	2010EL-1786  27          269    20           27    25     0            16     5            67    67     5      15     5      4      3            3            19
+	VC-18        27          269    20           27    25     16           0      15           67    67     15     1      15     14     13           13           19
+	2011EL-2317  26          268    19           26    24     5            15     0            66    66     4      14     4      3      2            2            18
+	VC-1         78          268    71           70    68     67           67     66           0     0      66     66     66     65     64           64           62
+	VC-10        78          268    71           70    68     67           67     66           0     0      66     66     66     65     64           64           62
+	VC-14        26          268    19           26    24     5            15     4            66    66     0      14     2      1      2            2            18
+	VC-15        26          268    19           26    24     15           1      14           66    66     14     0      14     13     12           12           18
+	VC-26        26          268    19           26    24     5            15     4            66    66     2      14     0      1      2            2            18
+	VC-25        25          267    18           25    23     4            14     3            65    65     1      13     1      0      1            1            17
+	2010EL-1796  24          266    17           24    22     3            13     2            64    64     2      12     2      1      0            0            16
+	2010EL-1798  24          266    17           24    22     3            13     2            64    64     2      12     2      1      0            0            16
+	3554-08      30          264    23           22    20     19           19     18           62    62     18     18     18     17     16           16           0
 
 Also, the file __output-10/pseudoalign/pseudoalign-positions.tsv__ which includes every variant that was used by the pipeline for genetating the phylogenetic tree as well as those that were filtered out.
 
@@ -113,7 +113,7 @@ This file contains a list of all variants detected by the pipeline, one per line
 A quick method to count the total number of 'valid' variants used to generate the phylogenetic tree and SNP matrix is with the following command:
 
 	$ grep --count -P "\tvalid\t" output-10/pseudoalign/pseudoalign-positions.tsv
-	358
+	360
 
 Questions
 =========
