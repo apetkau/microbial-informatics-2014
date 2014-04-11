@@ -23,6 +23,10 @@ mv assemblies/*.{out,err} logs/
 mkdir contigs
 for i in assemblies/*; do b=`basename $i`; cp $i/contigs.fasta contigs/$b.fasta; done
 
+# insert reference genome into contigs/ folder
+# reference genome downloaded from http://www.ncbi.nlm.nih.gov/nuccore/NC_016445.1 and http://www.ncbi.nlm.nih.gov/nuccore/NC_016446.1
+cp reference/2010EL-1786.fasta contigs/
+
 # make contigs tarball
 tar -cvzf contigs-cholera.tar.gz contigs/*
 
