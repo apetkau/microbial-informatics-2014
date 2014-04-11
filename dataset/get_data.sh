@@ -10,6 +10,13 @@ mkdir files-reduced
 for i in files/*.fastq; do b=`basename $i`; ./seqtk/seqtk sample -s 101 $i 6000000 > files-reduced/$b; done
 
 ##########################
+# Reference Genome       #
+##########################
+# reference genome downloaded from http://www.ncbi.nlm.nih.gov/nuccore/NC_016445.1 and http://www.ncbi.nlm.nih.gov/nuccore/NC_016446.1
+mkdir reference
+# export GenBank and FASTA formats to reference/*.ffn and reference/*.faa
+
+##########################
 # Assemblies/Annotations #
 ##########################
 
@@ -24,7 +31,6 @@ mkdir contigs
 for i in assemblies/*; do b=`basename $i`; cp $i/contigs.fasta contigs/$b.fasta; done
 
 # insert reference genome into contigs/ folder
-# reference genome downloaded from http://www.ncbi.nlm.nih.gov/nuccore/NC_016445.1 and http://www.ncbi.nlm.nih.gov/nuccore/NC_016446.1
 cp reference/2010EL-1786.fasta contigs/
 
 # make contigs tarball
@@ -36,10 +42,14 @@ mkdir tmp
 cd tmp # deal with many temp files building up
 for i in ../contigs/*.fasta; do b=`basename $i .fasta`; qsub -o ../logs/$b-prokka.out -e ../logs/$b-prokka.err -cwd -V -b yes prokka --outdir ../annotations/$b --prefix $b --locustag $b $i; sleep 2; done
 
+# export features from reference genome (concatenate both chromosomes) and to annotations/
+cat reference/*c*.ffn > annotations/2010EL-1786.ffn
+cat reference/*c*.faa > annotations/2010EL-1786.faa
+
 # copy annotations to annotations/ and create tar file
 cp annotations/*/*.faa annotations/
 cp annotations/*/*.ffn annotations/
-tar -cvvzf annotations-cholera.tar.gz annotations/
+tar -cvvzf annotations-cholera.tar.gz annotations/*.{ffn,faa}
 
 ##########################
 # Core SNP Pipeline data #
