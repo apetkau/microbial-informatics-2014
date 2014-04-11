@@ -23,6 +23,9 @@ mv assemblies/*.{out,err} logs/
 mkdir contigs
 for i in assemblies/*; do b=`basename $i`; cp $i/contigs.fasta contigs/$b.fasta; done
 
+# make contigs tarball
+tar -cvzf contigs-cholera.tar.gz contigs/*
+
 # annotate contigs with prokka 1.8: http://www.vicbioinformatics.com/software.prokka.shtml
 mkdir annotations
 mkdir tmp
