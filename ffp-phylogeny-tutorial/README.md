@@ -121,6 +121,7 @@ This should display a tree similar to below.
 
 ![tree-5.jpg](tree-5.jpg)\
 
+
 Questions
 =========
 
@@ -134,5 +135,26 @@ ffpry -l 10 contigs/*.fasta | ffpcol | ffprwn | ffpjsd -p genome_names.txt | ffp
 ```
 
 What effect does this have on the resulting tree?  Try adjusting to 15 and 20.
+
+Question 2
+----------
+
+By default, the `ffpry` software will compress the nucleotide characters into one of two states: either a purine __R__ or pyrimidine __Y__.  This can be seen by examining the output of the `ffpry` program.
+
+	$ ffpry -l 2 contigs/2010EL-1749.fasta
+	RR      1988920 RY      1013697 YR      1013730
+
+This shows the different 2-mer counts from __2010EL-1749__, encoded as either a purine or a pyramidine.
+
+It's possible to remove the compression to only states __R__ or __Y__ and leave the 4 state nucleotide encoding by using the `-d` parameter.  For example:
+
+	$ ffpry -d -l 2 contigs/2010EL-1749.fasta
+	TA      191171  TC      476051  TG      587034  TT      662771  AC      441843  AG      452107  AT   275766   CC      397991  CG      235525  GC      296088
+
+For a given k-mer size, this will result in more information being generated.  To construct a tree with the nucleotide counts we can use (don't forget __-d__ in `ffpcol` as well):
+
+	$ ffpry -d -l 5 contigs/*.fasta | ffpcol -d | ffprwn | ffpjsd -p genome_names.txt | ffptree > tree-5-dna.txt
+
+Run this for a kmer size of 5 and 10.  What differences do you notice in the tree as well as the running time?
 
 [Answers](Answers.md)
