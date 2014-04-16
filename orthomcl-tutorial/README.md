@@ -3,6 +3,14 @@ Ortholog Detection with OrthoMCL
 
 This tutorial covers ortholog detection using [OrthoMCL](http://orthomcl.org/common/downloads/software/v2.0/).  Instead of running all the software for OrthoMCL manually, we will take advantage of the [OrthoMCL Pipeline](https://github.com/apetkau/orthomcl-pipeline) to automate this process.
 
+Introduction
+============
+
+Tutorial
+========
+
+The following steps show how to run OrthoMCL on an example set of data and examine some of the results in a Venn Diagram.
+
 Step 1: Obtaining input Data
 ----------------------------
 

@@ -1,6 +1,12 @@
 Core SNP Phylogenomics
 ======================
 
+Introduction
+============
+
+Tutorial
+========
+
 This document walks through how to run the [core phylogenomics pipeline](https://github.com/apetkau/core-phylogenomics) to generate a set of SNPs and a phylogenetic tree based on whole genome sequencing data.  This tutorial assumes you have have the pipeline installed and that you have some familiarity with working on the command line in Linux.
 
 Step 1: Obtaining input data

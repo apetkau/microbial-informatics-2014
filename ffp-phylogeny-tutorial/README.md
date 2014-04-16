@@ -3,8 +3,11 @@ Feature Frequency Profiling Phylogeny Tutorial
 
 This project contains a tutorial for clustering genomes by frequences of kmers using <http://sourceforge.net/projects/ffp-phylogeny/> software.  This uses a custom version of ffp-phylogeny available at <https://github.com/apetkau/ffp-3.19-custom>.
 
-Steps
-=====
+Introduction
+============
+
+Tutorial
+========
 
 Step 1: Download Software
 -------------------------
