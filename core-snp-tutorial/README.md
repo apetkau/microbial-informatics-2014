@@ -14,7 +14,7 @@ Step 1: Obtaining input data
 
 The input data to the core phylogenomics pipeline consists of a reference genome (in FASTA format) and a set of sequencing reads (in FASTQ format).  This data can be obtained with the following commands:
 
-	$ wget http://url-to-data/core-snp-pipeline-data.tar.gz
+	$ wget http://wwwi/workshop/2014/data/core-snp-pipeline-data.tar.gz
 	$ tar -xvf core-snp-pipeline-data.tar.gz
 
 This will download and extract the data into two directories.  The first directory **reference/** contains the reference genome.  In this case, it is the concatenated chromosomes of V. cholerae 2010EL-1786, which can also be obtained from http://www.ncbi.nlm.nih.gov/nuccore/NC_016445.1 and http://www.ncbi.nlm.nih.gov/nuccore/NC_016446.1.  This file looks like:

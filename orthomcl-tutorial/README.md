@@ -16,7 +16,7 @@ Step 1: Obtaining input Data
 
 The input data for OrthoMCL consists of a set of genes.  This can be downloaded from:
 
-	$ wget http://url-to-data/annotations-cholera.tar.gz
+	$ wget http://wwwi/workshop/2014/data/annotations-cholera.tar.gz
 	$ tar -xvvzf annotations-cholera.tar.gz
 
 This will extract the annotated genomes into a directory __annotations/__.  This directory looks as follows:

@@ -41,7 +41,7 @@ Step 2: Input Files
 The input files for this software are assembled genomes in FASTA format.  The input data for this tutorial can be obtained with the following commands.
 
 ```bash
-$ wget http://url-to-data/contigs-cholera.tar.gz
+$ wget http://wwwi/workshop/2014/data/contigs-cholera.tar.gz
 $ tar -xvf contigs-cholera.tar.gz
 ```
 
