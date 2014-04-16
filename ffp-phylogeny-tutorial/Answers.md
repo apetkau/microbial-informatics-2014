@@ -12,3 +12,5 @@ Running ffp with a kmer length of 10, 15, or 20 will generate a more diverse pro
 | 10           | 2.7      | ![tree-10.jpg](tree-10.jpg) |
 | 15           | 5.7      | ![tree-15.jpg](tree-15.jpg) |
 | 20           | 131      | ![tree-20.jpg](tree-20.jpg) |
+
+Notice how the branch lengths are increasing and the genomes are beginning to visibly cluster as the kmer length increases.
