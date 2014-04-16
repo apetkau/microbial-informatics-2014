@@ -149,9 +149,9 @@ An example __genome-groups.txt__ file has been included with the rest of the dat
 
 To run `nml_parse_orthomcl.pl` and generate a Venn Diagram, please do the following:
 
-	$ nml_parse_orthomcl.pl -i orthomcl-output/groups/groups.txt -g genome-groups.txt -s --draw -o orthomcl-stats.txt
+	$ nml_parse_orthomcl.pl -i orthomcl-output/groups/groups.txt -g genome-groups.txt -s --draw -o orthomcl-stats.txt --genes
 	
-This will generate two main files of interest: an image file named __genome-groups.txt.svg__ and some statistics about the results in __orthomcl-stats.txt__.
+This will generate two main files of interest: an image file named __genome-groups.txt.svg__ and some statistics about the results in __orthomcl-stats.txt__.  A set of other files, all named **group_x.csv** will also be generated.
 
 The image file __genome-groups.txt.svg__ contains a Venn Diagram depeciting the numger of shared genes among the genome groups within the __genome-groups.txt__ file.  This looks as follows:
 
@@ -189,11 +189,30 @@ Total genes seen: 60153
 
 'Core' gene sets that is contained: 17 genomes has 3269 genes
 Found 4 for the following set: haiti
+2010EL-1749_02114,2010EL-1796_03119,2010EL-1798_02875,2011EL-2317_03311,2012V-1001_01554,3554-08_03049,VC-10_00387,VC-15_00297,VC-18_00534,VC-19_00302,VC-1_00125,VC-6_00154,Vch1786_I0090
+2010EL-1749_02115,2010EL-1796_03118,2010EL-1798_02876,2011EL-2317_03310,2012V-1001_01555,3554-08_03050,VC-10_00386,VC-15_00298,VC-18_00533,VC-19_00303,VC-1_00124,VC-6_00155,Vch1786_I0091
+2010EL-1749_02116,2010EL-1796_03117,2010EL-1798_02877,2011EL-2317_03309,2012V-1001_01556,3554-08_03051,VC-10_00385,VC-15_00299,VC-18_00532,VC-19_00304,VC-1_00123,VC-6_00156,Vch1786_I0092
+2010EL-1749_02118,2010EL-1796_03115,2010EL-1798_02879,2011EL-2317_03307,2012V-1001_01558,3554-08_03053,VC-10_00383,VC-15_00301,VC-18_00530,VC-19_00306,VC-1_00121,VC-6_00158,Vch1786_I0094
 Found 1 for the following set: c6706
+C6706_01322,C6706_01324
 Found 0 for the following set: nepal
+Printing out sets that were not explicit named in set file and contain at least one genome identified by user
+Found 19 in file 'group_1.csv' for the following set: 2010EL-1749:2010EL-1786:2010EL-1796:2011EL-2317:2012V-1001:3554-08:C6706:VC-1:VC-10:VC-14:VC-15:VC-18:VC-19:VC-25:VC-26:VC-6
+...
 ```
 
 One particular area to pay attention to is the __Genomes not included in group file__ section.  If this section has genomes listed, then these genomes were excluded from the analysis and you may have to adjust the __genomes-groups.txt__ file to include them and re-run `nml_parse_orthomcl.pl`.
 
+Another area to take a look at, right below __'Core' gene sets that is contained:__ contains a list of the gene ids unique to each genome group defined, as well as any other genome groups that weren't considered.  For example, for the set __haiti__ the 4 unique sets of genes are printed within this file.  To view more information about each of these genes, we can use `grep` to search through the input files.  For example, for the first unique set of genes for the __haiti__ group we have the gene id **2010EL-1749_02114**.  To find more information about this gene please run the following.
+
+	$ grep '2010EL-1749_02114' annotations/*.fasta
+	annotations/2010EL-1749.fasta:>2010EL-1749_02114 DNA polymerase V subunit UmuC
+
+This shows the product of the gene (as annotated by prokka) and the file it was found within.
+
 Questions
 =========
+
+1. Repeat the `grep` command to search for the products of the other gene ids in the first unique haiti gene set.  What are all these products?  Are they all the same?  Why or why not?
+
+[Answers](Answers.md)
