@@ -6,8 +6,8 @@ Answer 1
 
 Running ffp with a kmer length of 10, 15, or 20 will generate a more diverse profile for each genome, but at the cost of taking longer to run.  The following table describes the running time and resulting trees.
 
-|:K-mer Length:|:Time (s):|:Result                     :|
-|--------------|----------|-----------------------------|
+| K-mer Length | Time (s) | Result                      |
+|:------------:|:--------:|:---------------------------:|
 | 5            | 2.7      | ![tree-5.jpg](tree-5.jpg)   |
 | 10           | 2.7      | ![tree-10.jpg](tree-10.jpg) |
 | 15           | 5.7      | ![tree-15.jpg](tree-15.jpg) |
