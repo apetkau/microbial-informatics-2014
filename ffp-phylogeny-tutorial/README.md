@@ -134,3 +134,5 @@ ffpry -l 10 contigs/*.fasta | ffpcol | ffprwn | ffpjsd -p genome_names.txt | ffp
 ```
 
 What effect does this have on the resulting tree?  Try adjusting to 15 and 20.
+
+[Answers](Answers.md)
