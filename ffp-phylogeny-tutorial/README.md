@@ -119,7 +119,7 @@ $ figtree tree-5.txt
 
 This should display a tree similar to below.
 
-![tree-5.jpg](tree-5.jpg)
+![tree-5.jpg](tree-5.jpg)\
 
 Questions
 =========

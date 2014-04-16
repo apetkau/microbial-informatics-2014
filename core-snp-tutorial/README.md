@@ -82,7 +82,7 @@ When finished, you should expect to see the following output:
 
 The main file you will want to check out is __output-10/phylogeny/pseudoalign.phy_phyml_tree.txt__, which is the computed phylogenetic tree.  This can be opened up using [FigTree](http://tree.bio.ed.ac.uk/software/figtree/) and should look similar to below.
 
-![output-10-tree.jpg](output-10-tree.jpg)
+![output-10-tree.jpg](output-10-tree.jpg)\
 
 Also, the file __output-10/pseudoalign/matrix.csv__ which contains a matrix of core SNP distances among all the input isolates.
 
