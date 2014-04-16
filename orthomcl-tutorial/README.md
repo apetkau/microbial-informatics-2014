@@ -155,7 +155,7 @@ This will generate two main files of interest: an image file named __genome-grou
 
 The image file __genome-groups.txt.svg__ contains a Venn Diagram depeciting the numger of shared genes among the genome groups within the __genome-groups.txt__ file.  This looks as follows:
 
-![genome-groups-example.svg](genome-groups-example.svg)
+![genome-groups-example.jpg](genome-groups-example.jpg)
 
 The statistics file __orthomcl-stats.txt__ shows some summary statistics about the OrthoMCL results.  An example of this information is:
 
