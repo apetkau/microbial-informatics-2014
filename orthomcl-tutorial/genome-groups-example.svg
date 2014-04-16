@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg height="2000" width="2000" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<rect height="2000" id="bg" style="fill: white" width="2000" x="1" y="1" />
+	<g id="groups" style="fill-opacity: 0.0; stroke: black; stroke-width: 4">
+		<circle cx="673.666666666667" cy="666.666666666667" id="left" r="666.666666666667" />
+		<circle cx="1326.33333333333" cy="666.666666666667" id="right" r="666.666666666667" />
+		<circle cx="1000" cy="1326.33333333333" id="bottom" r="666.666666666667" />
+	</g>
+	<g id="text" style="font: Arial; font-size: 45">
+		<text x="255.416666666667" y="666.666666666667">0</text>
+		<text x="210.416666666667" y="486.666666666667">nepal</text>
+		<text x="1588.75" y="666.666666666667">1</text>
+		<text x="1543.75" y="486.666666666667">c6706</text>
+		<text x="988.75" y="1666.66666666667">4</text>
+		<text x="943.75" y="1500">haiti</text>
+		<text x="988.75" y="500">0</text>
+		<text x="876.25" y="333.333333333333">c6706:nepal</text>
+		<text x="577.5" y="1166.66666666667">74</text>
+		<text x="476.25" y="1000">haiti:nepal</text>
+		<text x="1388.75" y="1166.66666666667">0</text>
+		<text x="1276.25" y="1000">haiti:c6706</text>
+		<text x="955" y="1000">3269</text>
+		<text x="955" y="833.333333333333">Core</text>
+	</g>
+	<!-- 
+	Generated using the Perl SVG Module V2.53
+	by Ronan Oger
+	Info: http://www.roitsystems.com/
+ -->
+</svg>

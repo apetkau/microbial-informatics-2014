@@ -131,3 +131,67 @@ These correspond to the genes:
 	MAINVNTNVSAMTAQRYLNGAADGMQKSMERLSSGYKINSARDDAAGLQISNRLTSQSRG
 
 Notice how both these genes come from the same genome __2010EL-1749__.  This simply means that these two genes passed the cutoff criteria to be considered paralogs.
+
+Step 6: Venn Diagram of Orthologs
+---------------------------------
+
+Looking at text files can be useful but sometimes you will want to get an overall picture of the results and make comparisons of genes among different groups of genomes.  This can be accomplished with a script `nml_parse_orthomcl.pl` which will construct a Venn Diagram of the genes in common among a group of genomes.
+
+This script uses the orthomcl results file __orthomcl-output/groups/groups.txt__ along with another file defining the sets of genomes to compare.  This file is also called a groups file (which can make it confusing sometimes).  The format is:
+
+__genome-groups.txt:__
+
+	nepal: VC-25,VC-26,VC-14
+	haiti: 2010EL-1749,2010EL-1786,2010EL-1796,2010EL-1798,2011EL-2317,2012V-1001,3554-08,VC-10,VC-15,VC-18,VC-19,VC-1,VC-6
+	c6706: C6706
+
+An example __genome-groups.txt__ file has been included with the rest of the data for this tutorial.
+
+To run `nml_parse_orthomcl.pl` and generate a Venn Diagram, please do the following:
+
+	$ nml_parse_orthomcl.pl -i orthomcl-output/groups/groups.txt -g genome-groups.txt -s --draw -o orthomcl-stats.txt
+	
+This will generate two main files of interest: an image file named __genome-groups.txt.svg__ and some statistics about the results in __orthomcl-stats.txt__.
+
+The image file __genome-groups.txt.svg__ contains a Venn Diagram depeciting the numger of shared genes among the genome groups within the __genome-groups.txt__ file.  This looks as follows:
+
+![genome-groups-example.svg](genome-groups-example.svg)
+
+The statistics file __orthomcl-stats.txt__ shows some summary statistics about the OrthoMCL results.  An example of this information is:
+
+```
+Genomes not included in group file:
+
+
+Number of genes seen in the following genomes:
+
+VC-14: 3540
+2011EL-2317: 3536
+VC-26: 3544
+2010EL-1796: 3536
+3554-08: 3530
+VC-15: 3555
+2010EL-1749: 3534
+VC-19: 3555
+2010EL-1798: 3510
+2012V-1001: 3526
+VC-1: 3563
+C6706: 3440
+VC-10: 3563
+VC-6: 3547
+VC-25: 3541
+2010EL-1786: 3576
+VC-18: 3557
+
+Total genes seen: 60153
+
+'Core' gene sets that is contained: 17 genomes has 3269 genes
+Found 4 for the following set: haiti
+Found 1 for the following set: c6706
+Found 0 for the following set: nepal
+```
+
+One particular area to pay attention to is the __Genomes not included in group file__ section.  If this section has genomes listed, then these genomes were excluded from the analysis and you may have to adjust the __genomes-groups.txt__ file to include them and re-run `nml_parse_orthomcl.pl`.
+
+Questions
+=========
