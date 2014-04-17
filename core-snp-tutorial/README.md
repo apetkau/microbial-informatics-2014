@@ -90,13 +90,21 @@ When finished, you should expect to see the following output:
 	stage: mapping-final took 0.00 minutes to complete
 	pipeline took 6.95 minutes to complete
 
-The main file you will want to check out is __output-10/phylogeny/pseudoalign.phy_phyml_tree.txt__, which is the computed phylogenetic tree.  This can be opened up using [FigTree](http://tree.bio.ed.ac.uk/software/figtree/) and should look similar to below.
+Step 4: Examine Results
+-----------------------
+
+Due to the amount of data this pipeline is processing it may take a long time to complete.  Instead of waiting for the analysis to complete we will complete the rest of the lab with some example output data.  To obtain this example data please run the following commands.
+
+	$ cp /Course/MI_workshop/day7/output-10-example.tar.gz ./
+	$ tar -xvvzf output-10-example.tar.gz
+
+The main file you will want to check out is __output-10-example/phylogeny/pseudoalign.phy_phyml_tree.txt__, which is the computed phylogenetic tree.  This can be opened up using [FigTree](http://tree.bio.ed.ac.uk/software/figtree/) and should look similar to below.
 
 ![output-10-tree.jpg](output-10-tree.jpg)\
 
-Also, the file __output-10/pseudoalign/matrix.csv__ which contains a matrix of core SNP distances among all the input isolates.
+Also, the file __output-10-example/pseudoalign/matrix.csv__ which contains a matrix of core SNP distances among all the input isolates.
 
-	$ column -t output-10/pseudoalign/matrix.csv
+	$ column -t output-10-example/pseudoalign/matrix.csv
 	strain       2012V-1001  C6706  2010EL-1749  VC-6  VC-19  2010EL-1786  VC-18  2011EL-2317  VC-1  VC-10  VC-14  VC-15  VC-26  VC-25  2010EL-1796  2010EL-1798  3554-08
 	2012V-1001   0           280    15           38    36     27           27     26           78    78     26     26     26     25     24           24           30
 	C6706        280         0      273          272   270    269          269    268          268   268    268    268    268    267    266          266          264
@@ -116,9 +124,9 @@ Also, the file __output-10/pseudoalign/matrix.csv__ which contains a matrix of c
 	2010EL-1798  24          266    17           24    22     3            13     2            64    64     2      12     2      1      0            0            16
 	3554-08      30          264    23           22    20     19           19     18           62    62     18     18     18     17     16           16           0
 
-Also, the file __output-10/pseudoalign/pseudoalign-positions.tsv__ which includes every variant that was used by the pipeline for genetating the phylogenetic tree as well as those that were filtered out.
+Also, the file __output-10-example/pseudoalign/pseudoalign-positions.tsv__ which includes every variant that was used by the pipeline for genetating the phylogenetic tree as well as those that were filtered out.
 
-	$ head output-10/pseudoalign/pseudoalign-positions.tsv | column -t
+	$ head output-10-example/pseudoalign/pseudoalign-positions.tsv | column -t
 	#Chromosome                    Position  Status             Reference  2010EL-1749  2010EL-1796  2010EL-1798  2011EL-2317  2012V-1001  3554-08  C6706  VC-1  VC-10  VC-14  VC-15  VC-18  VC-19  VC-25  VC-26  VC-6
 	gi|360034408|ref|NC_016445.1|  17885     valid              T          T            T            T            T            T           T        G      T     T      T      T      T      T      T      T      T
 	gi|360034408|ref|NC_016445.1|  24001     filtered-coverage  T          T            T            -            T            T           T        G      T     T      T      T      T      T      T      T      T
@@ -128,7 +136,7 @@ This file contains a list of all variants detected by the pipeline, one per line
 
 A quick method to count the total number of 'valid' variants used to generate the phylogenetic tree and SNP matrix is with the following command:
 
-	$ grep --count -P "\tvalid\t" output-10/pseudoalign/pseudoalign-positions.tsv
+	$ grep --count -P "\tvalid\t" output-10-example/pseudoalign/pseudoalign-positions.tsv
 	360
 
 Questions
