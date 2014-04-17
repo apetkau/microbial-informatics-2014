@@ -14,9 +14,16 @@ The following steps show how to run OrthoMCL on an example set of data and exami
 Step 1: Obtaining input Data
 ----------------------------
 
-The input data for OrthoMCL consists of a set of genes.  This can be downloaded from:
+First we create a directory to contain all the files that will be created from OrthoMCL.  This can be done as follows.
 
-	$ wget http://wwwi/workshop/2014/data/annotations-cholera.tar.gz
+	$ git clone http://gitlab.corefacility.ca/aaron.petkau/microbialinformatics2014.git
+	$ cd microbialinformatics2014/orthomcl-tutorial/
+	$ ls
+	Answers.md  genome-groups-example.jpg  README.md
+
+The input data for OrthoMCL consists of a set of genes.  This can be obtained from:
+
+	$ cp /Course/MI_workshop/day6/annotations-cholera.tar.gz ./
 	$ tar -xvvzf annotations-cholera.tar.gz
 
 This will extract the annotated genomes into a directory __annotations/__.  This directory looks as follows:
@@ -110,9 +117,9 @@ When the pipeline is finished you should see the following output.
 Step 5: Example Results
 -----------------------
 
-Due to the amount of time it would take to run through this entire data set, we will run through the rest of this lab with a pre-computed set of results.  These results can be downloaded and extracted with the following commands.
+Due to the amount of time it would take to run through this entire data set, we will run through the rest of this lab with a pre-computed set of results.  These results can be copied and extracted with the following commands.
 
-	$ wget http://wwwi/workshop/2014/data/orthomcl-output-example.tar.gz
+	$ cp /Course/MI_workshop/day6/orthomcl-output-example.tar.gz ./
 	$ tar -xvvzf orthomcl-output-example.tar.gz
 
 This will extract the output to a directory named __orthomcl-output-example/__.
@@ -147,7 +154,7 @@ These correspond to the genes:
 
 Notice how both these genes come from the same genome __2010EL-1749__.  This simply means that these two genes passed the cutoff criteria to be considered paralogs.
 
-Step 6: Venn Diagram of Orthologs
+Step 7: Venn Diagram of Orthologs
 ---------------------------------
 
 Looking at text files can be useful but sometimes you will want to get an overall picture of the results and make comparisons of genes among different groups of genomes.  This can be accomplished with a script `nml_parse_orthomcl.pl` which will construct a Venn Diagram of the genes in common among a group of genomes.

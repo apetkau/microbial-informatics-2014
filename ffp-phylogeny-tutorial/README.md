@@ -9,7 +9,18 @@ Introduction
 Tutorial
 ========
 
-Step 1: Download Software
+Step 1: Construct Working Directory
+-----------------------------------
+
+To construct a working directory for this lab and obtain a copy of the instructions please run.
+
+	$ git clone http://gitlab.corefacility.ca/aaron.petkau/microbialinformatics2014.git
+	$ cd microbialinformatics2014/ffp-phylogeny-tutorial/
+	$ ls
+	Answers.md  tree-10-dna.jpg  tree-15.jpg  tree-5-dna.jpg
+	README.md   tree-10.jpg      tree-20.jpg  tree-5.jpg
+
+Step 2: Download Software
 -------------------------
 
 Download software from <https://github.com/apetkau/ffp-3.19-custom> and install using the following steps:
@@ -31,17 +42,17 @@ Once these steps are complete, you can test if the software is installed by runn
 
 ```bash
 $ ffpre
-Usage: ffpre [OPTION]... [FILE]... 
-Try `ffpre --help' for more information
+Usage: ffpry [OPTION]... [FILE]... 
+Try `ffpry --help' for more information
 ```
 
-Step 2: Input Files
+Step 3: Input Files
 -------------------
 
 The input files for this software are assembled genomes in FASTA format.  The input data for this tutorial can be obtained with the following commands.
 
 ```bash
-$ wget http://wwwi/workshop/2014/data/contigs-cholera.tar.gz
+$ cp /Course/MI_workshop/day7/contigs-cholera.tar.gz ./
 $ tar -xvf contigs-cholera.tar.gz
 ```
 
@@ -57,7 +68,7 @@ CTAAAAGGGGAGGGAACTGGATTTGTGTTCACTTGGAGTTTATTGCAGATTGTTGAGGGA
 TAACGTGTTTATAGACATTTTAGAGTTAAAGCCTTAACTCTAAATCATTCGTTTCGGATT
 ```
 
-Step 3: Generate genome name list
+Step 4: Generate genome name list
 ---------------------------------
 
 In order to build a tree using `ffp` a list of all the names of each genome must be provided, one genome per line.  These must be in the same order as is processed by the commands in step 4.  Each name must be unique and can be no more than 50 characters (original version was no more than 10 characters).  This file can be generated with the following commands:
@@ -91,7 +102,7 @@ VC-6
 
 Note: Adding or modifying any of the genomes within the **contigs/** directory will require re-generating the **genome_names.txt** file.
 
-Step 4: Build Phylogeny
+Step 5: Build Phylogeny
 -----------------------
 
 In order to build the phylogeny the following command can be used:
@@ -108,7 +119,7 @@ Cycle   Type    i       Length          Type    j       Length
 
 This command generates a neighbor-joining tree from the set of genomes and writes the tree to a file **tree-5.txt**.
 
-Step 5: View with FigTree
+Step 6: View with FigTree
 -------------------------
 
 In order to view the generated tree the following command can be used.

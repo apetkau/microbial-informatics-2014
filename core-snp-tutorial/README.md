@@ -9,12 +9,22 @@ Tutorial
 
 This document walks through how to run the [core phylogenomics pipeline](https://github.com/apetkau/core-phylogenomics) to generate a set of SNPs and a phylogenetic tree based on whole genome sequencing data.  This tutorial assumes you have have the pipeline installed and that you have some familiarity with working on the command line in Linux.
 
-Step 1: Obtaining input data
+Step 1: Constructing a Working Directory
+----------------------------------------
+
+To construct a working directory and obtain a copy of these instructions the following commands can be used.
+
+	$ git clone http://gitlab.corefacility.ca/aaron.petkau/microbialinformatics2014.git
+	$ cd microbialinformatics2014/core-snp-tutorial/
+	$ ls
+	mapping.conf  output-10-tree.jpg  README.md
+
+Step 2: Obtaining input data
 ----------------------------
 
 The input data to the core phylogenomics pipeline consists of a reference genome (in FASTA format) and a set of sequencing reads (in FASTQ format).  This data can be obtained with the following commands:
 
-	$ wget http://wwwi/workshop/2014/data/core-snp-pipeline-data.tar.gz
+	$ cp /Course/MI_workshop/day7/core-snp-pipeline-data.tar.gz ./
 	$ tar -xvf core-snp-pipeline-data.tar.gz
 
 This will download and extract the data into two directories.  The first directory **reference/** contains the reference genome.  In this case, it is the concatenated chromosomes of V. cholerae 2010EL-1786, which can also be obtained from http://www.ncbi.nlm.nih.gov/nuccore/NC_016445.1 and http://www.ncbi.nlm.nih.gov/nuccore/NC_016446.1.  This file looks like:
@@ -43,7 +53,7 @@ The second directory, __files-cov-10/__, contains the sequencing reads for all t
 
 For information on exactly how these files were generated please see [get_data.sh](../dataset/get_data.sh).
 
-Step 2: Running the Core SNP pipeline
+Step 3: Running the Core SNP pipeline
 -------------------------------------
 
 The command __snp_phylogenomics_control__ can used to generate a set of SNPs given the input data we just downloaded and build a whole genome phylogeny from a multiple alignment of these SNPs.  There are a number of different methods to building a whole genome phylogeny implemented in this pipeline but the method we will focus on for this tutorial is the reference mapping method.  
