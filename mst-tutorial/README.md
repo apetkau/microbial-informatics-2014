@@ -45,10 +45,11 @@ This lab will walk you through building a minimum spanning tree using SNP data. 
 
 Please follow the below steps to generate a minimum spanning tree.
 
-1. Load Dataset.
-    1. Click on **File > Load Dataset**
-    2. Name this dataset *Lab1*.  Set the **Dataset Type** to *SNP*.  When finished, click Next.  This should bring you to a **Typing Data** screen.
-    3. Click on **Browse...** and find the file *lab1-snp-profile.tsv*.  This file contains a set of sequence types (in column *ST*) defined based on the SNP data at different positions.  Click **Next** to continue.  This file looks similar to the following.
+### Step 1: Load Dataset
+
+1. Click on **File > Load Dataset**
+2. Name this dataset *Lab1*.  Set the **Dataset Type** to *SNP*.  When finished, click Next.  This should bring you to a **Typing Data** screen.
+3. Click on **Browse...** and find the file *lab1-snp-profile.tsv*.  This file contains a set of sequence types (in column *ST*) defined based on the SNP data at different positions.  Click **Next** to continue.  This file looks similar to the following.
 	
 	```
 	ST  gi|360034408|ref|NC_016445.1|_17885  gi|360034408|ref|NC_016445.1|_28297
@@ -57,7 +58,7 @@ Please follow the below steps to generate a minimum spanning tree.
 	3   T                                    A
 	```
 	
-    4. Click on **Browse...** and find the file *lab1-snp-strains.tsv*.  This file contains a mapping of the sequence types (in column *ST*) to strain ids.  Please make sure that the **Key** drop down menu is set to *ST* to indicate that this column contains the sequence types.  Click **Finish** to finish loading the data.  The file that was loaded looks similar to below.
+4. Click on **Browse...** and find the file *lab1-snp-strains.tsv*.  This file contains a mapping of the sequence types (in column *ST*) to strain ids.  Please make sure that the **Key** drop down menu is set to *ST* to indicate that this column contains the sequence types.  Click **Finish** to finish loading the data.  The file that was loaded looks similar to below.
 	
 	```
 	ST  Strain
@@ -66,9 +67,9 @@ Please follow the below steps to generate a minimum spanning tree.
 	3   2010EL-1796
 	```
 	
-2. Examine Data
-3. Run goeBURST
-4. View Results
+### Step 2: Examine Data
+### Step 3: Run goeBURST
+### Step 4: View Results
 
 Questions
 =========
