@@ -1,18 +1,18 @@
-ST	Strain
-1	2010EL-1786
-2	2010EL-1749
-3	2010EL-1796
-3	2010EL-1798
-4	2011EL-2317
-5	2012V-1001
-6	3554-08
-7	C6706
-8	VC-1
-8	VC-10
-9	VC-14
-10	VC-15
-11	VC-18
-12	VC-19
-13	VC-25
-14	VC-26
-15	VC-6
+ST	Strain	Location	Year
+1	2010EL-1786	Haiti	2010
+2	2010EL-1749	Cameroon	2010	
+3	2010EL-1796	Haiti	2010
+3	2010EL-1798	Haiti	2010
+4	2011EL-2317	Haiti	2011
+5	2012V-1001	United States	2011
+6	3554-08	Nepal	2008
+7	C6706	Peru	1991
+8	VC-1	Banke district, Nepalgunj municipality	2010
+8	VC-10	Banke district, Nepalgunj municipality	2010
+9	VC-14	Banke district, Nepalgunj municipality	2010
+10	VC-15	Dang Deokhuri district, Narayanpur VDC	2010
+11	VC-18	Banke district, Nepalgunj municipality	2010
+12	VC-19	Kathmandu district, Kathmandu city	2010
+13	VC-25	Rupandehi district, Butawal municipality	2010
+14	VC-26	Rupandehi district, Butawal municipality	2010
+15	VC-6	Banke district, Nepalgunj municipality	2010

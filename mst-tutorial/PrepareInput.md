@@ -41,3 +41,5 @@ The file __lab1-snp-strains.tsv__ contains a mapping of the Sequence Type in the
 	...
 
 Note: It is possible for more than one strain to have the same Sequence Type identifier, which indicates that both strains SNP profiles are identical.
+
+Extra information was added as separate columns to __lab1-snp-strains.tsv__ based on data from http://mbio.asm.org/content/4/4/e00398-13 and http://mbio.asm.org/content/2/4/e00157-11.abstract.
