@@ -107,12 +107,27 @@ When the pipeline is finished you should see the following output.
 	Parameters used can be viewed in orthomcl.conf and /home/aaron/Projects/MicrobialInformatics2014/orthomcl-tutorial/orthomcl-output/log/run.properties
 	Groups file can be found in /home/aaron/Projects/MicrobialInformatics2014/orthomcl-tutorial/orthomcl-output/groups/groups.txt
 
-Step 5: Looking at the Results
+Step 5: Example Results
+-----------------------
+
+Due to the amount of time it would take to run through this entire data set, we will run through the rest of this lab with a pre-computed set of results.  These results can be downloaded and extracted with the following commands.
+
+	$ wget http://wwwi/workshop/2014/data/orthomcl-output-example.tar.gz
+	$ tar -xvvzf orthomcl-output-example.tar.gz
+
+This will extract the output to a directory named __orthomcl-output-example/__.
+
+Step 6: Looking at the Results
 ------------------------------
 
-The main output from OrthoMCL is a file __orthomcl-output/groups/groups.txt__ which contains a list of potential orthologs among the entire input genome set, one set of orthologs per line.  This file looks as follows:
+The output directory contains a number of different sub directories, log files, and analysis results.  This looks as follows.
 
-	$ head orthomcl-output/groups/groups.txt
+	$ ls orthomcl-output-example/
+	blast_dir  blast_load  blast_results  compliant_fasta  groups  log  pairs
+
+The main output from OrthoMCL is a file __orthomcl-output-example/groups/groups.txt__ which contains a list of potential orthologs among the entire input genome set, one set of orthologs per line.  This file looks as follows:
+
+	$ head orthomcl-output-example/groups/groups.txt
 	group_1: 2010EL-1749|2010EL-1749_00119 2010EL-1749|2010EL-1749_00120 ...
 	group_2: 2010EL-1786|Vch1786_I1650 2010EL-1786|Vch1786_I2818 2010EL-1786|Vch1786_II0608 ...
 	group_3: 2010EL-1786|Vch1786_I0915 2010EL-1786|Vch1786_II0814 2010EL-1786|Vch1786_II0916 ...
@@ -137,7 +152,7 @@ Step 6: Venn Diagram of Orthologs
 
 Looking at text files can be useful but sometimes you will want to get an overall picture of the results and make comparisons of genes among different groups of genomes.  This can be accomplished with a script `nml_parse_orthomcl.pl` which will construct a Venn Diagram of the genes in common among a group of genomes.
 
-This script uses the orthomcl results file __orthomcl-output/groups/groups.txt__ along with another file defining the sets of genomes to compare.  This file is also called a groups file (which can make it confusing sometimes).  The format is:
+This script uses the orthomcl results file __orthomcl-output-example/groups/groups.txt__ along with another file defining the sets of genomes to compare.  This file is also called a groups file (which can make it confusing sometimes).  The format is:
 
 __genome-groups.txt:__
 
@@ -149,7 +164,7 @@ An example __genome-groups.txt__ file has been included with the rest of the dat
 
 To run `nml_parse_orthomcl.pl` and generate a Venn Diagram, please do the following:
 
-	$ nml_parse_orthomcl.pl -i orthomcl-output/groups/groups.txt -g genome-groups.txt -s --draw -o orthomcl-stats.txt --genes
+	$ nml_parse_orthomcl.pl -i orthomcl-output-example/groups/groups.txt -g genome-groups.txt -s --draw -o orthomcl-stats.txt --genes
 	
 This will generate two main files of interest: an image file named __genome-groups.txt.svg__ and some statistics about the results in __orthomcl-stats.txt__.  A set of other files, all named **group_x.csv** will also be generated.
 
