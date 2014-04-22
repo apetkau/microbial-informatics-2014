@@ -107,7 +107,7 @@ Please follow the below steps to generate a minimum spanning tree.
 
 3. Double-click on the **goeBURST Full MST** item in the **Datasets** panel.  This should bring you back to the minimum spanning tree view.  This should now be colored based on the location of each sequence type.
 
-   ![lab1-mst-location.jpg](lab1-mst-location.jpg)
+   ![lab1-mst-location.jpg](images/lab1-mst-location.jpg)
 
 Questions
 =========
