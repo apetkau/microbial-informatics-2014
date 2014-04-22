@@ -3,13 +3,10 @@ Ortholog Detection with OrthoMCL
 
 This tutorial covers ortholog detection using [OrthoMCL](http://orthomcl.org/common/downloads/software/v2.0/).  Instead of running all the software for OrthoMCL manually, we will take advantage of the [OrthoMCL Pipeline](https://github.com/apetkau/orthomcl-pipeline) to automate this process.
 
-Introduction
-============
-
 Tutorial
 ========
 
-The following steps show how to run OrthoMCL on the smaller example set of data and examine some of the results in a Venn Diagram.
+The following steps show how to run OrthoMCL on the larger example set of data and examine some of the results in a Venn Diagram.
 
 Step 1: Obtaining input Data
 ----------------------------
@@ -232,9 +229,34 @@ Another area to take a look at, right below __'Core' gene sets that is contained
 
 This shows the product of the gene (as annotated by prokka) and the file it was found within.
 
-Questions
-=========
+Step 8: Genearate Smaller Dataset
+---------------------------------
 
-1. Repeat the `grep` command to search for the products of the other gene ids in the first unique haiti gene set.  What are all these products?  Are they all the same?  Why or why not?
+To generate the smaller dataset, the following steps were used.
 
-[Answers](Answers.md)
+Copied output groups file from example dataset:
+
+	$ cp orthomcl-output-example/groups/groups.txt ./groups.txt
+
+Modified **groups.txt** file and wrote to **groups-small.txt** to only have 20 core gene groups.
+
+	$ perl -e 'while(<STDIN>){chomp;@a=split(/\s/); print "$_\n" if (@a == 18);}' < groups.txt | head -n 20 > groups-small.txt
+
+Added a few accessory gene groups and fixed up core gene groups within **groups-small.txt**.
+
+Write only the given list of genes to a new set of files under **annotations-small/**.
+
+	$ mkdir annotations-small
+	$ cp groups-small.txt annotations-small/
+	$ for i in \
+	`cat annotations-small/groups-small.txt | cut -f 1 --complement -d ' ' | tr ' ' '\n'|sort -u`;\
+	 do echo $i | perl -MBio::SeqIO -e '$seqid=<STDIN>;chomp $seqid; @a=split(/\|/,$seqid); $f=Bio::SeqIO->new(-file=>"<annotations/".$a[0].".fasta"); $o=Bio::SeqIO->new(-file=>">>annotations-small/".$a[0].".faa",-format=>"fasta");while($s = $f->next_seq){if ($s->display_id eq $a[1]){$o->write_seq($s);}}'; \
+	done
+	$ for i in \
+	`cat annotations-small/groups-small.txt | cut -f 1 --complement -d ' ' | tr ' ' '\n'|sort -u`;\
+	do echo $i | perl -MBio::SeqIO -e '$seqid=<STDIN>;chomp $seqid; @a=split(/\|/,$seqid); $f=Bio::SeqIO->new(-file=>"<annotations/".$a[0].".ffn"); $o=Bio::SeqIO->new(-file=>">>annotations-small/".$a[0].".ffn",-format=>"fasta");while($s = $f->next_seq){if ($s->display_id eq $a[1]){$o->write_seq($s);}}'; \
+	done
+
+Files in annotations-small/ should contain only the subset of genes we want.  The below command compresses these files.
+
+	$ tar -cvzf annotations-cholera-small.tar.gz annotations-small/
