@@ -97,6 +97,21 @@ Please follow the below steps to generate a minimum spanning tree.
 
    ![lab1-mst.jpg](images/lab1-mst.jpg)
 
+### Step 5: Visualizing Data
+
+1. Double-click on the **Isolate Data** item under the **Datasets** panel to the left.  This should bring up a table of the isolate data that was loaded from the **lab1-snp-strains.tsv** file.
+
+2. We can select which categories of data to annotate on the minimum spanning tree from this view.  To annotate the *Location* data on to the minimum spanning tree, select all rows from the *Location* column.  Click on the **View** button at the top right.  This should display a pie chart giving a breakdown of the locations at the bottom.
+
+   ![lab1-visualizing-location.jpg](images/lab1-visualizing-location.jpg)
+
+3. Double-click on the **goeBURST Full MST** item in the **Datasets** panel.  This should bring you back to the minimum spanning tree view.  This should now be colored based on the location of each sequence type.
+
+   ![lab1-mst-location.jpg](lab1-mst-location.jpg)
+
 Questions
 =========
 
+1. Using a similar procedure as in *Step 5* annotate the minimum spanning tree with the year of collection instead of the location.  Which is the most common year represented?  Which is the least common year?
+
+2. The *Level* selection can be used to define the maximum level nodes can be connected to be part of the same tree.  For the figure we generated, this can be interpreted as the maximum SNP distance to be considered part of the same closley related cluster.  Adjust the level to 20, or 15.  Which are the main strains that stand out?
