@@ -23,36 +23,100 @@ First we create a directory to contain all the files that will be created from O
 
 The input data for OrthoMCL consists of a set of genes.  This can be obtained from:
 
-	$ cp /Course/MI_workshop/day6/annotations-cholera.tar.gz ./
-	$ tar -xvvzf annotations-cholera.tar.gz
+	$ cp /Course/MI_workshop_2014/day6/annotations-cholera-small.tar.gz ./
+	$ tar -xvvzf annotations-cholera-small.tar.gz
 
-This will extract the annotated genomes into a directory __annotations/__.  This directory looks as follows:
+This will extract the annotated genomes into a directory __annotations-small/__.  This directory looks as follows:
 
-	$ ls annotations/
-	2010EL-1749.faa  2010EL-1786.ffn  2010EL-1798.faa  2011EL-2317.ffn  3554-08.faa  C6706.ffn  VC-14.faa  VC-15.ffn  VC-19.faa  VC-1.ffn   VC-26.faa  VC-6.ffn
-	2010EL-1749.ffn  2010EL-1796.faa  2010EL-1798.ffn  2012V-1001.faa   3554-08.ffn  VC-10.faa  VC-14.ffn  VC-18.faa  VC-19.ffn  VC-25.faa  VC-26.ffn
-	2010EL-1786.faa  2010EL-1796.ffn  2011EL-2317.faa  2012V-1001.ffn   C6706.faa    VC-10.ffn  VC-15.faa  VC-18.ffn  VC-1.faa   VC-25.ffn  VC-6.faa
+	$ ls annotations-small/
+	2010EL-1749.faa  2010EL-1786.ffn  2010EL-1798.faa  2011EL-2317.ffn  3554-08.faa  C6706.ffn         VC-10.ffn  VC-15.faa  VC-18.ffn  VC-1.faa   VC-25.ffn  VC-6.faa
+	2010EL-1749.ffn  2010EL-1796.faa  2010EL-1798.ffn  2012V-1001.faa   3554-08.ffn  groups-small.txt  VC-14.faa  VC-15.ffn  VC-19.faa  VC-1.ffn   VC-26.faa  VC-6.ffn
+	2010EL-1786.faa  2010EL-1796.ffn  2011EL-2317.faa  2012V-1001.ffn   C6706.faa    VC-10.faa         VC-14.ffn  VC-18.faa  VC-19.ffn  VC-25.faa  VC-26.ffn
 
 The files __*.faa__ contains the genes as amino acid sequences.  The files __*.ffn__ contain the genes as nucleotide sequences.  For example:
 
-	$ head annotations/2010EL-1749.faa
+	$ head annotations-small/2010EL-1749.faa
 	>2010EL-1749_00001 Stalked cell differentiation-controlling protein
 	MDARLFDNTQTLRASVLCGLSFFWALIAFLMALINFWSTRLVELASLELVCAFYSLYIYS
 	LAKRRIHTKQQVYLYLFILTGTTLFATYMKPLMMGVYIWSCFVPILFYIFTSARFAFVTS
 	...
 
-	$ head annotations/2010EL-1749.ffn
+	$ head annotations-small/2010EL-1749.ffn
 	>2010EL-1749_00001 Stalked cell differentiation-controlling protein
 	ATGGATGCTAGGTTATTTGACAATACACAAACGCTTCGAGCTTCAGTGCTATGCGGCCTA
 	AGTTTCTTTTGGGCTTTGATCGCTTTCTTGATGGCGCTGATCAATTTCTGGTCAACACGG
 	...
 
-Step 2: Setup OrthoMCL Database Configuration
----------------------------------------------
+Step 2: Database Preparation
+----------------------------
 
-OrthoMCL requires the use of a database, such as [MySQL](http://www.mysql.com/), to do some of the analysis.  This requires a bit of manual setup, but a lot of this has been done for you.  A configuration file with information on how to connect to the database still needs to be generated.  This can be done with the following command:
+OrthoMCL requires the use of a database, such as [MySQL](http://www.mysql.com/), to do some of the analysis.  This requires a bit of manual setup.  In particular, we need to construct a location and a user in this database to store our data.  This can be done with the following commands.
 
-	$ /opt/orthomcl-pipeline/scripts/setup_database.pl --user orthomcl --password orthomcl --host localhost --database orthomcl > orthomcl.conf
+	$ mysql -u root
+	Enter password: 
+	Welcome to the MySQL monitor.  Commands end with ; or \g.
+	Your MySQL connection id is 39
+	Server version: 5.5.35-0ubuntu0.13.10.2 (Ubuntu)
+	
+	Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+	
+	Oracle is a registered trademark of Oracle Corporation and/or its
+	affiliates. Other names may be trademarks of their respective
+	owners.
+	
+	Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+	
+	mysql>
+
+This will log you into MySQL with an administrator account and give you a command prompt specifically for MySQL commands.  The commands we need to run from here involve creating a new database for OrthoMCL and creating a user to access this database.  This can be accomplished with the following.
+
+Construct a new user **'orthomcl'@'localhost'** with the password **password**.
+
+	mysql> create user 'orthomcl'@'localhost' identified by 'password';
+	Query OK, 0 rows affected (0.00 sec)
+
+Build a new database, called **orthomcl**, to store the data.
+	
+	mysql> create database orthomcl;
+	Query OK, 1 row affected (0.00 sec)
+
+Give the user **'orthomcl'@'localhost'** permissions to modify the database **orthomcl**.
+
+	mysql> grant all on orthomcl.* to 'orthomcl'@'localhost';
+	Query OK, 0 rows affected (0.00 sec)
+
+Make sure permissions are properly updated.
+
+	mysql> flush privileges;
+	Query OK, 0 rows affected (0.00 sec)
+
+Show the list of all databases.
+
+	mysql> show databases;
+	+--------------------+
+	| Database           |
+	+--------------------+
+	| information_schema |
+	| mysql              |
+	| orthomcl           |
+	| performance_schema |
+	| test               |
+	+--------------------+
+	5 rows in set (0.00 sec)
+
+Exit MySQL.
+
+	mysql> exit
+	Bye
+
+Now we have constructed a database, called **orthomcl** which is located on the current machine **localhost**, accessible by the user **orthomcl@localhost** with the password **password**.
+
+Step 3: Setup OrthoMCL Database Configuration File
+--------------------------------------------------
+
+All the information we supplied to construct the database in the previous step must be written into a configuration file for OrthoMCL to know how to connect to the database.  This can be accomplished with the following command:
+
+	$ /opt/orthomcl/pipeline/orthomcl-pipeline/scripts/setup_database.pl --user orthomcl --password password --host localhost --database orthomcl > orthomcl.conf
 	Connecting to database orthomcl on host localhost with user orthomcl ...OK
 
 This generates a file, __orthomcl.conf__ which contains the neccessary database connection information and some default settings for OrthoMCL.  This file looks as follows.
@@ -60,7 +124,7 @@ This generates a file, __orthomcl.conf__ which contains the neccessary database 
 	coOrthologTable=CoOrtholog
 	dbConnectString=dbi:mysql:orthomcl:localhost:mysql_local_infile=1
 	dbLogin=orthomcl
-	dbPassword=orthomcl
+	dbPassword=password
 	dbVendor=mysql 
 	evalueExponentCutoff=-5
 	inParalogTable=InParalog
@@ -74,26 +138,26 @@ For a more detailed description of this file please see the [OrthoMCL](http://or
 
 For more details on how to setup and install the OrthoMCL Pipeline please see the [install](https://github.com/apetkau/orthomcl-pipeline/blob/master/INSTALL.md) documentation.
 
-Step 3: Renaming input files
+Step 4: Renaming input files
 ----------------------------
 
 The OrthoMCL Pipeline takes as input the __*.faa__ amino acid sequence files, but assumes its input files end with the __*.fasta__ extension.  To properly rename these files please use the following command.
 
-	$ prename 's/\.faa/\.fasta/' annotations/*.faa
+	$ prename 's/\.faa/\.fasta/' annotations-small/*.faa
 
-This rename all the __*.faa__ files within the __annotations/** directory.  These will look like:
+This rename all the __*.faa__ files within the __annotations-small/** directory.  These will look like:
 
-	$ ls annotations
+	$ ls annotations-small
 	2010EL-1749.fasta  2010EL-1786.ffn    2010EL-1798.fasta  2011EL-2317.ffn   3554-08.fasta  C6706.ffn    VC-14.fasta  VC-15.ffn    VC-19.fasta  VC-1.ffn     VC-26.fasta  VC-6.ffn
 	2010EL-1749.ffn    2010EL-1796.fasta  2010EL-1798.ffn    2012V-1001.fasta  3554-08.ffn    VC-10.fasta  VC-14.ffn    VC-18.fasta  VC-19.ffn    VC-25.fasta  VC-26.ffn
 	2010EL-1786.fasta  2010EL-1796.ffn    2011EL-2317.fasta  2012V-1001.ffn    C6706.fasta    VC-10.ffn    VC-15.fasta  VC-18.ffn    VC-1.fasta   VC-25.ffn    VC-6.fasta
 
-Step 4: Running OrthoMCL
+Step 5: Running OrthoMCL
 ------------------------
 
 In order to run OrthoMCL please use the following command.
 
-	$ orthomcl-pipeline -i annotations/ -o orthomcl-output -m orthomcl.conf --nocompliant
+	$ orthomcl-pipeline -i annotations-small/ -o orthomcl-output -m orthomcl.conf --nocompliant
 	Starting OrthoMCL pipeline on: Fri Apr 11 15:39:19 2014
 	Git commit: a3999872a160994b9e8eacb95163c24b4dd78bd8
 	
@@ -114,7 +178,7 @@ When the pipeline is finished you should see the following output.
 	Parameters used can be viewed in orthomcl.conf and /home/aaron/Projects/MicrobialInformatics2014/orthomcl-tutorial/orthomcl-output/log/run.properties
 	Groups file can be found in /home/aaron/Projects/MicrobialInformatics2014/orthomcl-tutorial/orthomcl-output/groups/groups.txt
 
-Step 5: Example Results
+Step 6: Example Results
 -----------------------
 
 Due to the amount of time it would take to run through this entire data set, we will run through the rest of this lab with a pre-computed set of results.  These results can be copied and extracted with the following commands.
@@ -124,7 +188,7 @@ Due to the amount of time it would take to run through this entire data set, we 
 
 This will extract the output to a directory named __orthomcl-output-example/__.
 
-Step 6: Looking at the Results
+Step 7: Looking at the Results
 ------------------------------
 
 The output directory contains a number of different sub directories, log files, and analysis results.  This looks as follows.
@@ -144,17 +208,17 @@ Each gene within an ortholog group is separated by spaces.  So, for example, gro
 
 These correspond to the genes:
 
-	$ grep -A1 '2010EL-1749_00119' annotations/2010EL-1749.fasta
+	$ grep -A1 '2010EL-1749_00119' annotations-small/2010EL-1749.fasta
 	>2010EL-1749_00119 Flagellin D
 	MAVNVNTNVAAMTAQRYLTGATNAQQTSMERLSSGFKINSAKDDAAGLQISNRLNVQSRG
 
-	$ grep -A1 '2010EL-1749_00120' annotations/2010EL-1749.fasta
+	$ grep -A1 '2010EL-1749_00120' annotations-small/2010EL-1749.fasta
 	>2010EL-1749_00120 Flagellin B
 	MAINVNTNVSAMTAQRYLNGAADGMQKSMERLSSGYKINSARDDAAGLQISNRLTSQSRG
 
 Notice how both these genes come from the same genome __2010EL-1749__.  This simply means that these two genes passed the cutoff criteria to be considered paralogs.
 
-Step 7: Venn Diagram of Orthologs
+Step 8: Venn Diagram of Orthologs
 ---------------------------------
 
 Looking at text files can be useful but sometimes you will want to get an overall picture of the results and make comparisons of genes among different groups of genomes.  This can be accomplished with a script `nml_parse_orthomcl.pl` which will construct a Venn Diagram of the genes in common among a group of genomes.
@@ -227,8 +291,8 @@ One particular area to pay attention to is the __Genomes not included in group f
 
 Another area to take a look at, right below __'Core' gene sets that is contained:__ contains a list of the gene ids unique to each genome group defined, as well as any other genome groups that weren't considered.  For example, for the set __haiti__ the 4 unique sets of genes are printed within this file.  To view more information about each of these genes, we can use `grep` to search through the input files.  For example, for the first unique set of genes for the __haiti__ group we have the gene id **2010EL-1749_02114**.  To find more information about this gene please run the following.
 
-	$ grep '2010EL-1749_02114' annotations/*.fasta
-	annotations/2010EL-1749.fasta:>2010EL-1749_02114 DNA polymerase V subunit UmuC
+	$ grep '2010EL-1749_02114' annotations-small/*.fasta
+	annotations-small/2010EL-1749.fasta:>2010EL-1749_02114 DNA polymerase V subunit UmuC
 
 This shows the product of the gene (as annotated by prokka) and the file it was found within.
 
