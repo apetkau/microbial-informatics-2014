@@ -16,6 +16,9 @@ for i in files/*.fastq; do b=`basename $i`; ./seqtk/seqtk sample -s 101 $i 60000
 mkdir reference
 # export GenBank and FASTA formats to reference/*.ffn and reference/*.faa
 
+# Extract small subregion for smaller reference mapping lab
+perl -MBio::SeqIO -e '$i=Bio::SeqIO->new(-file=>"<reference/2010EL-1786.fasta",-format=>"fasta");$s=$i->next_seq; print ">",$s->display_id,"_2000000_2400000\n";print $s->subseq(2000000,2400000),"\n";'| fold -w80 > reference/2010EL-1786-c1_2000_2400kb.fasta
+
 ##########################
 # Assemblies/Annotations #
 ##########################
@@ -65,3 +68,24 @@ prename 's/_1\.fastq/\.fastq/' files-cov-10/*_1.fastq
 
 # tar up reduced fastq files and reference file
 tar -cvvzf core-snp-pipeline-data.tar.gz files-cov-10/* reference/*
+
+# map reads to small subregion of reference to reduce dataset size
+mkdir read-reduction
+cp reference/2010EL-1786-c1_2000_2400kb.fasta read-reduction/
+cd read-reduction
+mkdir cholera-files-subsample
+mkdir cholera-files-subsample/reference
+cp ../reference/2010EL-1786-c1_2000_2400kb.fasta cholera-files-subsample/reference
+mkdir cholera-files-subsample/fastq
+
+smalt index -k 13 -s 1 2010EL-1786-c1_2000_2400kb 2010EL-1786-c1_2000_2400kb.fasta
+for i in ../files-cov-10/*.fastq; do b=`basename $i`; echo $i; smalt map -f samsoft -n 8 -r 1 -y 0.5 2010EL-1786-c1_2000_2400kb $i > $b.sam 2> $b.err; done
+
+# pull out mapped reads from sam files
+# used fasta_utilities https://github.com/apetkau/fasta_utilities 724d0ed31e653d55113d8594ee218b4c41779be5
+for i in *.sam; do b=`basename $i .sam`; perl fasta_utilities/scripts/sam2fastq.pl --remove-unaligned $i > cholera-files-subsample/fastq/$b.fastq; done
+# rename files to remove extra .fastq
+prename 's/\.fastq$//' cholera-files-subsample/fastq/*.fastq
+
+# tar up file containing reduced dataset
+tar -cvzf cholera-files-subsample.tar.gz cholera-files-subsample
