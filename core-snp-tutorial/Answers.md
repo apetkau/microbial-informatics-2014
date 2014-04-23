@@ -29,3 +29,5 @@
    |:----------------:|:---------------:|:--------------------------------------------------------------:|
    | 2                | 28              | ![output-10-subsample.jpg](images/output-10-subsample.jpg)     |
    | 5                | 10              | ![output-10-subsample-5.jpg](images/output-10-subsample-5.jpg) |
+
+   The difference between the tree where the minimum coverage is 2 the tree where the minimum coverage is 5 is that with a minimum coverage of 5 the tree looks a bit flatter since there are less positions avaiable to differentiate some of the samples.
