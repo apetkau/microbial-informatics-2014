@@ -141,7 +141,7 @@ Also, the file __output-10-subsample/pseudoalign/pseudoalign-positions.tsv__ whi
 	gi|360034408|ref|NC_016445.1|_2000000_2400000  17132     valid              A          A            A            A            A            A           A        C      A     A      A      A      A      A      A      A      A
 	...
 	
-This file contains a list of all variants detected by the pipeline, one per line.  Each variant is given a status, with *valid* indicating that the variants at that position were used for further analysis.  Note: since reference mapping was performed with respect to the region starting at 2mbp on chromosome I, all positions are indicated relative to this region.
+This file contains a list of all variants detected by the pipeline, one per line.  Each variant is given a status, with *valid* indicating that the variants at that position were used for further analysis.  *Note: since reference mapping was performed with respect to the region starting at 2mbp on chromosome I, all positions are indicated relative to this region.*
 
 A quick method to count the total number of 'valid' variants used to generate the phylogenetic tree and SNP matrix is with the following command:
 
