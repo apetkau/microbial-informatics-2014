@@ -145,7 +145,7 @@ The OrthoMCL Pipeline takes as input the __*.faa__ amino acid sequence files, bu
 
 	$ prename 's/\.faa/\.fasta/' annotations-small/*.faa
 
-This rename all the __*.faa__ files within the __annotations-small/** directory.  These will look like:
+This rename all the __*.faa__ files within the **annotations-small/** directory.  These will look like:
 
 	$ ls annotations-small
 	2010EL-1749.fasta  2010EL-1786.ffn    2010EL-1798.fasta  2011EL-2317.ffn   3554-08.fasta  C6706.ffn         VC-10.ffn    VC-15.fasta  VC-18.ffn    VC-1.fasta   VC-25.ffn    VC-6.fasta

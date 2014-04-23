@@ -47,9 +47,9 @@ The files __*.faa__ contains the genes as amino acid sequences.  The files __*.f
 Step 2: Setup OrthoMCL Database Configuration
 ---------------------------------------------
 
-OrthoMCL requires the use of a database, such as [MySQL](http://www.mysql.com/), to do some of the analysis.  This requires a bit of manual setup, but a lot of this has been done for you.  A configuration file with information on how to connect to the database still needs to be generated.  This can be done with the following command:
+OrthoMCL requires the use of a database, such as [MySQL](http://www.mysql.com/), to do some of the analysis.  This requires a bit of manual setup.  For more information on setup please see **Step 2: Database Preparation** from the [main tutorial](README.md).  To generate a configuration file with information on how to connect to the database please run the following command.
 
-	$ /opt/orthomcl-pipeline/scripts/setup_database.pl --user orthomcl --password orthomcl --host localhost --database orthomcl > orthomcl.conf
+	$ /opt/orthomcl-pipeline/scripts/setup_database.pl --user orthomcl --password password --host localhost --database orthomcl > orthomcl.conf
 	Connecting to database orthomcl on host localhost with user orthomcl ...OK
 
 This generates a file, __orthomcl.conf__ which contains the neccessary database connection information and some default settings for OrthoMCL.  This file looks as follows.
@@ -57,7 +57,7 @@ This generates a file, __orthomcl.conf__ which contains the neccessary database 
 	coOrthologTable=CoOrtholog
 	dbConnectString=dbi:mysql:orthomcl:localhost:mysql_local_infile=1
 	dbLogin=orthomcl
-	dbPassword=orthomcl
+	dbPassword=password
 	dbVendor=mysql 
 	evalueExponentCutoff=-5
 	inParalogTable=InParalog
