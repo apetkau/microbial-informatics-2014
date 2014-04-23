@@ -156,8 +156,8 @@ Questions
 2. The above tutorial generates a phylogeny only from a 400kbp fragment of the whole genome.  It would be expected that a more complete picture can be obtained by extracting variants using the entire genome, but this takes more time to run.  An example set of results obtained from running the pipeline on the entire genome (see the walkthrough [here](READMELargePhylogeny.md) for more information) can be obtained by running the following.
 	
 	```bash
-	cp /Course/MI_workshop_2014/day7/output-10-example.tar.gz ./
-	tar -xvvzf output-10-example.tar.gz
+	$ cp /Course/MI_workshop_2014/day7/output-10-example.tar.gz ./
+	$ tar -xvvzf output-10-example.tar.gz
 	```
    This will extract the results into a directory __output-10-example/__.  Please examine the resulting whole genome phylgeny and the number of positions used to generate the phylogeny.  How does using the whole genome compare to only using a fragment of the genome?
 
