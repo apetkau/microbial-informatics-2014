@@ -15,3 +15,15 @@ Ortholog Detection with OrthoMCL: Answers
 	```
 	
    These are all the same except for **Vch1786_I0090** which is found within **2010EL-1786**.  This is because this was the only genome that wasn't annotated using prokka.  Instead, the annotations were extracted from the GenBank file on NCBI.  More information on the particular gene can be found at http://www.ncbi.nlm.nih.gov/gene/?term=Vch1786_I0090.
+
+2. The below commands can be used to generate a Venn Diagram.
+	
+	```bash
+	$ nml_parse_orthomcl.pl -i example-large/groups.txt -g genome-groups.txt -s --draw -o orthomcl-stats-large.txt --genes
+	```
+
+   This produces a Venn Diagram that looks as follows.
+
+   ![genome-groups-example.jpg](genome-groups-example.jpg)
+
+   The number of core genes within this full dataset is 3269.

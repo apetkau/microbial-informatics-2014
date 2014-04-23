@@ -292,4 +292,15 @@ Questions
 
 1. Repeat the `grep` command to search for the products of the other gene ids (such as **2010EL-1796_03119**, **VC-10_00387**, and **Vch1786_I0090**) in the first unique haiti gene set.  What are all these products?  Are they all the same?  Why or why not?
 
+2. The above steps only walked through running a small subsample of genes for each of the genomes due to time constraints.  To see what sort of results you would get with a full run through OrthoMCL please copy and extract the **example-large.tar.gz** flie.  This can be obtained with the commands.
+
+	```bash
+	$ cp /Course/MI_workshop_2014/day6/example-large.tar.gz ./
+	$ tar -xvzf example-large.tar.gz
+	```
+	
+   This extracts the full dataset to a directory, **example-large/**, which contains the full set of annotations and an OrthoMCL groups.txt file from running OrthoMCL.  More information on how this dataset was run can be found at [READMELargeDataset.md](READMELargeDataset.md).
+   
+   Run the `nml_parse_orthomcl.pl` script on this dataset.  What does the Venn Diagram look like?  How many genes are within the core genome?
+
 [Answers](Answers.md)

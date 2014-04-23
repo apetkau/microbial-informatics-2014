@@ -260,3 +260,14 @@ Write only the given list of genes to a new set of files under **annotations-sma
 Files in annotations-small/ should contain only the subset of genes we want.  The below command compresses these files.
 
 	$ tar -cvzf annotations-cholera-small.tar.gz annotations-small/
+
+Step 9: Generate Examples Large Dataset
+---------------------------------------
+
+The following commands were used to generate the large dataset tarball.
+
+	$ mkdir example-large
+	$ cp -r annotations example-large/
+	$ cp orthomcl-output-example/groups/groups.txt example-large/
+	$ tar -cvvzf example-large.tar.gz example-large/
+
