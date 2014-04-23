@@ -116,7 +116,7 @@ Step 3: Setup OrthoMCL Database Configuration File
 
 All the information we supplied to construct the database in the previous step must be written into a configuration file for OrthoMCL to know how to connect to the database.  This can be accomplished with the following command:
 
-	$ /opt/orthomcl/pipeline/orthomcl-pipeline/scripts/setup_database.pl --user orthomcl --password password --host localhost --database orthomcl > orthomcl.conf
+	$ orthomcl-setup-database.pl --user orthomcl --password password --host localhost --database orthomcl > orthomcl.conf
 	Connecting to database orthomcl on host localhost with user orthomcl ...OK
 
 This generates a file, __orthomcl.conf__ which contains the neccessary database connection information and some default settings for OrthoMCL.  This file looks as follows.
