@@ -39,7 +39,7 @@
    The total number of variants used to generate this tree can be obtained using.
 	
 	```bash
-	grep --count -P "\tvalid\t" output-10-example/pseudoalign/pseudoalign-positions.tsv
+	$ grep --count -P "\tvalid\t" output-10-example/pseudoalign/pseudoalign-positions.tsv
 	360
 	```
 
