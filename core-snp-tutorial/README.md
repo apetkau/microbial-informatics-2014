@@ -151,3 +151,6 @@ A quick method to count the total number of 'valid' variants used to generate th
 Questions
 =========
 
+1. The **minimum coverage** setting within the **mapping.conf** file can have a large effect on the total number of valid positions used to generate the tree.  Please try re-running the pipeline with a minimum coverage of *5*.  What effect does this have on the total number of *valid* variants used to generate the phylogenetic tree?  What effect does this have on the phylogenetic tree generated?
+
+[Answers](Answers.md)
