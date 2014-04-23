@@ -1,9 +1,6 @@
 Core SNP Phylogenomics
 ======================
 
-Introduction
-============
-
 Tutorial
 ========
 
@@ -138,7 +135,3 @@ A quick method to count the total number of 'valid' variants used to generate th
 
 	$ grep --count -P "\tvalid\t" output-10-example/pseudoalign/pseudoalign-positions.tsv
 	360
-
-Questions
-=========
-

@@ -31,3 +31,16 @@
    | 5                | 10              | ![output-10-subsample-5.jpg](images/output-10-subsample-5.jpg) |
 
    The difference between the tree where the minimum coverage is 2 the tree where the minimum coverage is 5 is that with a minimum coverage of 5 the tree looks a bit flatter since there are less positions avaiable to differentiate some of the samples.
+
+2. The phylogenetic tree generated from the whole genome looks as follows.
+   
+   ![output-10-tree.jpg](images/output-10-tree.jpg)
+
+   The total number of variants used to generate this tree can be obtained using.
+	
+	```bash
+	grep --count -P "\tvalid\t" output-10-example/pseudoalign/pseudoalign-positions.tsv
+	360
+	```
+
+   This is over 10x the number of positions used when mapping to the 400kbp fragment of the genome.  This is reflected in the phylogenetic tree, which shows a bit more separation between the samples.

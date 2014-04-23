@@ -22,7 +22,7 @@ To construct a working directory and obtain a copy of these instructions the fol
 Step 2: Obtaining input data
 ----------------------------
 
-The input data to the core phylogenomics pipeline consists of a reference genome (in FASTA format) and a set of sequencing reads (in FASTQ format).  The reference genome and sequencing reads are only a small section from the larger dataset which makes this overall pipeline a bit faster to run.  To see a walkthrough using the entire dataset please go to [READMELargePhylogeny.md](READMELargePhylogen.md).
+The input data to the core phylogenomics pipeline consists of a reference genome (in FASTA format) and a set of sequencing reads (in FASTQ format).  The reference genome and sequencing reads are only a small section from the larger dataset which makes this overall pipeline a bit faster to run.  To see a walkthrough using the entire dataset please go to [READMELargePhylogeny.md](READMELargePhylogeny.md).
 
 The data can be obtained with the following commands.
 
@@ -152,5 +152,13 @@ Questions
 =========
 
 1. The **minimum coverage** setting within the **mapping.conf** file can have a large effect on the total number of valid positions used to generate the tree.  Please try re-running the pipeline with a minimum coverage of *5*.  What effect does this have on the total number of *valid* variants used to generate the phylogenetic tree?  What effect does this have on the phylogenetic tree generated?
+
+2. The above tutorial generates a phylogeny only from a 400kbp fragment of the whole genome.  It would be expected that a more complete picture can be obtained by extracting variants using the entire genome, but this takes more time to run.  An example set of results obtained from running the pipeline on the entire genome (see the walkthrough [here](READMELargePhylogeny.md) for more information) can be obtained by running the following.
+	
+	```bash
+	cp /Course/MI_workshop_2014/day7/output-10-example.tar.gz ./
+	tar -xvvzf output-10-example.tar.gz
+	```
+   This will extract the results into a directory __output-10-example/__.  Please examine the resulting whole genome phylgeny and the number of positions used to generate the phylogeny.  How does using the whole genome compare to only using a fragment of the genome?
 
 [Answers](Answers.md)
