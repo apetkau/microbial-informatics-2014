@@ -8,7 +8,7 @@ Introduction
 
 ![orthomcl-overview.jpg](orthomcl-overview.jpg)
 
-The input to OrthoMCL is a set of genes belonging to a set of genomes.  These are most likely un-ordered with no way to match up orthologous genes between genomes.  The genomes are processed by OrthoMCL which produces, as output, a file listing which proteins within which genomes are the most likely to be orthologs.
+The **input** to OrthoMCL is a set of genes belonging to a set of genomes.  These are most likely un-ordered with no way to match up orthologous genes between genomes.  The genomes are processed by **OrthoMCL** which produces, as **output**, a file listing which proteins within which genomes are the most likely to be orthologs.
 
 The OrthoMCL algorithm proceds through a number of different stages.  These are summarized below.
 
