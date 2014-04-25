@@ -16,25 +16,32 @@ Step 1: Obtaining input Data
 
 First we create a directory to contain all the files that will be created from OrthoMCL.  This can be done as follows.
 
+	```bash
 	$ git clone http://gitlab.corefacility.ca/aaron.petkau/microbialinformatics2014.git
 	$ cd microbialinformatics2014/orthomcl-tutorial/
 	$ ls
 	Answers.md  genome-groups-example.jpg  README.md
+	```
 
 The input data for OrthoMCL consists of a set of genes.  This can be obtained from:
 
+	```bash
 	$ cp /Course/MI_workshop_2014/day6/annotations-cholera-small.tar.gz ./
 	$ tar -xvvzf annotations-cholera-small.tar.gz
+	```
 
 This will extract the annotated genomes into a directory __annotations-small/__.  This directory looks as follows:
 
+	```bash
 	$ ls annotations-small/
 	2010EL-1749.faa  2010EL-1786.ffn  2010EL-1798.faa  2011EL-2317.ffn  3554-08.faa  C6706.ffn         VC-10.ffn  VC-15.faa  VC-18.ffn  VC-1.faa   VC-25.ffn  VC-6.faa
 	2010EL-1749.ffn  2010EL-1796.faa  2010EL-1798.ffn  2012V-1001.faa   3554-08.ffn  groups-small.txt  VC-14.faa  VC-15.ffn  VC-19.faa  VC-1.ffn   VC-26.faa  VC-6.ffn
 	2010EL-1786.faa  2010EL-1796.ffn  2011EL-2317.faa  2012V-1001.ffn   C6706.faa    VC-10.faa         VC-14.ffn  VC-18.faa  VC-19.ffn  VC-25.faa  VC-26.ffn
+	```
 
 The files __*.faa__ contains the genes as amino acid sequences.  The files __*.ffn__ contain the genes as nucleotide sequences.  For example:
 
+	```bash
 	$ head annotations-small/2010EL-1749.faa
 	>2010EL-1749_00001 Stalked cell differentiation-controlling protein
 	MDARLFDNTQTLRASVLCGLSFFWALIAFLMALINFWSTRLVELASLELVCAFYSLYIYS
@@ -46,12 +53,14 @@ The files __*.faa__ contains the genes as amino acid sequences.  The files __*.f
 	ATGGATGCTAGGTTATTTGACAATACACAAACGCTTCGAGCTTCAGTGCTATGCGGCCTA
 	AGTTTCTTTTGGGCTTTGATCGCTTTCTTGATGGCGCTGATCAATTTCTGGTCAACACGG
 	...
+	```
 
 Step 2: Database Preparation
 ----------------------------
 
 OrthoMCL requires the use of a database, such as [MySQL](http://www.mysql.com/), to do some of the analysis.  This requires a bit of manual setup.  In particular, we need to construct a location and a user in this database to store our data.  This can be done with the following commands.
 
+	```bash
 	$ mysql -u root
 	Enter password: 
 	Welcome to the MySQL monitor.  Commands end with ; or \g.
@@ -67,6 +76,7 @@ OrthoMCL requires the use of a database, such as [MySQL](http://www.mysql.com/),
 	Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 	
 	mysql>
+	```
 
 This will log you into MySQL with an administrator account and give you a command prompt specifically for MySQL commands.  The commands we need to run from here involve creating a new database for OrthoMCL and creating a user to access this database.  This can be accomplished with the following.
 
@@ -116,8 +126,10 @@ Step 3: Setup OrthoMCL Database Configuration File
 
 All the information we supplied to construct the database in the previous step must be written into a configuration file for OrthoMCL to know how to connect to the database.  This can be accomplished with the following command:
 
+	```bash
 	$ orthomcl-setup-database.pl --user orthomcl --password password --host localhost --database orthomcl > orthomcl.conf
 	Connecting to database orthomcl on host localhost with user orthomcl ...OK
+	```
 
 This generates a file, __orthomcl.conf__ which contains the neccessary database connection information and some default settings for OrthoMCL.  This file looks as follows.
 
@@ -143,20 +155,25 @@ Step 4: Renaming input files
 
 The OrthoMCL Pipeline takes as input the __*.faa__ amino acid sequence files, but assumes its input files end with the __*.fasta__ extension.  To properly rename these files please use the following command.
 
+	```bash
 	$ prename 's/\.faa/\.fasta/' annotations-small/*.faa
+	```
 
 This rename all the __*.faa__ files within the **annotations-small/** directory.  These will look like:
 
+	```bash
 	$ ls annotations-small
 	2010EL-1749.fasta  2010EL-1786.ffn    2010EL-1798.fasta  2011EL-2317.ffn   3554-08.fasta  C6706.ffn         VC-10.ffn    VC-15.fasta  VC-18.ffn    VC-1.fasta   VC-25.ffn    VC-6.fasta
 	2010EL-1749.ffn    2010EL-1796.fasta  2010EL-1798.ffn    2012V-1001.fasta  3554-08.ffn    groups-small.txt  VC-14.fasta  VC-15.ffn    VC-19.fasta  VC-1.ffn     VC-26.fasta  VC-6.ffn
 	2010EL-1786.fasta  2010EL-1796.ffn    2011EL-2317.fasta  2012V-1001.ffn    C6706.fasta    VC-10.fasta       VC-14.ffn    VC-18.fasta  VC-19.ffn    VC-25.fasta  VC-26.ffn
+	```
 
 Step 5: Running OrthoMCL
 ------------------------
 
 In order to run OrthoMCL please use the following command.
 
+	```bash
 	$ orthomcl-pipeline -i annotations-small/ -o orthomcl-output-small -m orthomcl.conf --nocompliant
 	Starting OrthoMCL pipeline on: Tue Apr 22 18:16:11 2014
 	Git commit: 2467fdfe0976354f0ca42841fff777c74971f66e
@@ -164,6 +181,7 @@ In order to run OrthoMCL please use the following command.
 	
 	=Stage 1: Validate Files =
 	...
+	```
 
 If you get the message:
 
@@ -183,8 +201,10 @@ Step 6: Example Results
 
 If the pipeline does not run properly, some example results can be used for the below steps.  These can be obtained with the following commands.
 
+	```bash
 	$ cp /Course/MI_workshop_2014/day6/orthomcl-output-small.tar.gz ./
 	$ tar -xvvzf orthomcl-output-small.tar.gz
+	```
 
 This will extract the output to a directory named __orthomcl-output-small/__.
 
@@ -193,20 +213,25 @@ Step 7: Looking at the Results
 
 The output directory contains a number of different sub directories, log files, and analysis results.  This looks as follows.
 
+	```bash
 	$ ls orthomcl-output-small/
 	blast_dir  blast_load  blast_results  compliant_fasta  groups  log  pairs
+	```
 
 The main output from OrthoMCL is a file __orthomcl-output-small/groups/groups.txt__ which contains a list of potential orthologs among the entire input genome set, one set of orthologs per line.  This file looks as follows:
 
+	```bash
 	$ head orthomcl-output-small/groups/groups.txt
 	group_1: 2010EL-1749|2010EL-1749_00001 3554-08|3554-08_01855 ...
 	group_2: 2010EL-1749|2010EL-1749_00002 3554-08|3554-08_01856 ...
 	...
+	```
 
 Each gene within an ortholog group is separated by spaces.  So, for example, group_1 contains the gene `2010EL-1749_00001` from genome __2010EL-1749__ and the gene `3554-08_01855` from genome __3554-08__.
 
 These correspond to the genes:
 
+	```bash
 	$ grep -A1 '2010EL-1749_00001' annotations-small/2010EL-1749.fasta
 	>2010EL-1749_00001 Stalked cell differentiation-controlling protein
 	MDARLFDNTQTLRASVLCGLSFFWALIAFLMALINFWSTRLVELASLELVCAFYSLYIYS
@@ -214,6 +239,7 @@ These correspond to the genes:
 	$ grep -A1 '3554-08_01855' annotations-small/3554-08.fasta
 	>3554-08_01855 Stalked cell differentiation-controlling protein
 	MDARLFDNTQTLRASVLCGLSFFWALIAFLMALINFWSTRLVELASLELVCAFYSLYIYS
+	```
 
 Step 8: Venn Diagram of Orthologs
 ---------------------------------
@@ -232,7 +258,9 @@ An example __genome-groups.txt__ file has been included with the rest of the dat
 
 To run `nml_parse_orthomcl.pl` and generate a Venn Diagram, please do the following:
 
+	```bash
 	$ nml_parse_orthomcl.pl -i orthomcl-output-small/groups/groups.txt -g genome-groups.txt -s --draw -o orthomcl-stats.txt --genes
+	```
 	
 This will generate two main files of interest: an image file named __genome-groups.txt.svg__ and some statistics about the results in __orthomcl-stats.txt__.
 
@@ -282,8 +310,10 @@ One particular area to pay attention to is the __Genomes not included in group f
 
 Another area to take a look at, right below __'Core' gene sets that is contained:__ contains a list of the gene ids unique to each genome group defined, as well as any other genome groups that weren't considered.  For example, for the set __haiti__ the 2 unique sets of genes are printed within this file.  To view more information about each of these genes, we can use `grep` to search through the input files.  For example, for the first unique set of genes for the __haiti__ group we have the gene id **2010EL-1749_02114**.  To find more information about this gene please run the following.
 
+	```bash
 	$ grep '2010EL-1749_02114' annotations-small/*.fasta
 	annotations-small/2010EL-1749.fasta:>2010EL-1749_02114 DNA polymerase V subunit UmuC
+	```
 
 This shows the product of the gene (as annotated by prokka) and the file it was found within.
 
