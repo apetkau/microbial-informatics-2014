@@ -1,13 +1,21 @@
 Ortholog Detection with OrthoMCL
 ================================
 
-This tutorial covers ortholog detection using [OrthoMCL](http://orthomcl.org/common/downloads/software/v2.0/).  Instead of running all the software for OrthoMCL manually, we will take advantage of the [OrthoMCL Pipeline](https://github.com/apetkau/orthomcl-pipeline) to automate this process.
-
 Introduction
 ============
 
+[OrthoMCL](http://genome.cshlp.org/content/13/9/2178.full) is a set of tools that can be used for identification of orthologous genes within a set of genomes.  The input to OrthoMCL is a set of protein sequences belonging to a set of genomes.  These are processed by OrthoMCL which produces, as output, a file listing which proteins within which genomes are the most likely to be orthologs.
+
+The OrthoMCL algorithm proceds through a number of different stages.  These are summarized below.
+
+[![orthmcl-summary.jpg](orthomcl-summary.jpg)](http://genome.cshlp.org/content/13/9/2178/F1.expansion.html)
+
+Due to the complexity of running OrthoMCL, this tutorial will use the [OrthoMCL Pipeline](https://github.com/apetkau/orthomcl-pipeline) to help automate this process.  There are still a number of steps that must be performed which are listed below.
+
 Tutorial
 ========
+
+The data for this tutorial includes a number of genes from a set of *V. Cholerae* genomes.  Due to the amount of time it takes to run OrthoMCL, the number of genes within each genome was reduced ahead of time to ~20.  For a description of running OrthoMCL on entire set of genes from each genome please see the [following](READMELargeDataset.md).
 
 The following steps show how to run OrthoMCL on the smaller example set of data and examine some of the results in a Venn Diagram.
 
