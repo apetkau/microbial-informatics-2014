@@ -131,7 +131,7 @@ mysql> show databases;
 | orthomcl           |
 | performance_schema |
 +--------------------+
-5 rows in set (0.00 sec)
+4 rows in set (0.00 sec)
 ```
 
 Please make sure the *orthomcl* database exists within this list.  Now we are ready to exit MySQL.
