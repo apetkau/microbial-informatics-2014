@@ -62,7 +62,6 @@ OrthoMCL requires the use of a database, such as [MySQL](http://www.mysql.com/),
 
 ```bash
 $ mysql -u root
-Enter password: 
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 39
 Server version: 5.5.35-0ubuntu0.13.10.2 (Ubuntu)
@@ -78,7 +77,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 mysql>
 ```
 
-This will log you into MySQL with an administrator account and give you a command prompt specifically for MySQL commands.  The commands we need to run from here involve creating a new database for OrthoMCL and creating a user to access this database.  This can be accomplished with the following.
+This will log you into MySQL with an administrator account (no need for a password) and give you a command prompt specifically for MySQL commands.  The commands we need to run from here involve creating a new database for OrthoMCL and creating a user to access this database.  This can be accomplished with the following.
 
 Construct a new user **'orthomcl'@'localhost'** with the password **password**.
 
