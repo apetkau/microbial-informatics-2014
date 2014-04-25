@@ -4,12 +4,17 @@ Ortholog Detection with OrthoMCL
 Introduction
 ============
 
-[OrthoMCL](http://genome.cshlp.org/content/13/9/2178.full) is a set of tools that can be used for identification of orthologous genes within a set of genomes.  The input to OrthoMCL is a set of protein sequences belonging to a set of genomes.  These are processed by OrthoMCL which produces, as output, a file listing which proteins within which genomes are the most likely to be orthologs.
+[OrthoMCL](http://genome.cshlp.org/content/13/9/2178.full) is a set of tools that can be used for identification of orthologous genes within a set of genomes.  An overview of OrthoMCL is as follows.
+
+![orthomcl-overview.jpg](orthomcl-overview.jpg)
+
+The input to OrthoMCL is a set of genes belonging to a set of genomes.  These are most likely un-ordered with no way to match up orthologous genes between genomes.  The genomes are processed by OrthoMCL which produces, as output, a file listing which proteins within which genomes are the most likely to be orthologs.
 
 The OrthoMCL algorithm proceds through a number of different stages.  These are summarized below.
 
 [![orthmcl-summary.jpg](orthomcl-summary.jpg)](http://genome.cshlp.org/content/13/9/2178/F1.expansion.html)
 
+The first step involves performing BLAST of every gene against every other gene.  The reciprocal best matches between genes are found.  These are sent through further processing and used to generate a graph of all genes linked up by there similarity scores.  The graph is sent through the software, [mcl](http://micans.org/mcl/), which detects clusters of similar scoring genes within the graph.  These clusters are printed out to a file and can be interpreted as the most likely sets of orthologs or paralogs.
 
 Due to the complexity of running OrthoMCL, this tutorial will use the [OrthoMCL Pipeline](https://github.com/apetkau/orthomcl-pipeline) to help automate this process.  There are still a number of steps that must be performed which are listed below.
 
