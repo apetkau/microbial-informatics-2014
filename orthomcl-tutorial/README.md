@@ -14,7 +14,7 @@ The OrthoMCL algorithm proceds through a number of different stages.  These are 
 
 [![orthmcl-summary.jpg](orthomcl-summary.jpg)](http://genome.cshlp.org/content/13/9/2178/F1.expansion.html)
 
-The first step involves performing BLAST of every gene against every other gene.  The reciprocal best matches between genes are found.  These are sent through further processing and used to generate a graph of all genes linked up by there similarity scores.  The graph is sent through the software, [mcl](http://micans.org/mcl/), which detects clusters of similar scoring genes within the graph.  These clusters are printed out to a file and can be interpreted as the most likely sets of orthologs or paralogs.
+The first step involves performing BLAST of every gene against every other gene.  The reciprocal best matches between genes are found.  These are sent through further processing and used to generate a graph of all genes linked up by their similarity scores.  The graph is sent through the software, [mcl](http://micans.org/mcl/), which detects clusters of similar scoring genes within the graph.  These clusters are printed out to a file and can be interpreted as the most likely sets of orthologs or paralogs.
 
 Due to the complexity of running OrthoMCL, this tutorial will use the [OrthoMCL Pipeline](https://github.com/apetkau/orthomcl-pipeline) to help automate this process.  There are still a number of steps that must be performed which are listed below.
 
