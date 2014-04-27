@@ -21,5 +21,5 @@ Labs
 | Lab: Pan-genome BLAST Atlas with GView Server                                | Lab: [Core SNP Phylogenies](core-snp-tutorial/README.md)                       |
 |                                                                              | ![output-10-subsample](core-snp-tutorial/images/output-10-subsample-thumb.jpg) |
 |                                                                              |                                                                                |
-| Lab: [Minimum Spanning Trees with Phyloviz](mst-tutorial/README.md)          |                                                                                |
+| Lab: [Minimum Spanning Trees with PHYLOViZ](mst-tutorial/README.md)          |                                                                                |
 | ![lab1-mst-location](mst-tutorial/images/lab1-mst-location-thumb.jpg)        |                                                                                |
