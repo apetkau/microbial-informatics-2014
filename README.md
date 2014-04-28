@@ -10,6 +10,19 @@ The data for these tutorials is a set of whole genome sequencing data from a num
 
 These tutorials do not go through the exact types of data analysis performed in the publications but should help in getting started working with microbial whole genome sequence data.
 
+These labs assume that you are familar working within a Linux environment and using the command line.
+
+Getting Lab Data
+----------------
+
+In order to get the data needed to run the labs please run the following command.
+
+```bash
+$ git clone https://github.com/apetkau/microbial-informatics-2014.git
+```
+
+This will copy all the instructions and other needed files to a directory, **microbial-informatics-2014/**.
+
 Labs
 ----
 
