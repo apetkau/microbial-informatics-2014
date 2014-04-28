@@ -24,6 +24,6 @@ Ortholog Detection with OrthoMCL: Answers
 
    This produces a Venn Diagram that looks as follows.
 
-   ![genome-groups-example.jpg](genome-groups-example.jpg)
+   ![genome-groups-example.jpg](images/genome-groups-example.jpg)
 
    The number of core genes within this full dataset is 3269.

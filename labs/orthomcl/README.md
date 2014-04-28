@@ -6,13 +6,13 @@ Introduction
 
 [OrthoMCL](http://genome.cshlp.org/content/13/9/2178.full) is a set of tools that can be used for identification of orthologous genes within a set of genomes.  An overview of OrthoMCL is as follows.
 
-![orthomcl-overview.jpg](orthomcl-overview.jpg)
+![orthomcl-overview.jpg](images/orthomcl-overview.jpg)
 
 The **input** to OrthoMCL is a set of genes belonging to a set of genomes.  These are most likely un-ordered with no way to match up orthologous genes between genomes.  The genomes are processed by **OrthoMCL** which produces, as **output**, a file listing which proteins within which genomes are the most likely to be orthologs.
 
 The OrthoMCL algorithm proceds through a number of different stages.  These are summarized below.
 
-[![orthmcl-summary.jpg](orthomcl-summary.jpg)](http://genome.cshlp.org/content/13/9/2178/F1.expansion.html)
+[![orthmcl-summary.jpg](images/orthomcl-summary.jpg)](http://genome.cshlp.org/content/13/9/2178/F1.expansion.html)
 
 The first step involves performing BLAST of every gene against every other gene.  The reciprocal best matches between genes are found.  These are sent through further processing and used to generate a graph of all genes linked up by their similarity scores.  The graph is sent through the software, [mcl](http://micans.org/mcl/), which detects clusters of similar scoring genes within the graph.  These clusters are printed out to a file and can be interpreted as the most likely sets of orthologs or paralogs.
 
@@ -296,7 +296,7 @@ This will generate two main files of interest: an image file named __genome-grou
 
 The image file __genome-groups.txt.svg__ contains a Venn Diagram depeciting the numger of shared genes among the genome groups within the __genome-groups.txt__ file.  This looks as follows:
 
-![genome-groups-small.jpg](genome-groups-small.jpg)
+![genome-groups-small.jpg](images/genome-groups-small.jpg)
 
 This shows that there are 17 genes within the core genome of all genomes analysed.  There are 2 unique genes to the __haiti__ group and there is 1 unique gene in c6706 not shared among any genomes.
 

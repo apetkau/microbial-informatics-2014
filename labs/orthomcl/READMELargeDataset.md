@@ -174,7 +174,7 @@ This will generate two main files of interest: an image file named __genome-grou
 
 The image file __genome-groups.txt.svg__ contains a Venn Diagram depeciting the numger of shared genes among the genome groups within the __genome-groups.txt__ file.  This looks as follows:
 
-![genome-groups-example.jpg](genome-groups-example.jpg)\
+![genome-groups-example.jpg](images/genome-groups-example.jpg)
 
 This shows that there are 3269 genes within the core genome of all genomes analysed.  Between the __nepal__ and __haiti__ group there are 74 unique genes not shared with __c6707__.  There are 4 unique genes to the __haiti__ group and there is 1 unique gene in c6706 not shared among any genomes.
 
