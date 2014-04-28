@@ -1,6 +1,8 @@
 Working with GView Server
 =========================
 
+![gview-server-main](images/gview-server-main.jpg)
+
 Introduction
 ============
 
