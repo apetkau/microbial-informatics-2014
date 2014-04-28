@@ -20,6 +20,8 @@ In this lab, we will go through a number of different analysis types using GView
 Lab 1: BLAST Atlas
 ------------------
 
+### Part A
+
 A BLAST ATlas is used to depict the prescence and abscence of particular regions within a set of genomes.  The precscence or abscence of a region is determined by running [BLAST](http://en.wikipedia.org/wiki/BLAST) between these regions.  The BLAST results are compiled into a table and are used to generate an image using GView.  In order to construct a BLAST Atlas using the cholera data please proceed through the following steps.
 
 1. **_Go to GView Server_**
@@ -46,3 +48,10 @@ A BLAST ATlas is used to depict the prescence and abscence of particular regions
 
   ![lab1a-results](images/lab1a-results.jpg)
 
+### Part B
+
+*V. Cholerae* contains two circular chromosomes and **Part A** only used Chromosome I for a BLAST Atlas.  In order to construct a BLAST atlas for Chromosome II, please follow the same steps as in **Part A**, but use the file *2010EL-1786-c2.gbk* as a reference genome instead of *2010EL-1786-c1.gbk*.
+
+The completed results for both Chromosomes should look similar to the following.
+
+![lab1a-atlas](images/lab1a-atlas.jpg) ![lab1b-atlas](images/lab1b-atlas.jpg)
