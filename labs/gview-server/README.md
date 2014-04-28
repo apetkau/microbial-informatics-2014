@@ -87,3 +87,9 @@ In order to construct a pan-genome BLAST atlas please proceed through the follow
   2. On completion, your results should look similar to below.
 
   ![lab2-atlas](images/lab2-atlas.jpg)
+
+### Questions
+
+1. The previous walkthrough had you construct a pan-genome BLAST Atlas using Chromosome I as the seed genome.  Please follow through the same procedure, but this time use Chromosome II as the seed genome.  What differences do you notice?
+
+[Answers](Answers.md)
