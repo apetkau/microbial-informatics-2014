@@ -1,5 +1,5 @@
-Microbial Informatics 2014 Tutorials
-====================================
+Microbial Informatics 2014 Labs
+===============================
 
 Welcome to the Microbial Informatics 2014 labs.  This page contains a number of tutorials on performing data analysis on whole genome sequencing data for the [Microbial Informatics](https://www.corefacility.ca/wiki/bin/view/BioinformaticsWorkshop/WorkshopMay2014) workshop hosted at the National Microbiology Laboratory in Winnipeg, Canada.
 
