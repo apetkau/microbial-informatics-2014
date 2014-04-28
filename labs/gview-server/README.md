@@ -54,4 +54,4 @@ A BLAST ATlas is used to depict the prescence and abscence of particular regions
 
 The completed results for both Chromosomes should look similar to the following.
 
-![lab1a-atlas](images/lab1a-atlas.jpg) ![lab1b-atlas](images/lab1b-atlas.jpg)
+| ![lab1a-atlas](images/lab1a-atlas.jpg) | ![lab1b-atlas](images/lab1b-atlas.jpg) |
