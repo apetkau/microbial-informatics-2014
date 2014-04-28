@@ -1,7 +1,7 @@
 Preparing PHYLOViZ Input
 ========================
 
-After running the data through the core SNP pipeline as described in http://gtlab.corefacility.ca/aaron.petkau/microbialinformatics2014/blob/master/labs/core-snp/README.md the following commands were run on the input file __output-10-example/pseudoalign/pseudoalign-positions.tsv__.
+After running the data through the core SNP pipeline as described in https://github.com/apetkau/microbial-informatics-2014/tree/master/labs/core-snp the following commands were run on the input file __output-10-example/pseudoalign/pseudoalign-positions.tsv__.
 
 	$ head output-10-example/pseudoalign/pseudoalign-positions.tsv | column -t
 	#Chromosome                    Position  Status             Reference  2010EL-1749  2010EL-1796  2010EL-1798  2011EL-2317  2012V-1001  3554-08  C6706  VC-1  VC-10  VC-14  VC-15  VC-18  VC-19  VC-25  VC-26  VC-6

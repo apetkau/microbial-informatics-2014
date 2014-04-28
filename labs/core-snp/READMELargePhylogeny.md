@@ -9,12 +9,12 @@ This document walks through how to run the [core phylogenomics pipeline](https:/
 Step 1: Constructing a Working Directory
 ----------------------------------------
 
-To construct a working directory and obtain a copy of these instructions the following commands can be used.
+To construct and switch to a working directory and obtain a copy of these instructions the following commands can be used.
 
-	$ git clone http://gitlab.corefacility.ca/aaron.petkau/microbialinformatics2014.git
+	$ git clone https://github.com/apetkau/microbial-informatics-2014.git
 	$ cd microbialinformatics2014/labs/core-snp/
 	$ ls
-	mapping.conf  output-10-tree.jpg  README.md
+	Answers.md  images  mapping.conf  READMELargePhylogeny.md  README.md
 
 Step 2: Obtaining input data
 ----------------------------

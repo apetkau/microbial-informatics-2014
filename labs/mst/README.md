@@ -14,7 +14,7 @@ Constructing a Working Directory
 
 To construct a working directory and obtain a copy of these instructions the following commands can be used.
 
-	$ git clone http://gitlab.corefacility.ca/aaron.petkau/microbialinformatics2014.git
+	$ git clone https://github.com/apetkau/microbial-informatics-2014.git
 	$ cd microbialinformatics2014/labs/mst/
 	$ ls
 	images  lab1-snp-profile.tsv  lab1-snp-strains.tsv  PrepareInput.md  README.md
@@ -33,7 +33,7 @@ This should launch phyloviz which should look similar to the following.
 Lab 1: Minimum Spanning Tree with SNP Data
 ------------------------------------------
 
-This lab will walk you through building a minimum spanning tree using SNP data.  The SNP data we will be using was generated using the methods described in the tutorial on [Core SNP Phylogenies](http://gitlab.corefacility.ca/aaron.petkau/microbialinformatics2014/blob/master/core-snp-tutorial/README.md).  In particular, the input file is the __pseudoalign-positions.tsv__ file, which was taken through the steps described at in [PrepareInput.md](PrepareInput.md).
+This lab will walk you through building a minimum spanning tree using SNP data.  The SNP data we will be using was generated using the methods described in the tutorial on [Core SNP Phylogenies](https://github.com/apetkau/microbial-informatics-2014/tree/master/labs/core-snp).  In particular, the input file is the __pseudoalign-positions.tsv__ file, which was taken through the steps described at in [PrepareInput.md](PrepareInput.md).
 
 Please follow the below steps to generate a minimum spanning tree.
 

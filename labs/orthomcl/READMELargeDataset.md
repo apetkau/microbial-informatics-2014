@@ -13,10 +13,10 @@ Step 1: Obtaining input Data
 
 First we create a directory to contain all the files that will be created from OrthoMCL.  This can be done as follows.
 
-	$ git clone http://gitlab.corefacility.ca/aaron.petkau/microbialinformatics2014.git
+	$ git clone https://github.com/apetkau/microbial-informatics-2014.git
 	$ cd microbialinformatics2014/labs/orthomcl
 	$ ls
-	Answers.md  genome-groups-example.jpg  README.md
+	Answers.md  genome-groups.txt  images  READMELargeDataset.md  README.md
 
 The input data for OrthoMCL consists of a set of genes.  This can be obtained from:
 
