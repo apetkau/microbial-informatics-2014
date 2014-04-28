@@ -15,7 +15,7 @@ Constructing a Working Directory
 To construct a working directory and obtain a copy of these instructions the following commands can be used.
 
 	$ git clone http://gitlab.corefacility.ca/aaron.petkau/microbialinformatics2014.git
-	$ cd microbialinformatics2014/mst-tutorial/
+	$ cd microbialinformatics2014/labs/mst/
 	$ ls
 	images  lab1-snp-profile.tsv  lab1-snp-strains.tsv  PrepareInput.md  README.md
 
@@ -45,7 +45,7 @@ Please follow the below steps to generate a minimum spanning tree.
 
    ![lab1-typing.jpg](images/lab1-typing.jpg)
 
-3. Click on **Browse...** and find the file *microbialinformatics2014/mst-tutorial/lab1-snp-profile.tsv*.  This file contains a set of sequence types (in column *ST*) defined based on the SNP data at different positions.  Click **Next** to continue.  This file looks similar to the following.
+3. Click on **Browse...** and find the file *microbialinformatics2014/labs/mst/lab1-snp-profile.tsv*.  This file contains a set of sequence types (in column *ST*) defined based on the SNP data at different positions.  Click **Next** to continue.  This file looks similar to the following.
 
 	```	
 	ST  gi|360034408|ref|NC_016445.1|_17885  gi|360034408|ref|NC_016445.1|_28297

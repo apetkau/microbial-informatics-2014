@@ -12,7 +12,7 @@ Step 1: Constructing a Working Directory
 To construct a working directory and obtain a copy of these instructions the following commands can be used.
 
 	$ git clone http://gitlab.corefacility.ca/aaron.petkau/microbialinformatics2014.git
-	$ cd microbialinformatics2014/core-snp-tutorial/
+	$ cd microbialinformatics2014/labs/core-snp/
 	$ ls
 	mapping.conf  output-10-tree.jpg  README.md
 

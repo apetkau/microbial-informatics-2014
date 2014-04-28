@@ -30,7 +30,7 @@ First we create a directory to contain all the files that will be created from O
 
 ```bash
 $ git clone http://gitlab.corefacility.ca/aaron.petkau/microbialinformatics2014.git
-$ cd microbialinformatics2014/orthomcl-tutorial/
+$ cd microbialinformatics2014/labs/orthomcl/
 $ ls
 Answers.md  genome-groups-example.jpg  README.md
 ```

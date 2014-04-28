@@ -15,7 +15,7 @@ Step 1: Construct Working Directory
 To construct a working directory for this lab and obtain a copy of the instructions please run.
 
 	$ git clone http://gitlab.corefacility.ca/aaron.petkau/microbialinformatics2014.git
-	$ cd microbialinformatics2014/ffp-phylogeny-tutorial/
+	$ cd microbialinformatics2014/labs/ffp-phylogeny/
 	$ ls
 	Answers.md  tree-10-dna.jpg  tree-15.jpg  tree-5-dna.jpg
 	README.md   tree-10.jpg      tree-20.jpg  tree-5.jpg
