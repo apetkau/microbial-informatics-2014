@@ -1,10 +1,10 @@
 Working with GView Server
 =========================
 
-![gview-server-main](images/gview-server-main.jpg)
-
 Introduction
 ============
+
+![gview-server-main](images/gview-server-main.jpg)
 
 [GView Server](http://server.gview.ca) is a web-based application for performing comparative genomics analysis.  Genomes can be uploaded and multiple categories of analysis types can be performed on these files.  The types of analysis include:
 
