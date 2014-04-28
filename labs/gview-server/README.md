@@ -20,8 +20,6 @@ In this lab, we will go through a number of different analysis types using GView
 Lab 1: BLAST Atlas
 ------------------
 
-### Part A
-
 A BLAST ATlas is used to depict the prescence and abscence of particular regions within a set of genomes.  The precscence or abscence of a region is determined by running [BLAST](http://en.wikipedia.org/wiki/BLAST) between these regions.  The BLAST results are compiled into a table and are used to generate an image using GView.  In order to construct a BLAST Atlas using the cholera data please proceed through the following steps.
 
 1. **_Go to GView Server_**
@@ -46,17 +44,17 @@ A BLAST ATlas is used to depict the prescence and abscence of particular regions
   1. The next screen will give you a job id where your results can be found on completion.  Click on the link and wait for your analysis results to finish.
   2. On completion, you should see a screen similar to below.
 
-  ![lab1a-results](images/lab1a-results.jpg)
+     ![lab1a-results](images/lab1a-results.jpg)
 
-### Part B
+     The BLAST Atlas generated will look similar to below.
 
-*V. Cholerae* contains two circular chromosomes and **Part A** only used Chromosome I for a BLAST Atlas.  In order to construct a BLAST atlas for Chromosome II, please follow the same steps as in **Part A**, but use the file *2010EL-1786-c2.gbk* as a reference genome instead of *2010EL-1786-c1.gbk*.
+     ![lab1a-atlas](images/lab1a-atlas.jpg)
 
-The completed results for both Chromosomes should look similar to the following.
+### Questions
 
-| Chromosome I                           | Chromosome II                          |
-|:--------------------------------------:|:--------------------------------------:|
-| ![lab1a-atlas](images/lab1a-atlas.jpg) | ![lab1b-atlas](images/lab1b-atlas.jpg) |
+1. *V. Cholerae* contains two circular chromosomes but this lab only used Chromosome I (2010EL-1786-c1.gbk) for a BLAST Atlas.  Please construct a BLAST atlas for Chromosome II (2010EL-1786-c2.gbk) by following a similar procedure as above.  What differences do you notice between the chromosomes?
+
+[Answers](Answers.md)
 
 Lab 2: Pan-genome BLAST Atlas
 -----------------------------
