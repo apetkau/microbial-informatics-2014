@@ -13,13 +13,13 @@ These tutorials do not go through the exact types of data analysis performed in 
 Labs
 ----
 
-| Day 6: May 14, 2014                                                        | Day 7: May 15, 2014                                                            |
-|:--------------------------------------------------------------------------:|:------------------------------------------------------------------------------:|
-| **Lab:** [Ortholog detection with OrthoMCL](labs/orthomcl)                 | **Lab:** [Feature Frequency Profile Phylogenies](labs/ffp-phylogeny)           |
-| ![genome-groups-small](labs/orthomcl/imags/genome-groups-small-thumb.jpg)  | ![tree-5](labs/ffp-phylogeny/images/tree-5-thumb.jpg)                          |
-|                                                                            |                                                                                |
-| **Lab:** Pan-genome BLAST Atlas with GView Server                          | **Lab:** [Core SNP Phylogenies](labs/core-snp)                                 |
-|                                                                            | ![output-10-subsample](labs/core-snp/images/output-10-subsample-thumb.jpg)     |
-|                                                                            |                                                                                |
-| **Lab:** [Minimum Spanning Trees with PHYLOViZ](labs/mst)                  |                                                                                |
+| Day 6: May 14, 2014                                                         | Day 7: May 15, 2014                                                            |
+|:---------------------------------------------------------------------------:|:------------------------------------------------------------------------------:|
+| **Lab:** [Ortholog detection with OrthoMCL](labs/orthomcl)                  | **Lab:** [Feature Frequency Profile Phylogenies](labs/ffp-phylogeny)           |
+| ![genome-groups-small](labs/orthomcl/images/genome-groups-small-thumb.jpg)  | ![tree-5](labs/ffp-phylogeny/images/tree-5-thumb.jpg)                          |
+|                                                                             |                                                                                |
+| **Lab:** Pan-genome BLAST Atlas with GView Server                           | **Lab:** [Core SNP Phylogenies](labs/core-snp)                                 |
+|                                                                             | ![output-10-subsample](labs/core-snp/images/output-10-subsample-thumb.jpg)     |
+|                                                                             |                                                                                |
+| **Lab:** [Minimum Spanning Trees with PHYLOViZ](labs/mst)                   |                                                                                |
 | ![lab1-mst-location](labs/mst/images/lab1-mst-location-thumb.jpg)          |                                                                                |
