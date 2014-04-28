@@ -57,3 +57,33 @@ The completed results for both Chromosomes should look similar to the following.
 | Chromosome I                           | Chromosome II                          |
 |:--------------------------------------:|:--------------------------------------:|
 | ![lab1a-atlas](images/lab1a-atlas.jpg) | ![lab1b-atlas](images/lab1b-atlas.jpg) |
+
+Lab 2: Pan-genome BLAST Atlas
+-----------------------------
+
+In the previous lab, we constructed separate BLAST Atlases for the two chromosomes of *V. Cholerae*.  This was necessary because we are using BLAST to compare all query genomes to some pre-defined reference genome.  If this reference genome is missing any data that is contained in the query genomes (like a separate chromosome, or plasmids, or other genomic elements) these would not show up within the BLAST Atlas.  It would be nice if we were able to combine all these separate genomic elements (chromosomes, plasmids, etc) into a single reference file so we can quickly get a picture of all the differences among the genomes.  This can be accomplished using the **Pan-genome BLAST atlas** analysis type which first constructs a pan-genome from all the uploaded genomes and then uses this pan-genome as the reference to run BLAST queries against.
+
+In order to construct a pan-genome BLAST atlas please proceed through the following steps.
+
+1. **_Go to GView Server_**
+2. **_Select Analysis Type_**
+  1. Set the **Analysis Type** to *Pangenome Analysis*.
+  2. There is no reference genome to upload for this analysis, so click *Continue* to proceed.
+4. **_Upload Genomes_**
+  1. Click on **Browse** next to **Select a sequence file**.
+  2. Select */Course/MI_workshop_2014/day6/gview-server-annotations/reference/2010EL-1786-c1.gbk* (Chromosome I).
+  3. Click on the **Plus** icon ![plus](images/plus-button.png) to add a new file to upload.
+  4. Select *2010EL-1786-c2.gbk* (Chromosome II).
+  5. Add the files *2010EL-1749.gbk* and *VC-1.gbk* using the same method.
+  6. Click on **Continue** when finished.  This should now upload all the selected genomes to GView Server.
+5. **_Adjust BLAST Parameters and Seed Genome_**
+  1. In this screen it's possible to adjust some of the settings for BLAST as well as to select the seed genome.  The seed genome is the genome used as a starting point for constructing the pan-genome.  Please make sure that *2010EL-1786-c1* is selected as the seed genome.
+  2. Click on **Continue** to proceed.
+6. **_Customize Appearance_**
+  1. In this screen it's possible to adjust the appearance settings of the BLAST Atlas.  Within the **Map title** text field please enter *Lab 2: Seed Chromosome I*.
+  2. No other settings need to be adjusted so click on **Complete** to start the analysis.
+7. **_Wait for Analysis Results_**
+  1. The next screen will give you a job id where your results can be found on completion.  Click on the link and wait for your analysis results to finish.
+  2. On completion, your results should look similar to below.
+
+  ![lab2-atlas](images/lab2-atlas.jpg)

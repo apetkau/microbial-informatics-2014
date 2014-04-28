@@ -65,6 +65,7 @@ cp annotations/*/*.gbk gview-server-annotations/other-genomes/
 cp reference/2010EL-1786-c*.gbk gview-server-annotations/reference/
 
 cd gview-server-annotations
+# shifted a contig in other-genomes/VC-1.gbk so the first contig has a CDS
 tar -cvzf other-genomes.tar.gz other-genomes/
 
 ##########################
