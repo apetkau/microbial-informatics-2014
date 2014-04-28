@@ -54,6 +54,19 @@ cp annotations/*/*.faa annotations/
 cp annotations/*/*.ffn annotations/
 tar -cvvzf annotations-cholera.tar.gz annotations/*.{ffn,faa}
 
+############################
+# GView Server Annotations #
+############################
+mkdir gview-server-annotations
+mkdir gview-server-annotations/reference
+mkdir gview-server-annotations/other-genomes
+
+cp annotations/*/*.gbk gview-server-annotations/other-genomes/
+cp reference/2010EL-1786-c*.gbk gview-server-annotations/reference/
+
+cd gview-server-annotations
+tar -cvzf other-genomes.tar.gz other-genomes/
+
 ##########################
 # Core SNP Pipeline data #
 ##########################
