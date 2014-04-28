@@ -55,7 +55,7 @@ The second directory, __cholera-files-subsample/fastq/__, contains the sequencin
 	GATAACTACGATTCGTTTACTTACAACCTGTACCAA
 	...
 
-For information on exactly how these files were generated please see [get_data.sh](../dataset).
+For information on exactly how these files were generated please see [get_data.sh](../dataset/get_data.sh).
 
 Step 3: Running the Core SNP pipeline
 -------------------------------------
