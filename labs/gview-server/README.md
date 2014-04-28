@@ -32,7 +32,7 @@ A BLAST ATlas is used to depict the prescence and abscence of particular regions
 4. **_Upload Query Genomes_**
   1. Click on **Browse** next to **Select a sequence file**.
   2. Select */Course/MI_workshop_2014/day6/gview-server-annotations/other-genomes/2010EL-1749.gbk*.
-  3. Click on the **Plus** icon [plus](images/plus-button.png) to add a new file to upload.
+  3. Click on the **Plus** icon ![plus](images/plus-button.png) to add a new file to upload.
   4. Click on **Browse** and select the file *VC-1.gbk*.
   5. Click on **Continue** when finished.  This should now upload all the selected genomes to GView Server.
 5. **_Adjust BLAST Parameters_**
