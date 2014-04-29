@@ -233,6 +233,8 @@ In this lab we will look at exploring the results of GView Server within [GView]
    1. The Venn Diagram shows that 3269 genes are part of the core genome set.  How do the 3269 core genes correspond to what is displayed in the BLAST Atlas?
    2. The Venn Digram shows that there are 74 genes that are unique to only the haiti and nepal group.  That is, there are 74 genes that are found in every genome except C6706.  Can you find these region(ss) on the pan-genome BLAST Atlas?
 
+[Answers](Answers.md)
+
 [gview-server]: http://server.gview.ca
 [gview]: http://www.gview.ca
 [blast]: http://en.wikipedia.org/wiki/BLAST
