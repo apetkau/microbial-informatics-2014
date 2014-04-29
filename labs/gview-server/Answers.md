@@ -44,6 +44,12 @@ The following table shows a comparison of the pan-genome BLAST Atlas using both 
 
 The main difference is with the positions of features on the pan-genome.  Starting with a seed genome of Chromosome II places Chromosome II at the very beginning of the atlas (from position 0 kbp to 1000 kbp).
 
+### Answer 3
+
+1. The 3269 genes that are part of the core genome set from the OrthoMCL analysis correspond to all the places in the pan-genome BLAST Atlas containing coloured blocks in every single slot.  Since most of the BLAST Atlas contains coloured blocks in every slot then both the pan-genome BLAST Atlas and the OrthoMCL analysis appear fairly consistent.
+
+2. This unique region of 74 genes found in every genome except C6706 corresponds to a number of different regions including around 2950 kbp.
+
 [lab2-atlas-1]: images/lab1a-atlas.jpg
 [lab2-atlas-2]: images/lab1b-atlas.jpg
 [lab3-atlas-1]: images/lab2-atlas.jpg
