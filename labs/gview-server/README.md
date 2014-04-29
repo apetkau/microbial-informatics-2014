@@ -191,7 +191,7 @@ Lab 4: Working with GView
 In this lab we will look at exploring the results of GView Server within [GView][gview].  GView is a ciruclar and linear genome viewer which provides the ability to customize the appearance of the genome map, add new data to display, and export the results.  In order to start working with GView please follow the steps below.
 
 1. **_Launch GView_**
-  1. Go to the results page for **Lab 3** or http://server.gview.ca/w/2014/2.
+  1. Go to the results page for **Lab 3** or http://server.gview.ca/w/2014/L3.
   2. Find the Launch GView Webstart Circular link and click on it.  This should bring up a window asking you to open up the file gview-circular.jnlp.  Click Ok and wait for GView to finish loading.  When finished loading, you should get a window that looks like the following.
 
     ![gview 1][lab4-1]
