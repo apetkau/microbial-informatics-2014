@@ -1,12 +1,12 @@
 Microbial Informatics 2014 Labs
 ===============================
 
-Welcome to the Microbial Informatics 2014 labs.  This page contains a number of tutorials on performing data analysis on whole genome sequencing data for the [Microbial Informatics](https://www.corefacility.ca/wiki/bin/view/BioinformaticsWorkshop/WorkshopMay2014) workshop hosted at the National Microbiology Laboratory in Winnipeg, Canada.
+Welcome to the Microbial Informatics 2014 labs.  This page contains a number of tutorials on performing data analysis on whole genome sequencing data for the [Microbial Informatics][workshop-2014] workshop hosted at the National Microbiology Laboratory in Winnipeg, Canada.
 
 Introduction
 ------------
 
-The data for these tutorials is a set of whole genome sequencing data from a number of *V. Cholerae* strains from the [outbreak of cholera in Haiti](http://en.wikipedia.org/wiki/2010%E2%80%9313_Haiti_cholera_outbreak) beginning in 2010 as well as a number of other *V. cholerae* strains included for comparison.  This data was previously published in http://mbio.asm.org/content/4/4/e00398-13.abstract and http://mbio.asm.org/content/2/4/e00157-11.abstract and is available on [NCBI's Sequence Read Archive](http://www.ncbi.nlm.nih.gov/sra/).
+The data for these tutorials is a set of whole genome sequencing data from a number of *V. Cholerae* strains from the [outbreak of cholera in Haiti][haiti-cholera] beginning in 2010 as well as a number of other *V. cholerae* strains included for comparison.  This data was previously published in http://mbio.asm.org/content/4/4/e00398-13.abstract and http://mbio.asm.org/content/2/4/e00157-11.abstract and is available on [NCBI's Sequence Read Archive](http://www.ncbi.nlm.nih.gov/sra/).
 
 These tutorials do not go through the exact types of data analysis performed in the publications but should help in getting started working with microbial whole genome sequence data.
 
@@ -36,3 +36,6 @@ Labs
 |                                                                             |                                                                                |
 | **3:00-4:45 pm:** [Minimum Spanning Trees with PHYLOViZ](labs/mst)          |                                                                                |
 | ![lab1-mst-location](labs/mst/images/lab1-mst-location-thumb.jpg)           |                                                                                |
+
+[workshop-2014]: https://www.corefacility.ca/wiki/bin/view/BioinformaticsWorkshop/WorkshopMay2014
+[haiti-cholera]: http://en.wikipedia.org/wiki/2010%E2%80%9313_Haiti_cholera_outbreak
