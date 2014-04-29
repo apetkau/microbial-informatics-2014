@@ -51,13 +51,13 @@ ORIGIN
   2. Find */Course/MI_workshop_2014/day6/gview-server-annotations/reference/2010EL-1786-c1.gbk*
   3. Click **Continue**, you should be brought to a screen that looks like the following.
 
-     ![gview customize][lab1-customize]
+     ![gview customize][lab1-1]
 
 4. **_Set Title_**
   1. Enter *2010EL-1786 Chromosome I* for the **Map title**.
 5. **_Set Features to Display_**
   1. Find the **Display reference features** box and click on the **Edit Features** ![edit features][edit] icon.
-  2. Make sure *rRNA*, *CDS*, and *tRNA* are selected.  Click on the *Close* ![close][close] icon.
+  2. Make sure *rRNA*, *CDS*, and *tRNA* are selected.  Click on the **Close** ![close][close] icon.
 6. **_Add Additional Data_**
   1. Click on the **Show GC Content** and **Show GC Skew** boxes to make sure these are included.
 7. **_Adjust Appearance_**
