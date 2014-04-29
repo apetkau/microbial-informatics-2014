@@ -1,7 +1,7 @@
 GView Server Answers
 ====================
 
-Lab 1
+Lab 2
 -----
 
 ### Answer 1
@@ -10,7 +10,7 @@ The following table shows a comparison of the BLAST atlas for both chromosomes.
 
 | Chromosome I                 | Chromosome II                |
 |:----------------------------:|:----------------------------:|
-| ![lab1a-atlas][lab1-atlas-1] | ![lab1b-atlas][lab1-atlas-2] |
+| ![lab1a-atlas][lab2-atlas-1] | ![lab1b-atlas][lab2-atlas-2] |
 
 A few differences include:
 
@@ -18,7 +18,7 @@ A few differences include:
 * VC-1 on Chromosome I has a small region around position 100 kbp which is missing when compared to 2010EL-1786 and 2010EL-1749.
 * Chromosome I contains a number of small gaps missing from all genomes (for example around 2150 kbp).  These correspond to RNA coding regions which were not selected to be displayed in the **Customize Appearance** screen.
 
-Lab 2
+Lab 3
 -----
 
 ### Answer 1
@@ -27,7 +27,7 @@ The following table shows a comparison of the BLAST Atlas and pan-genome BLAST A
 
 | BLAST Atlas                  | Pan-genome BLAST Atlas     |
 |:----------------------------:|:--------------------------:|
-| ![blast atlas][lab1-atlas-1] | ![pan atlas][lab2-atlas-1] |
+| ![blast atlas][lab2-atlas-1] | ![pan atlas][lab3-atlas-1] |
 
 The differences between the BLAST Atlas and the Pan-genome BLAST Atlas include:
 
@@ -40,11 +40,11 @@ The following table shows a comparison of the pan-genome BLAST Atlas using both 
 
 | Seed: Chromosome I             | Seed: Chromosome II            |
 |:------------------------------:|:------------------------------:|
-| ![lab2-atlas-c1][lab2-atlas-1] | ![lab2-atlas-c2][lab2-atlas-2] |
+| ![lab2-atlas-c1][lab3-atlas-1] | ![lab2-atlas-c2][lab3-atlas-2] |
 
 The main difference is with the positions of features on the pan-genome.  Starting with a seed genome of Chromosome II places Chromosome II at the very beginning of the atlas (from position 0 kbp to 1000 kbp).
 
-[lab1-atlas-1]: images/lab1a-atlas.jpg
-[lab1-atlas-2]: images/lab1b-atlas.jpg
-[lab2-atlas-1]: images/lab2-atlas.jpg
-[lab2-atlas-2]: images/lab2-atlas-c2.jpg
+[lab2-atlas-1]: images/lab1a-atlas.jpg
+[lab2-atlas-2]: images/lab1b-atlas.jpg
+[lab3-atlas-1]: images/lab2-atlas.jpg
+[lab3-atlas-2]: images/lab2-atlas-c2.jpg
