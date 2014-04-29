@@ -222,7 +222,7 @@ In this lab we will look at exploring the results of GView Server within [GView]
 
 1. The pan-genome BLAST Atlas in **Lab 3** was constructed using only 3 separate genomes.  It's possible to add as many genomes as you want by simply adding more files in the **Upload Genomes** screen.  A quick method to add a large number of files is to compress all the files first within a **zip** or **tarball**.  An example of such a set of files is at */Course/MI_workshop_2014/day6/gview-server-annotations/other-genomes-ffn.tar.gz* (compressed file containing annotations for all genomes in ffn format).
 
-   The one downside to uploading large datasets is the longer time it takes to perform the analysis.  A pre-computed pan-genome analysis with the above set of files is displayed below and can be found at http://server.gview.ca/w/2014/L1Q3.
+   The one downside to uploading large datasets is the longer time it takes to perform the analysis.  A pre-computed pan-genome analysis with the above set of files is displayed below and can be found at http://server.gview.ca/w/2014/L4Q1.
 
    ![pangenome all][lab4-4]
 
