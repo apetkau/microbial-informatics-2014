@@ -244,12 +244,12 @@ In this lab we will look at exploring the results of GView Server within [GView]
 [lab1-2]: images/lab1-appearance.jpg
 [lab1-3]: images/gview-complete.jpg
 [lab1-4]: images/gview-results-1.jpg
-[lab2-1]: images/lab1a-atlas.jpg
-[lab3-1]: images/lab2-atlas.jpg
+[lab2-1]: images/lab2-atlas-1.jpg
+[lab3-1]: images/lab3-atlas-c1.jpg
 [lab4-1]: images/lab3-gview-1.jpg
 [lab4-2]: images/lab3-style-editor-2.jpg
 [lab4-3]: images/lab3-slot_-1_3.jpg
-[lab3-4]: images/lab3-pangeome-all.jpg
+[lab4-4]: images/lab3-pangeome-all.jpg
 [plus-button]: images/plus-button.png
 [zoom-in]: images/magnifier-zoom-in.png
 [zoom-out]: images/magnifier-zoom-out.png

@@ -61,9 +61,9 @@ Lab 4
 
    ![3940][lab4-3940]
 
-[lab2-atlas-1]: images/lab1a-atlas.jpg
-[lab2-atlas-2]: images/lab1b-atlas.jpg
-[lab3-atlas-1]: images/lab2-atlas.jpg
-[lab3-atlas-2]: images/lab2-atlas-c2.jpg
+[lab2-atlas-1]: images/lab2-atlas-1.jpg
+[lab2-atlas-2]: images/lab2-atlas-2.jpg
+[lab3-atlas-1]: images/lab3-atlas-c1.jpg
+[lab3-atlas-2]: images/lab3-atlas-c2.jpg
 [lab4-2950]: images/lab4-2950.jpg
 [lab4-3940]: images/lab4-3940.jpg
