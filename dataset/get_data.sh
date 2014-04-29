@@ -60,13 +60,16 @@ tar -cvvzf annotations-cholera.tar.gz annotations/*.{ffn,faa}
 mkdir gview-server-annotations
 mkdir gview-server-annotations/reference
 mkdir gview-server-annotations/other-genomes
+mkdir gview-server-annotations/orther-genomes-ffn
 
 cp annotations/*/*.gbk gview-server-annotations/other-genomes/
+cp annotations/*/*.ffn gview-server-annotations/orther-genomes-ffn/
 cp reference/2010EL-1786-c*.gbk gview-server-annotations/reference/
 
 cd gview-server-annotations
 # shifted a contig in other-genomes/VC-1.gbk so the first contig has a CDS
 tar -cvzf other-genomes.tar.gz other-genomes/
+tar -cvzf other-genomes-ffn.tar.gz orther-genomes-ffn/
 
 ##########################
 # Core SNP Pipeline data #
