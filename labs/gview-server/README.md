@@ -6,7 +6,7 @@ Introduction
 
 ![gview-server-main][main-1]
 
-[GView Server](http://server.gview.ca) is a web-based application for performing comparative genomics analysis.  Genomes can be uploaded and multiple categories of analysis types can be performed on these files.  The types of analysis include:
+[GView Server][gview-server] is a web-based application for performing comparative genomics analysis.  Genomes can be uploaded and multiple categories of analysis types can be performed on these files.  The types of analysis include:
 
 * BLAST Atlas
 * Pangenome BLAST Atlas
@@ -15,14 +15,14 @@ Introduction
 * Signature genes
 * Reciprocal BLAST
 
-Results for each analysis type are displayed using [GView](http://www.gview.ca) a circular and linear genome viewer.  GView can be used to make modifications to the appearance of the results and export the genome map to an image file.
+Results for each analysis type are displayed using [GView][gview] a circular and linear genome viewer.  GView can be used to make modifications to the appearance of the results and export the genome map to an image file.
 
 In this lab, we will go through a number of different analysis types using GView Server, and how to modify the results in GView.
 
 Lab 1: BLAST Atlas
 ------------------
 
-A BLAST ATlas is used to depict the prescence and abscence of particular regions within a set of genomes.  The precscence or abscence of a region is determined by running [BLAST](http://en.wikipedia.org/wiki/BLAST) between these regions.  The BLAST results are compiled into a table and are used to generate an image using GView.  In order to construct a BLAST Atlas using the cholera data please proceed through the following steps.
+A BLAST ATlas is used to depict the prescence and abscence of particular regions within a set of genomes.  The precscence or abscence of a region is determined by running [BLAST][blast] between these regions.  The BLAST results are compiled into a table and are used to generate an image using GView.  In order to construct a BLAST Atlas using the cholera data please proceed through the following steps.
 
 1. **_Go to GView Server_**
   1. Go to http://server.gview.ca.
@@ -97,7 +97,7 @@ In order to construct a pan-genome BLAST atlas please proceed through the follow
 Lab 3: Working with GView
 -------------------------
 
-In this lab we will look at exploring the results of GView Server within [GView](http://www.gview.ca).  GView is a ciruclar and linear genome viewer which provides the ability to customize the appearance of the genome map, add new data to display, and export the results.  In order to start working with GView please follow the steps below.
+In this lab we will look at exploring the results of GView Server within [GView][gview].  GView is a ciruclar and linear genome viewer which provides the ability to customize the appearance of the genome map, add new data to display, and export the results.  In order to start working with GView please follow the steps below.
 
 1. **_Launch GView_**
   1. Go to the results page for **Lab 2** or http://server.gview.ca/w/2014/2.
@@ -127,6 +127,10 @@ In this lab we will look at exploring the results of GView Server within [GView]
 5. **_Exit GView_**
   1. To quite GView, go to **File > Exit**.
 
+
+[gview-server]: http://server.gview.ca
+[gview]: http://www.gview.ca
+[blast]: http://en.wikipedia.org/wiki/BLAST
 
 [main-1]: images/gview-server-main.jpg
 [lab2-1]: images/lab2-atlas.jpg
