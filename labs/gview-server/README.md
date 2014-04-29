@@ -90,7 +90,7 @@ In order to construct a pan-genome BLAST atlas please proceed through the follow
 
 ### Questions
 
-1. In **Lab 1** we constructed a BLAST Atlas using both *Chromosome I* as a reference.  Compare the BLAST Atlas using *Chromosome I* to the pan-genome BLAST Atlas constructed in **Lab 2*.  What extra information do you see in the pan-genome BLAST Atlas?
+1. In **Lab 1** we constructed a BLAST Atlas using both *Chromosome I* as a reference.  Compare the BLAST Atlas using *Chromosome I* to the pan-genome BLAST Atlas constructed in **Lab 2**.  What extra information do you see in the pan-genome BLAST Atlas?
 
 2. In **Lab 2** we constructed a pan-genome BLAST Atlas using Chromosome I as the seed genome.  Please follow through the same procedure, but this time use Chromosome II as the seed genome.  What differences do you notice?
 
