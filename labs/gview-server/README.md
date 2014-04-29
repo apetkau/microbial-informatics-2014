@@ -182,16 +182,6 @@ In order to construct a pan-genome BLAST atlas please proceed through the follow
 
 2. In this lab we constructed a pan-genome BLAST Atlas using Chromosome I as the seed genome.  Please follow through the same procedure, but this time use Chromosome II as the seed genome.  What differences do you notice?
 
-3. The pan-genome BLAST Atlas in this lab was constructed using only 3 separate genomes.  It's possible to add as many genomes as you want by simply adding more files in the **Upload Genomes** screen.  A quick method to add a large number of files is to compress all the files first within a **zip** or **tarball**.  An example of such a set of files is at */Course/MI_workshop_2014/day6/gview-server-annotations/other-genomes-ffn.tar.gz* (compressed file containing annotations for all genomes in ffn format).
-
-   The one downside to uploading large datasets is the longer time it takes to perform the analysis.  A pre-computed pan-genome analysis with the above set of files is displayed below and can be found at http://server.gview.ca/w/2014/L1Q3.
-
-   ![pangenome all][lab3-2]
-
-   This exact same dataset was used in **Question 2** from the [OrthoMCL](labs/orthomcl) lab.  In reference to the resulting [Venn Diagram](labs/orthomcl/Answers.md) from this lab, please answer the following.
-
-   1. The Venn Diagram shows that 3269 genes are part of the core genome set.  How do the 3269 core genes correspond to what is displayed in the BLAST Atlas?
-   2. The Venn Digram shows that there are 74 genes that are unique to only the haiti and nepal group.  That is, there are 74 genes that are found in every genome except C6706.  Can you find this region on the pan-genome BLAST Atlas?
 
 [Answers](Answers.md)
 
@@ -228,6 +218,20 @@ In this lab we will look at exploring the results of GView Server within [GView]
 5. **_Exit GView_**
   1. To quite GView, go to **File > Exit**.
 
+### Questions
+
+1. The pan-genome BLAST Atlas in **Lab 3** was constructed using only 3 separate genomes.  It's possible to add as many genomes as you want by simply adding more files in the **Upload Genomes** screen.  A quick method to add a large number of files is to compress all the files first within a **zip** or **tarball**.  An example of such a set of files is at */Course/MI_workshop_2014/day6/gview-server-annotations/other-genomes-ffn.tar.gz* (compressed file containing annotations for all genomes in ffn format).
+
+   The one downside to uploading large datasets is the longer time it takes to perform the analysis.  A pre-computed pan-genome analysis with the above set of files is displayed below and can be found at http://server.gview.ca/w/2014/L1Q3.
+
+   ![pangenome all][lab4-4]
+
+   Please load up this BLAST Atlas in GView and take some time to look at the data.  In order to make it easier to navigate, you may want to turn on lower quality rendering by selecting **View > Quality > Low**.
+
+2. The exact same dataset from the previous question was used in **Question 2** from the [OrthoMCL](labs/orthomcl) lab.  In reference to the resulting [Venn Diagram](labs/orthomcl/Answers.md) from this lab, please answer the following.
+
+   1. The Venn Diagram shows that 3269 genes are part of the core genome set.  How do the 3269 core genes correspond to what is displayed in the BLAST Atlas?
+   2. The Venn Digram shows that there are 74 genes that are unique to only the haiti and nepal group.  That is, there are 74 genes that are found in every genome except C6706.  Can you find these region(ss) on the pan-genome BLAST Atlas?
 
 [gview-server]: http://server.gview.ca
 [gview]: http://www.gview.ca
@@ -240,10 +244,10 @@ In this lab we will look at exploring the results of GView Server within [GView]
 [lab1-4]: images/gview-results-1.jpg
 [lab2-1]: images/lab1a-atlas.jpg
 [lab3-1]: images/lab2-atlas.jpg
-[lab3-2]: images/lab3-pangeome-all.jpg
 [lab4-1]: images/lab3-gview-1.jpg
 [lab4-2]: images/lab3-style-editor-2.jpg
 [lab4-3]: images/lab3-slot_-1_3.jpg
+[lab3-4]: images/lab3-pangeome-all.jpg
 [plus-button]: images/plus-button.png
 [zoom-in]: images/magnifier-zoom-in.png
 [zoom-out]: images/magnifier-zoom-out.png
