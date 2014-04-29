@@ -22,7 +22,9 @@ In this lab, we will go through a number of different analysis types using GView
 Lab 1: Viewing Genomes
 ----------------------
 
-This exercise will provide an introduction to loading a single GenBank file into GView through GView Server.  This can be used to quickly load up and customize the appearance of a genome file in GView.    Note:  All sequence files (such as GenBank) must include sequence data in order to work with GView Server.  That is, if you opened up the file within a text editor you should see some text that looks like:
+This exercise will provide an introduction to loading a single GenBank file into GView through GView Server.  This can be used to quickly load up and customize the appearance of a genome file in GView.
+
+Note:  All sequence files (such as GenBank) must include sequence data in order to work with GView Server.  That is, if you opened up the file within a text editor you should see some text that looks like:
 
 ```
 ORIGIN
