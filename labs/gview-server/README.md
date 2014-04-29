@@ -4,8 +4,6 @@ Working with GView Server
 Introduction
 ============
 
-![gview-server-main][main-1]
-
 [GView Server][gview-server] is a web-based application for performing comparative genomics analysis.  Genomes can be uploaded and multiple categories of analysis types can be performed on these files.  The types of analysis include:
 
 * BLAST Atlas
