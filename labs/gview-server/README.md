@@ -22,21 +22,6 @@ Lab 1: Viewing Genomes
 
 This exercise will provide an introduction to loading a single GenBank file into GView through GView Server.  This can be used to quickly load up and customize the appearance of a genome file in GView.
 
-Note:  All sequence files (such as GenBank) must include sequence data in order to work with GView Server.  That is, if you opened up the file within a text editor you should see some text that looks like:
-
-```
-ORIGIN
-        1 tttcatcagg tcgtttatgg taattttttt catgtttagt ccttactcga cgttggcgag
-       61 tgccaaatgc tgagcccatt gagcggtact tgttgcaata acgcttggat ttcagtcccg
-```
-
-If, instead, you see the following within the text file then you'll have to obtain the version of the file with the sequence data included (NCBI by default does not include sequence data for example).
-
-```
-ORIGIN      
-//
-```
-
 1. **_Go to GView Server_**
   1. Go to http://server.gview.ca, you should see a page similar to the following.
 
@@ -81,6 +66,21 @@ ORIGIN
   2. You can click on the *gview-all* links in the **Download** section to download the resulting data and the GView viewer.
 
 An example of these results can be found at http://server.gview.ca/w/2014/L1.
+
+*Note:  All sequence files (such as GenBank) must include sequence data in order to work with GView Server.  That is, if you opened up the file within a text editor you should see some text that looks like:*
+
+```
+ORIGIN
+        1 tttcatcagg tcgtttatgg taattttttt catgtttagt ccttactcga cgttggcgag
+       61 tgccaaatgc tgagcccatt gagcggtact tgttgcaata acgcttggat ttcagtcccg
+```
+
+*If, instead, you see the following within the text file then you'll have to obtain the version of the file with the sequence data included (NCBI by default does not include sequence data for example).*
+
+```
+ORIGIN      
+//
+```
 
 
 Lab 2: BLAST Atlas
