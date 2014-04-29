@@ -228,7 +228,7 @@ In this lab we will look at exploring the results of GView Server within [GView]
 
    Please load up this BLAST Atlas in GView and take some time to look at the data.  In order to make it easier to navigate, you may want to turn on lower quality rendering by selecting **View > Quality > Low**.
 
-2. The exact same dataset from the previous question was used in **Question 2** from the [OrthoMCL](labs/orthomcl) lab.  In reference to the resulting [Venn Diagram](labs/orthomcl/Answers.md) from this lab, please answer the following.
+2. The exact same dataset from the previous question was used in **Question 2** from the [OrthoMCL](../labs/orthomcl) lab.  In reference to the resulting [Venn Diagram](../labs/orthomcl/Answers.md) from this lab, please answer the following.
 
    1. The Venn Diagram shows that 3269 genes are part of the core genome set.  How do the 3269 core genes correspond to what is displayed in the BLAST Atlas?
    2. The Venn Digram shows that there are 74 genes that are unique to only the haiti and nepal group.  That is, there are 74 genes that are found in every genome except C6706.  Can you find these region(ss) on the pan-genome BLAST Atlas?
