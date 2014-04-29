@@ -106,17 +106,13 @@ A BLAST ATlas is used to depict the prescence and abscence of particular regions
 5. **_Adjust BLAST Parameters_**
   1. In this screen it's possible to adjust some of the settings for BLAST.  For this example we will keep the default settings.  Click on **Continue** to proceed.
 6. **_Customize Appearance_**
-  1. In this screen it's possible to adjust the appearance settings of the BLAST Atlas.  Within the **Map title** text field please enter *Lab 1: 2010EL-1786 Chromosome I*.
+  1. In this screen it's possible to adjust the appearance settings of the BLAST Atlas.  Within the **Map title** text field please enter *2010EL-1786 Chromosome I*.
   2. No other settings need to be adjusted so click on **Complete** to start the analysis.
 7. **_Wait for Analysis Results_**
   1. The next screen will give you a job id where your results can be found on completion.  Click on the link and wait for your analysis results to finish.
-  2. On completion, you should see a screen similar to below.  An example of the results can also be found at http://server.gview.ca/w/2014/L2.
+  2. On completion the results should look similar to below.  An example of the results can also be found at http://server.gview.ca/w/2014/L2.
 
-     ![lab2-results][lab2-1]
-
-     The BLAST Atlas generated will look similar to below.
-
-     ![lab2-atlas][lab2-2]
+     ![lab2-atlas][lab2-1]
 
 ### Questions
 
@@ -146,7 +142,7 @@ In order to construct a pan-genome BLAST atlas please proceed through the follow
   1. In this screen it's possible to adjust some of the settings for BLAST as well as to select the seed genome.  The seed genome is the genome used as a starting point for constructing the pan-genome.  Please make sure that *2010EL-1786-c1* is selected as the seed genome.
   2. Click on **Continue** to proceed.
 6. **_Customize Appearance_**
-  1. In this screen it's possible to adjust the appearance settings of the BLAST Atlas.  Within the **Map title** text field please enter *Lab 2: Seed Chromosome I*.
+  1. In this screen it's possible to adjust the appearance settings of the BLAST Atlas.  Within the **Map title** text field please enter *Seed Chromosome I*.
   2. No other settings need to be adjusted so click on **Complete** to start the analysis.
 7. **_Wait for Analysis Results_**
   1. The next screen will give you a job id where your results can be found on completion.  Click on the link and wait for your analysis results to finish.
@@ -205,8 +201,7 @@ In this lab we will look at exploring the results of GView Server within [GView]
 [lab1-2]: images/lab1-appearance.jpg
 [lab1-3]: images/gview-complete.jpg
 [lab1-4]: images/gview-results-1.jpg
-[lab2-1]: images/lab1a-results.jpg
-[lab2-2]: images/lab1a-atlas.jpg
+[lab2-1]: images/lab1a-atlas.jpg
 [lab3-1]: images/lab2-atlas.jpg
 [lab4-1]: images/lab3-gview-1.jpg
 [lab4-2]: images/lab3-style-editor-2.jpg
