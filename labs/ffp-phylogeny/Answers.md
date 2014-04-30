@@ -49,6 +49,12 @@ The core feature, phenetic feature, and core SNP phylogenies for a k-mer length 
 |:-------------------------------------------:|:----------------------------------:|:--------------------------:|
 | ![core feature 20](images/tree-core-20.jpg) | ![tree-20.jpg](images/tree-20.jpg) | ![core snp][core-snp-tree] |
 
+Some differences include:
+
+* The core SNP gives a much larger relative distance to C6706 as compared to the FFP trees, but all three trees place it much more distant from any other genome.
+* Both the trees generated from the core genome cluster (VC-1,VC-10) together and separate from any other genome.
+* Both the FFP trees give a much larger distance to the branch containing 2010EL-1786 than does the core SNP tree.  A possible cause could be because 2010EL-1786 is the only closed and finished genome in this dataset (that is, the gaps in between contigs are filled in, and there will most likely be less artifacts from the assembly method which could introduce extra and possibly common data with all other genomes).
+
 Both the core feature and core SNP phylogeny would exclude any regions that are not part of the core genome.  That is, regions where there are gaps in the pan-genome BLAST Atlas.  Some of the larger such regions include:
 
 * ~100 kbp on the pan-genome BLAST Atlas where C6706 has the largest region missing, and VC-10,VC-26,VC-25,VC-15,VC-1 all have smaller gaps.
