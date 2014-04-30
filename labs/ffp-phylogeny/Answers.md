@@ -38,3 +38,4 @@ This generates a tree that should look similar to below.
 
 ![faa tree](images/tree-5-aa.jpg)
 
+Some differences are that the amino acid sequence tree separates some of the branches of the tree a bit more visibly and the branch lengths are quite a bit shorter (especially those between VC-6, VC-10, VC-14, and the rest).
