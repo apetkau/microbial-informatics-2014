@@ -15,7 +15,7 @@ Step 1: Construct Working Directory
 To construct a working directory for this lab and obtain a copy of the instructions the following commands can be used.
 
 	$ git https://github.com/apetkau/microbial-informatics-2014.git
-	$ cd microbialinformatics2014/labs/ffp-phylogeny/
+	$ cd microbial-informatics-2014/labs/ffp-phylogeny/
 	$ ls
 	Answers.md  images  README.md
 

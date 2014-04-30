@@ -17,7 +17,7 @@ Constructing a Working Directory
 To construct a working directory and obtain a copy of these instructions the following commands can be used.
 
 	$ git clone https://github.com/apetkau/microbial-informatics-2014.git
-	$ cd microbialinformatics2014/labs/mst/
+	$ cd microbial-informatics-2014/labs/mst/
 	$ ls
 	Answers.md  lab1-snp-profile.tsv  PrepareInput.md  sampleADfile.txt
 	images      lab1-snp-strains.tsv  README.md        sampleAPfile.txt

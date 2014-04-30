@@ -12,7 +12,7 @@ Step 1: Constructing a Working Directory
 To construct and switch to a working directory and obtain a copy of these instructions the following commands can be used.
 
 	$ git clone https://github.com/apetkau/microbial-informatics-2014.git
-	$ cd microbialinformatics2014/labs/core-snp/
+	$ cd microbial-informatics-2014/labs/core-snp/
 	$ ls
 	Answers.md  images  mapping.conf  READMELargePhylogeny.md  README.md
 
