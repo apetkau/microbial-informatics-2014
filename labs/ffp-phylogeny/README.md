@@ -217,8 +217,8 @@ Question 4
 
 In [Whole-genome phylogeny of Escherichia coli/Shigella group by feature frequency profiles (FFPs)](http://www.pnas.org/content/108/20/8329.full) the authors discusses using this same FFP method to construct two different types of phylogenies (depicted in [Figure 1](http://www.pnas.org/content/108/20/8329/F1.expansion.html)).
 
-1. **Phenetic phylogeny**:  This phylogeny is constructed from all k-mers computed from every genome. This is the type we have been constructing throught this lab.
-2. **Core Feature/Evolutionary phylogeny**:  This phylogeny is constructed by considering only core k-mers (that is, k-mers contained within every genome).
+* **Phenetic phylogeny**:  This phylogeny is constructed from all k-mers computed from every genome. This is the type we have been constructing throught this lab.
+* **Core Feature/Evolutionary phylogeny**:  This phylogeny is constructed by considering only core k-mers (that is, k-mers contained within every genome).
 
 A similar **Core Feature** can be constructed by first filtering out k-mers using the `ffpfilt` program (which takes the place of `ffpcol`).  This can be accomplished with.
 
@@ -226,8 +226,8 @@ A similar **Core Feature** can be constructed by first filtering out k-mers usin
 $ ffpry -l 20 contigs/*.fasta | ffpfilt -l 0.05 -u 0.95 -e -s | ffprwn | ffpjsd -p genome_names.txt | ffptree > tree-core-20.txt
 ```
 
-a. Compare the **Core Feature** tree generated from this command to the **Phenetic phylogeny** tree generated with a k-mer length of 20 from **Question 1**.  Compare also to the [Core SNP](../core-snp/Answers.md) phylogeny from the previous lab **question 2**.  How do they differ?
+1. Compare the **Core Feature** tree generated from this command to the **Phenetic phylogeny** tree generated with a k-mer length of 20 from **Question 1**.  Compare also to the [Core SNP](../core-snp/Answers.md) phylogeny from the previous lab **question 2**.  How do they differ?
 
-b. Using the depiction of the core genome from the [pan-genome BLAST Atlas](../gview-server/README.md) constructed yesterday in **Question 1**, which regions would have been excluded from the **core feature** and **core SNP** trees?
+2. Using the depiction of the core genome from the [pan-genome BLAST Atlas](../gview-server/README.md) constructed yesterday in **Question 1**, which regions would have been excluded from the **core feature** and **core SNP** trees?
 
 [Answers](Answers.md)
