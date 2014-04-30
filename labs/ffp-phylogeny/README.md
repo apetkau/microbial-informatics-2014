@@ -75,7 +75,7 @@ TAACGTGTTTATAGACATTTTAGAGTTAAAGCCTTAACTCTAAATCATTCGTTTCGGATT
 Step 4: Generate genome name list
 ---------------------------------
 
-In order to build a tree using `ffp` a list of all the names of each genome must be provided, one genome per line.  These must be in the same order as is processed by the commands in step 4.  Each name must be unique and can be no more than 50 characters (original version was no more than 10 characters).  This file can be generated with the following commands:
+In order to build a tree using `ffp` a list of all the names of each genome must be provided, one genome per line.  These must be in the same order as is processed by the commands in **Step 5**.  Each name must be unique and can be no more than 50 characters (original version was no more than 10 characters).  This file can be generated with the following commands:
 
 ```bash
 $ ls contigs/*.fasta | sed -e 's/^contigs\///' -e 's/\.fasta$//' > genome_names.txt
@@ -84,7 +84,7 @@ $ ls contigs/*.fasta | sed -e 's/^contigs\///' -e 's/\.fasta$//' > genome_names.
 This will generate a file **genome_names.txt** that looks like the following:
 
 ```bash
-$ head genome_names.txt
+$ cat genome_names.txt
 2010EL-1749
 2010EL-1786
 2010EL-1796
@@ -159,9 +159,9 @@ By default, the `ffpry` software will compress the nucleotide characters into on
 	$ ffpry -l 2 contigs/2010EL-1749.fasta
 	RR      1988920 RY      1013697 YR      1013730
 
-This shows the different 2-mer counts from __2010EL-1749__, encoded as either a purine or a pyramidine.
+This shows the different 2-mer counts, 1988920 for combination RR, 1013697 for combination RY, and 1013730 for combination YR from __2010EL-1749__, encoded as either a purine or a pyramidine.  *Note: There are no YY counts because these are combined with the reverse complimented (RR) counts.* 
 
-It's possible to remove the compression to only states __R__ or __Y__ and leave the 4 state nucleotide encoding by using the `-d` parameter.  For example:
+It's possible to remove the compression to __R__ or __Y__ and leave the 4 state nucleotide encoding by using the `-d` parameter.  For example:
 
 	$ ffpry -d -l 2 contigs/2010EL-1749.fasta
 	TA      191171  TC      476051  TG      587034  TT      662771  AC      441843  AG      452107  AT   275766   CC      397991  CG      235525  GC      296088
