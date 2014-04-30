@@ -181,7 +181,7 @@ Strain	emm type	Group carbohydrate	ST	Location	Collection
 
 [goeburst]: http://www.biomedcentral.com/1471-2105/10/152
 [phyloviz]: http://www.phyloviz.net
-[mst-phylovis-intro]: https://www.corefacility.ca/wiki/pub/BioinformaticsWorkshop/WebHome/Day6LabPetkauPhylovizgeoBURSTMay2014.pdf
+[mst-phyloviz-intro]: https://www.corefacility.ca/wiki/pub/BioinformaticsWorkshop/WebHome/Day6LabPetkauPhylovizgeoBURSTMay2014.pdf
 
 [lab2-1]: images/lab2-goeburst-level.jpg
 [lab2-2]: images/lab2-goeburst-level1.jpg
