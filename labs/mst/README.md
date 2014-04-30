@@ -114,7 +114,7 @@ Please follow the below steps to generate a minimum spanning tree.
 
 ### Questions
 
-1. Using a similar procedure as in *Step 5* annotate the minimum spanning tree with the year of collection instead of the location.  Which is the most common year represented?  Which is the least common year?
+1. Using a similar procedure as in *Step 5* annotate the minimum spanning tree with the year of collection instead of the location.  You will have to reset the selection from the **Isolate Data** table in **Step 5.1** by clicking on the **Reset** button.  Then you can select the **Year** column in the table to view.  Which is the most common year represented?  Which is the least common year?
 
 2. The *Level* selection can be used to define the maximum level nodes can be connected to be part of the same tree.  For the figure we generated, this can be interpreted as the maximum SNP distance to be considered part of the same group or cluster.  Adjust the level to 20 and to 15.   Which are the main isolates that are left out at each level cutoff?
 
@@ -136,7 +136,7 @@ ST	gki	gtr	murI	mutS	recP	xpt	yqiZ
 3	5	3	4	1	6	2	1
 ```
 
-4. Click on **Next** to continue.  This should bring you to a screen that looks like the following.
+4. Click on **Next** to continue.
 5. Click on **Browse ...** and find the file *microbialinformatics2014/labs/mst/sampleADfile.txt*.  This file contains data from a number of isolates including the sequence type (stored in column ST).
 
 ```
