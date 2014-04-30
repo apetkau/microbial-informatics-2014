@@ -43,7 +43,11 @@ Some differences are that the amino acid sequence tree separates some of the bra
 Answer 4
 --------
 
-The core feature phylogeny would exclude any regions that are not part of the core genome.  That is, regions where there are gaps in the pan-genome BLAST Atlas.  Some of the larger such regions include:
+The core feature tree generated from a k-mer length of 20 looks like.
+
+![core feature 20](images/tree-core-20.jpg)
+
+This core feature phylogeny would exclude any regions that are not part of the core genome.  That is, regions where there are gaps in the pan-genome BLAST Atlas.  Some of the larger such regions include:
 
 * ~100 kbp on the pan-genome BLAST Atlas where C6706 has the largest region missing, and VC-10,VC-26,VC-25,VC-15,VC-1 all have smaller gaps.
 * ~4000 kbp on the pan-genome BLAST Atlas where C6706 has a large unique region, and VC-10, VC-1 have smaller unique regions.
