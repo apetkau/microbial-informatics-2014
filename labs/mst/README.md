@@ -4,7 +4,7 @@ Minimum Spanning Tree and goeBURST with PHYLOViZ
 Introduction
 ============
 
-PHYLOViZ is a desktop application for performing analysis on sequence-based typing data (such as MLST, MLVA, or SNP data).  PHYLOViZ can calculate possible evolutionary relationships by using the [goeBURST][goeburst] algorithm and provides an interface for visualization of the results.  More information on phyloviz can be found at http://www.phyloviz.net/ and a short presentation introducing goeBURST can be found at [PHYLOViZ goeBURST Presentation][mst-phyloviz-intro].
+[PHYLOViZ](phyloviz) is a desktop application for performing analysis on sequence-based typing data (such as MLST, MLVA, or SNP data).  PHYLOViZ can calculate possible evolutionary relationships by using the [goeBURST][goeburst] algorithm and provides an interface for visualization of the results.  More information on phyloviz can be found at http://www.phyloviz.net/ and a short presentation introducing goeBURST can be found at [PHYLOViZ goeBURST Presentation][mst-phyloviz-intro].
 
 Tutorial
 ========
@@ -180,6 +180,7 @@ Strain	emm type	Group carbohydrate	ST	Location	Collection
 [Answers](Answers.md)
 
 [goeburst]: http://www.biomedcentral.com/1471-2105/10/152
+[phyloviz]: http://www.phyloviz.net
 [mst-phylovis-intro]: https://www.corefacility.ca/wiki/pub/BioinformaticsWorkshop/WebHome/Day6LabPetkauPhylovizgeoBURSTMay2014.pdf
 
 [lab2-1]: images/lab2-goeburst-level.jpg
