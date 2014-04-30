@@ -14,10 +14,12 @@ Step 1: Construct Working Directory
 
 To construct a working directory for this lab and obtain a copy of the instructions the following commands can be used.
 
-	$ git clone https://github.com/apetkau/microbial-informatics-2014.git
-	$ cd microbial-informatics-2014/labs/ffp-phylogeny/
-	$ ls
-	Answers.md  images  README.md
+```bash
+$ git clone https://github.com/apetkau/microbial-informatics-2014.git
+$ cd microbial-informatics-2014/labs/ffp-phylogeny/
+$ ls
+Answers.md  images  README.md
+```
 
 Step 2: Download Software
 -------------------------
@@ -54,7 +56,7 @@ Step 3: Input Files
 The input files for this software are assembled genomes in FASTA format.  The input data for this tutorial can be obtained with the following commands.
 
 ```bash
-$ cp /Course/MI_workshop/day7/contigs-cholera.tar.gz ./
+$ cp /Course/MI_workshop_2014/day7/contigs-cholera.tar.gz ./
 $ tar -xvf contigs-cholera.tar.gz
 ```
 
