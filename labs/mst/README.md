@@ -17,7 +17,8 @@ To construct a working directory and obtain a copy of these instructions the fol
 	$ git clone https://github.com/apetkau/microbial-informatics-2014.git
 	$ cd microbialinformatics2014/labs/mst/
 	$ ls
-	images  lab1-snp-profile.tsv  lab1-snp-strains.tsv  PrepareInput.md  README.md
+	Answers.md  lab1-snp-profile.tsv  PrepareInput.md  sampleADfile.txt
+	images      lab1-snp-strains.tsv  README.md        sampleAPfile.txt
 
 Starting Phyloviz
 -----------------
@@ -113,7 +114,7 @@ Please follow the below steps to generate a minimum spanning tree.
 
 1. Using a similar procedure as in *Step 5* annotate the minimum spanning tree with the year of collection instead of the location.  Which is the most common year represented?  Which is the least common year?
 
-2. The *Level* selection can be used to define the maximum level nodes can be connected to be part of the same tree.  For the figure we generated, this can be interpreted as the maximum SNP distance to be considered part of the same closley related cluster.  Adjust the level to 20, or 15.  Which are the main strains that stand out?
+2. The *Level* selection can be used to define the maximum level nodes can be connected to be part of the same tree.  For the figure we generated, this can be interpreted as the maximum SNP distance to be considered part of the same group or cluster.  Adjust the level to 20 and to 15.   Which are the main isolates that are left out at each level cutoff?
 
 [Answers](Answers.md)
 

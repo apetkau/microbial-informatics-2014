@@ -4,6 +4,22 @@ PHYLOViZ Answers
 Lab 1
 -----
 
+1. The tree with the year of collection data added looks as follows.
+
+   [mst year](images/lab1-year.jpg)
+
+   The most common year represented is 2010 (with 13).  The least common years are 1991 and 2008 (with 1 each).
+
+2. Images for the tree and the isolates left out when adjusting to the different levels are as follows.
+
+   * Level 20:  isolates 7 (C6706) and 8 ((VC-1,VC-10) are left out.
+
+   ![level 20](images/lab1-20.jpg)
+
+   * Level 15:  isolates 2 (2010EL-1749),5 (2012V-1001),6 (3554-08),7 (C6706),8 (VC-1,VC-10),12 (VC-19),15 (VC-6).
+
+   ![level 15](images/lab1-15.jpg)
+
 Lab 2
 -----
 
