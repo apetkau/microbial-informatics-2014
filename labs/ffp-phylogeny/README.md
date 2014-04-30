@@ -226,8 +226,12 @@ A similar **Core Feature** can be constructed by first filtering out k-mers usin
 $ ffpry -l 20 contigs/*.fasta | ffpfilt -l 0.05 -u 0.95 -e -s | ffprwn | ffpjsd -p genome_names.txt | ffptree > tree-core-20.txt
 ```
 
-1. Compare the **Core Feature** tree generated from this command to the **Phenetic phylogeny** tree generated with a k-mer length of 20 from **Question 1**.  Compare also to the [Core SNP](../core-snp/Answers.md) phylogeny from the previous lab **question 2**.  How do they differ?
+### Part A
 
-2. Using the depiction of the core genome from the [pan-genome BLAST Atlas](../gview-server/README.md) constructed yesterday in **Question 1**, which regions would have been excluded from the **core feature** and **core SNP** trees?
+Compare the **Core Feature** tree generated from this command to the **Phenetic phylogeny** tree generated with a k-mer length of 20 from **Question 1**.  Compare also to the [Core SNP](../core-snp/Answers.md) phylogeny from the previous lab **question 2**.  How do they differ?
+
+### Part B
+
+Using the depiction of the core genome from the [pan-genome BLAST Atlas](../gview-server/README.md) constructed yesterday in **Question 1**, which regions would have been excluded from the **core feature** and **core SNP** trees?
 
 [Answers](Answers.md)
