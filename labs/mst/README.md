@@ -1,5 +1,5 @@
-Minimum Spanning Tree with Phyloviz
-===================================
+Minimum Spanning Tree and goeBURST with PHYLOViZ
+================================================
 
 Introduction
 ============
@@ -7,7 +7,7 @@ Introduction
 Tutorial
 ========
 
-This tutorial will go through constructing a minimum spanning tree from SNP, MLST, and other typing data.  The software we will use for constructing these trees is [phyloviz](http://www.phyloviz.net).
+This tutorial will go through constructing a minimum spanning tree from SNP, MLST, and other typing data.  The software we will use for constructing these trees is [PHYLOViZ](http://www.phyloviz.net).
 
 Constructing a Working Directory
 --------------------------------
@@ -22,11 +22,11 @@ To construct a working directory and obtain a copy of these instructions the fol
 Starting Phyloviz
 -----------------
 
-In order to start phyloviz the following command can be entered in a terminal.
+In order to start PHYLOViZ the following command can be entered in a terminal.
 
 	$ phyloviz
 
-This should launch phyloviz which should look similar to the following.
+This should launch PHYLOViZ which should look similar to the following.
 
 ![images/phyloviz-start.jpg](images/phyloviz-start.jpg)
 
@@ -109,9 +109,72 @@ Please follow the below steps to generate a minimum spanning tree.
 
    ![lab1-mst-location.jpg](images/lab1-mst-location.jpg)
 
-Questions
-=========
+### Questions
 
 1. Using a similar procedure as in *Step 5* annotate the minimum spanning tree with the year of collection instead of the location.  Which is the most common year represented?  Which is the least common year?
 
 2. The *Level* selection can be used to define the maximum level nodes can be connected to be part of the same tree.  For the figure we generated, this can be interpreted as the maximum SNP distance to be considered part of the same closley related cluster.  Adjust the level to 20, or 15.  Which are the main strains that stand out?
+
+[Answers](Answers.md)
+
+Lab 2: MLST Data in PHYLOViZ
+----------------------------
+
+### Step 1: Load Dataset
+
+1. Click on **File > Load Dataset**.
+2. Name this dataset *Lab2*.  Set the Dataset Type to *MLST*.  When finished, click Next.
+3. Click on **Browse ...** and find the file */Course/MI_workshop_2014/day6/sampleAPfile.txt*.  This file contains a set of sequence types (in column ST) and the allelic profile data used to define that type.  The contents of the file look as below.
+
+```
+ST	gki	gtr	murI	mutS	recP	xpt	yqiZ
+1	10	6	6	6	12	13	8
+2	5	4	4	1	2	15	2
+3	5	3	4	1	6	2	1
+```
+
+4. Click on **Next** to continue.  This should bring you to a screen that looks like the following.
+5. Click on **Browse ...** and find the file */Course/MI_workshop_2014/day6/sampleADfile.txt*.  This file contains data from a number of isolates including the sequence type (stored in column ST).
+
+```
+Strain	emm type	Group carbohydrate	ST	Location	Collection
+168554	stG485	G	47	Portugal	UL
+171712	stG480	G	38	Portugal	UL
+220269	stG2078	G	15	Portugal	UL
+223754	stC839	C	3	Portugal	UL
+230631	stG480	G	8	Portugal	UL
+231995	stC74a	G	29	Portugal	UL
+```
+
+6. Set the **Key** to be the sequence type (*ST*) column.
+7. Click on **Finish** to finish loading the data.
+
+### Step 2: Run goeBURST
+
+1. Right click on the **Multi-Locus Sequence Typing** in the **Datasets** panel (you may have to expand **Lab2**).  From here you should see an option to Compute.  Within the Compute menu, click on **goeBURST**.
+2. Use **goeBURST distance** (the only option) for the distance and click on **Next**.  This should bring you to a screen that looks like the following.
+
+   ![goeburst level][lab2-1]
+
+3. Leave the **Level** set to the default (*SLV*).  Click on **Finish** to start the analysis.
+
+### Step 3: Examine Results
+
+1. Once the analysis is complete, another item in the **Lab2** Datasets tree on the right titled *goeBURST (Level 1 ...)** should appear.  Double-click this item to view the goeBURST results.  This should bring up a screen that looks like the following.
+
+   ![goeburst level][lab2-2]
+
+2. Any of the clonal complexes found are displayed in the main window (the number showing the sequence type).  Zooming in and out can be accomplished by right-clicking and dragging the mouse.  Different nodes in the graph can be dragged around to change the placement.
+3. The **Groups at...** panel shows a list of all the independent clonal groups found.  Clicking on an entry will display a different group.
+4. The **Options** button gives a number of different options.  In particular, selecting *High Quality* will make the image look nicer and selecting **Level Labels** will put the distance labels on each of the edges.
+
+### Questions
+
+1. You should be able to use a similar method as in **Lab 1: Step 5** to visualize associated isolate data on the goeBURST image.  Please do this now for the **Location** data.  Also try this out with the other combinations of data.
+
+2. Re-run the goeBURST algorithm on this data at a *DLV*, *TLV*, and *Full MST* level.  How do the results differ?
+
+[Answers](Answers.md)
+
+[lab2-1]: images/lab2-goeburst-level.jpg
+[lab2-2]: images/lab2-goeburst-level1.jpg
