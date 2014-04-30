@@ -212,4 +212,16 @@ $ ls annotations/*.faa | sed -e 's/^annotations\///' -e 's/\.faa$//' > genome_na
 
 Please use what you know to construct an amio acid ffp tree with a k-mer length of 5 using the files ``annotations/*.faa``.  What differences do you notice?
 
+Question 4
+----------
+
+In [Whole-genome phylogeny of Escherichia coli/Shigella group by feature frequency profiles (FFPs)](http://www.pnas.org/content/108/20/8329.full) the authors discusses using this same FFP method to construct two different types of phylogenies.
+
+1. **Phenetic phylogeny**:  This phylogeny is constructed from all k-mers computed from every genome. This is the type we have been constructing throught this lab.
+2. **Core Feature/Evolutionary phylogeny**:  This phylogeny is constructed by considering only core k-mers (that is, k-mers contained within every genome).
+
+The two phylgenies that were constructed are depicted in [Figure 1](http://www.pnas.org/content/108/20/8329/F1.expansion.html).
+
+Using the depiction of the core genome from the [pan-genome BLAST Atlas](../gview-server/README.md) constructed yesterday in **Question 1**, and the [OrthoMCL results](../orthomcl/Answers.md) what sort of difference would you expect between the phenetic and evolutionary phylogenies?  That is, which regions would be excluded from the core phylogeny?
+
 [Answers](Answers.md)
