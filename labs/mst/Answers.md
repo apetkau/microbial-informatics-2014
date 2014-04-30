@@ -12,7 +12,7 @@ Lab 1
 
 2. Images for the tree and the isolates left out when adjusting to the different levels are as follows.
 
-   * Level 20:  isolates 7 (C6706) and 8 ((VC-1,VC-10) are left out.
+   * Level 20:  isolates 7 (C6706) and 8 (VC-1,VC-10) are left out.
 
    ![level 20](images/lab1-20.jpg)
 
