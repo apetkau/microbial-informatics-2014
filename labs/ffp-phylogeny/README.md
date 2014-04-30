@@ -33,8 +33,11 @@ $ ./configure --disable-gui --prefix=`pwd`/software
 $ make
 $ make install
 
-$ export PATH=`pwd`/software/bin:$PATH
+$ echo export PATH=`pwd`/software/bin:\$PATH >> ~/.bashrc
+$ source ~/.bashrc
 $ cd ..
+$ ls
+Answers.md  ffp-3.19-custom  images  README.md
 ```
 
 Once these steps are complete, you can test if the software is installed by running `ffpre`.  For example:
