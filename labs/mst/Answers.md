@@ -6,7 +6,7 @@ Lab 1
 
 1. The tree with the year of collection data added looks as follows.
 
-   [mst year](images/lab1-year.jpg)
+   ![mst year](images/lab1-year.jpg)
 
    The most common year represented is 2010 (with 13).  The least common years are 1991 and 2008 (with 1 each).
 
