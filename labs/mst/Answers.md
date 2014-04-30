@@ -19,7 +19,7 @@ Lab 2
 
    * TLV
 
-   [tlv](images/lab2-level3.jpg)
+   ![tlv](images/lab2-level3.jpg)
 
    * Full MST
 

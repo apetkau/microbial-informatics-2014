@@ -124,7 +124,7 @@ Lab 2: MLST Data in PHYLOViZ
 
 1. Click on **File > Load Dataset**.
 2. Name this dataset *Lab2*.  Set the Dataset Type to *MLST*.  When finished, click Next.
-3. Click on **Browse ...** and find the file */Course/MI_workshop_2014/day6/sampleAPfile.txt*.  This file contains a set of sequence types (in column ST) and the allelic profile data used to define that type.  The contents of the file look as below.
+3. Click on **Browse ...** and find the file *microbialinformatics2014/labs/mst/sampleAPfile.txt*.  This file contains a set of sequence types (in column ST) and the allelic profile data used to define that type.  The contents of the file look as below.
 
 ```
 ST	gki	gtr	murI	mutS	recP	xpt	yqiZ
@@ -134,7 +134,7 @@ ST	gki	gtr	murI	mutS	recP	xpt	yqiZ
 ```
 
 4. Click on **Next** to continue.  This should bring you to a screen that looks like the following.
-5. Click on **Browse ...** and find the file */Course/MI_workshop_2014/day6/sampleADfile.txt*.  This file contains data from a number of isolates including the sequence type (stored in column ST).
+5. Click on **Browse ...** and find the file *microbialinformatics2014/labs/mst/sampleADfile.txt*.  This file contains data from a number of isolates including the sequence type (stored in column ST).
 
 ```
 Strain	emm type	Group carbohydrate	ST	Location	Collection
