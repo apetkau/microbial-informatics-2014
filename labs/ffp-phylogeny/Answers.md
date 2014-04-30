@@ -25,8 +25,8 @@ Answer 2
 
 Note: The publication at http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2806744/ describes a method for selecting the best parameters and also shows that the trees will converge quickly to a stable solution as the k-mer length increases.  They also describe a method for computing statistical support for the branching order of the major groups.  Also, see the publication http://www.pnas.org/content/108/20/8329.
 
-Question 3
-----------
+Answer 3
+--------
 
 Constructing the amio acid sequence-based tree can be accomplished with the following.
 
