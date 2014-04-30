@@ -172,4 +172,44 @@ For a given k-mer size, this will result in more information being generated.  T
 
 Run this for a kmer size of 5 and 10.  What differences do you notice in the tree as well as the running time?
 
+Question 3
+----------
+
+The Feature Frequency Profile method of constructing phylogenies can also be run on amino acid sequence data as well as nucleotide data.  This requires access to the genome annotations instead of the contigs.  These can be accessed by running.
+
+```bash
+$ cp /Course/MI_workshop_2014/day6/annotations-cholera.tar.gz ./
+$ tar -xvzf annotations-cholera.tar.gz
+$ ls annotations/
+2010EL-1749.faa  2010EL-1786.ffn  2010EL-1798.faa  2011EL-2317.ffn  3554-08.faa  C6706.ffn  VC-14.faa  VC-15.ffn  VC-19.faa  VC-1.ffn   VC-26.faa  VC-6.ffn
+2010EL-1749.ffn  2010EL-1796.faa  2010EL-1798.ffn  2012V-1001.faa   3554-08.ffn  VC-10.faa  VC-14.ffn  VC-18.faa  VC-19.ffn  VC-25.faa  VC-26.ffn
+2010EL-1786.faa  2010EL-1796.ffn  2011EL-2317.faa  2012V-1001.ffn   C6706.faa    VC-10.ffn  VC-15.faa  VC-18.ffn  VC-1.faa   VC-25.ffn  VC-6.faa
+```
+
+This extracts the annotations which were used in the previous annotations lab.  The amino acid sequence data are stored within the __.faa__ files.  For example:
+
+```bash
+$ head annotations/2010EL-1749.faa
+>2010EL-1749_00001 Stalked cell differentiation-controlling protein
+MDARLFDNTQTLRASVLCGLSFFWALIAFLMALINFWSTRLVELASLELVCAFYSLYIYS
+LAKRRIHTKQQVYLYLFILTGTTLFATYMKPLMMGVYIWSCFVPILFYIFTSARFAFVTS
+```
+
+To use the amino acid data the program `ffpaa` needs to be used instead of `ffpry`.  This will count the frequency of amino acid symbols instead of nucleotide symbols.  For example.
+
+```bash
+$ ffpaa -l 2 annotations/2010EL-1749.faa
+FA	8462	FC	1182	FD	10330 ...
+```
+
+This also requires the `-a` option to the `ffpcol` program.
+
+This also requires constructing a new genome names **genome_names_faa.txt** file defining the order of the genomes (since we are using different files).  This can be generated with.
+
+```bash
+$ ls annotations/*.faa | sed -e 's/^annotations\///' -e 's/\.faa$//' > genome_names_faa.txt
+```
+
+Please use what you know to construct an amio acid ffp tree with a k-mer length of 5 using the files ``annotations/*.faa``.  What differences do you notice?
+
 [Answers](Answers.md)

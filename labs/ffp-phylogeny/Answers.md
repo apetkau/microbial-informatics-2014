@@ -24,3 +24,17 @@ Answer 2
 | 10           | 113      | ![tree-10-dna.jpg](images/tree-10-dna.jpg) |
 
 Note: The publication at http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2806744/ describes a method for selecting the best parameters and also shows that the trees will converge quickly to a stable solution as the k-mer length increases.  They also describe a method for computing statistical support for the branching order of the major groups.  Also, see the publication http://www.pnas.org/content/108/20/8329.
+
+Question 3
+----------
+
+Constructing the amio acid sequence-based tree can be accomplished with the following.
+
+```bash
+$ ffpaa -l 5 annotations/*.faa | ffpcol -a | ffprwn | ffpjsd -p genome_names_faa.txt | ffptree > tree-5-aa.txt
+```
+
+This generates a tree that should look similar to below.
+
+![faa tree](images/tree-5-aa.jpg)
+
