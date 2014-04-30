@@ -43,9 +43,11 @@ Some differences are that the amino acid sequence tree separates some of the bra
 Answer 4
 --------
 
-The core feature tree generated from a k-mer length of 20 looks like.
+The core and phenetic phylogenies for a k-mer length of 20 are.
 
-![core feature 20](images/tree-core-20.jpg)
+| Core Feature                                | Phenetic                           |
+|:-------------------------------------------:|:----------------------------------:|
+| ![core feature 20](images/tree-core-20.jpg) | ![tree-20.jpg](images/tree-20.jpg) |
 
 This core feature phylogeny would exclude any regions that are not part of the core genome.  That is, regions where there are gaps in the pan-genome BLAST Atlas.  Some of the larger such regions include:
 
