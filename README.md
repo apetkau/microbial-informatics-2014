@@ -48,10 +48,10 @@ Labs
 
 | Day 6: May 14, 2014                                                         | Day 7: May 15, 2014                                                            |
 |:---------------------------------------------------------------------------:|:------------------------------------------------------------------------------:|
-| **8:45-10:45 am:** [Ortholog detection with OrthoMCL](labs/orthomcl)        | **12:30-2:00 pm:** [Core SNP Phylogenies](labs/core-snp)                      |
+| **8:45-10:15 am:** [Ortholog detection with OrthoMCL](labs/orthomcl)        | **12:30-2:00 pm:** [Core SNP Phylogenies](labs/core-snp)                      |
 | ![genome-groups-small](labs/orthomcl/images/genome-groups-small-thumb.jpg)  | ![output-10-subsample](labs/core-snp/images/output-10-subsample-thumb.jpg)     |
 |                                                                             |                                                                                |
-| **10:30-12:45 pm:** [Working with GView Server](labs/gview-server)          | **2:15-3:15 pm:** [Feature Frequency Profile Phylogenies](labs/ffp-phylogeny) |
+| **10:30-12:15 pm:** [Working with GView Server](labs/gview-server)          | **2:15-3:15 pm:** [Feature Frequency Profile Phylogenies](labs/ffp-phylogeny) |
 | ![lab2-pangenome-atlas](labs/gview-server/images/lab2-atlas-thumb.jpg)      | ![tree-5](labs/ffp-phylogeny/images/tree-5-thumb.jpg)                          |
 |                                                                             |                                                                                |
 | **3:00-4:45 pm:** [Minimum Spanning Trees with PHYLOViZ](labs/mst)          |                                                                                |
