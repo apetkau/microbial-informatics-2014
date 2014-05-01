@@ -13,6 +13,7 @@ my $cwd = getcwd;
 my $doc_dir = "$script_dir/../doc";
 my $lab_dir_orig = "$script_dir/../labs";
 my $lab_dir = "$script_dir/labs";
+my $scale = "65%";
 
 my %file_properties = (
 	'core-snp/README.md' => {'file'=>'Day7PetkauCoreSNPLab.pdf', 'title'=>'Core SNP Phylogenies', 'date'=>'May 15, 2014'},
@@ -27,6 +28,8 @@ my %file_properties = (
 	'mst/Answers.md' => {'file'=>'Day6PetkauMSTAnswers.pdf', 'title'=>'Minimum Spanning Trees with PHYLOViZ: Answers', 'date'=>'May 14, 2014'}
 );
 
+my @gview_server_files = ('lab2-atlas-1.jpg','lab2-atlas-2.jpg','lab3-atlas-c1.jpg','lab3-atlas-c2.jpg');
+
 my $author = "Aaron Petkau";
 my $geometry = "margin=1in";
 my $highlight = "monochrome";
@@ -37,8 +40,17 @@ my $command;
 system("rm -r $lab_dir") if (-e $lab_dir);
 system("cp -r $lab_dir_orig $lab_dir");
 
+# resize gview server images even more so they fit on the page
+for my $file (@gview_server_files)
+{
+	my $image = "$lab_dir/gview-server/images/$file";
+	$command = "convert -resize 60% $image $image";
+	print "$command\n";
+	system("$command");
+}
+
 # prepare images by converting the dpi 
-$command = "find $lab_dir -iname '*.jpg' | xargs -I {} convert {} -resize 65% {}";
+$command = "find $lab_dir -iname '*.jpg' | xargs -I {} convert {} -resize $scale {}";
 print "$command\n";
 system($command);
 
