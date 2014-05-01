@@ -55,14 +55,14 @@ We will use the unblocked-FFP which is meant for smaller genomes.  The main step
 
    This step constructs a distance matrix based on the relative proportion of k-mer frequency counts in each genome.  A distance of *0* would indicate no difference in any k-mer frequency profile for two genomes while a larger number indicates a greater distance.  For example, for the two genomes above we get the following distance matrices.
 
-   * For 1-mer counts.
+   For 1-mer counts.
 
    ```
    genome1     0.00e+00 1.89e-01 
    genome2     1.89e-01 0.00e+00
    ```
 
-   * For 2-mer counts.
+   For 2-mer counts.
 
    ```
    genome1     0.00e+00 4.58e-01 
