@@ -1,18 +1,18 @@
-ST	Strain	Location	Year
-1	2010EL-1786	Haiti	2010
-2	2010EL-1749	Cameroon	2010
-3	2010EL-1796	Haiti	2010
-3	2010EL-1798	Haiti	2010
-4	2011EL-2317	Haiti	2011
-5	2012V-1001	United States	2011
-6	3554-08	Nepal	2008
-7	C6706	Peru	1991
-8	VC-1	Banke district, Nepalgunj municipality	2010
-8	VC-10	Banke district, Nepalgunj municipality	2010
-9	VC-14	Banke district, Nepalgunj municipality	2010
-10	VC-15	Dang Deokhuri district, Narayanpur VDC	2010
-11	VC-18	Banke district, Nepalgunj municipality	2010
-12	VC-19	Kathmandu district, Kathmandu city	2010
-13	VC-25	Rupandehi district, Butawal municipality	2010
-14	VC-26	Rupandehi district, Butawal municipality	2010
-15	VC-6	Banke district, Nepalgunj municipality	2010
+ST	Strain	Location	Year	NCBI Accession
+1	2010EL-1786	Haiti	2010	NC_016446,NC_016446
+2	2010EL-1749	Cameroon	2010	SRR773655
+3	2010EL-1796	Haiti	2010	SRR771582
+3	2010EL-1798	Haiti	2010	SRR074109
+4	2011EL-2317	Haiti	2011	SRR773175
+5	2012V-1001	United States	2011	SRR892331
+6	3554-08	Nepal	2008	SRR774919
+7	C6706	Peru	1991	SRR774920
+8	VC-1	Banke district, Nepalgunj municipality	2010	SRR308665
+8	VC-10	Banke district, Nepalgunj municipality	2010	SRR308707
+9	VC-14	Banke district, Nepalgunj municipality	2010	SRR308715
+10	VC-15	Dang Deokhuri district, Narayanpur VDC	2010	SRR308716
+11	VC-18	Banke district, Nepalgunj municipality	2010	SRR308721
+12	VC-19	Kathmandu district, Kathmandu city	2010	SRR308722
+13	VC-25	Rupandehi district, Butawal municipality	2010	SRR308726
+14	VC-26	Rupandehi district, Butawal municipality	2010	SRR308727
+15	VC-6	Banke district, Nepalgunj municipality	2010	SRR308703
