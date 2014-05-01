@@ -64,6 +64,6 @@ Both the core feature and core SNP phylogeny would exclude any regions that are 
 * ~100 kbp on the pan-genome BLAST Atlas where C6706 has the largest region missing, and VC-10,VC-26,VC-25,VC-15,VC-1 all have smaller gaps.
 * ~4000 kbp on the pan-genome BLAST Atlas where C6706 has a large unique region, and VC-10, VC-1 have smaller unique regions.
 
-![pan-genome blast atlas](../gview-server/images/lab4-pangenome-all.jpg) 
+![pan-genome blast atlas](../gview-server/images/lab4-pangenome-all.jpg)
 
 [core-snp-tree.jpg]: ../core-snp/images/output-10-tree.jpg
