@@ -1,8 +1,8 @@
-Answers
-=======
+Feature Frequency Profiling Phylogeny: Answers
+==============================================
 
-Answer 1
---------
+Question 1
+----------
 
 Running ffp with a kmer length of 10, 15, or 20 will generate a more diverse profile for each genome, but at the cost of taking longer to run.  The following table describes the running time and resulting trees.
 
@@ -15,8 +15,8 @@ Running ffp with a kmer length of 10, 15, or 20 will generate a more diverse pro
 
 Notice how the branch lengths are increasing and the genomes are beginning to visibly cluster as the kmer length increases.
 
-Answer 2
---------
+Question 2
+---------
 
 | K-mer Length | Time (s) | Result                                     |
 |:------------:|:--------:|:------------------------------------------:|
@@ -25,8 +25,8 @@ Answer 2
 
 Note: The publication at http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2806744/ describes a method for selecting the best parameters and also shows that the trees will converge quickly to a stable solution as the k-mer length increases.  They also describe a method for computing statistical support for the branching order of the major groups.  Please also see the publication http://www.pnas.org/content/108/20/8329 and the [documentation](http://sourceforge.net/projects/ffp-phylogeny/files/?source=navbar) for the FFP software for more details.
 
-Answer 3
---------
+Question 3
+---------
 
 Constructing the amio acid sequence-based tree can be accomplished with the following.
 
@@ -40,8 +40,8 @@ This generates a tree that should look similar to below.
 
 Some differences are that the amino acid sequence tree separates some of the branches of the tree a bit more visibly and the branch lengths are quite a bit shorter (especially those between VC-6, VC-10, VC-14, and the rest).
 
-Answer 4
---------
+Question 4
+----------
 
 ### Part A
 
