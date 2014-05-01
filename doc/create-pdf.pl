@@ -32,6 +32,9 @@ system("cp -r $lab_dir_orig $lab_dir");
 # prepare images by converting the dpi 
 system("find $lab_dir -iname '*.jpg' | xargs -I {} convert {} -units 'PixelsPerInch' -density $dpi_to_convert -resample '$dpi_to_convert' {}");
 
+# prepare images to not be figures by adding '\' right after
+system("find $lab_dir -iname '*.md' | xargs -I {} sed -i -e 's/\\.jpg)\$/\\.jpg)\\\\/' -e 's/\\.jpg\\]\$/\\.jpg\\]\\\\/' {}");
+
 for my $file (keys %file_properties)
 {
 	my $name = $file_properties{$file};
