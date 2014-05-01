@@ -251,8 +251,8 @@ In this lab we will look at exploring the results of GView Server within [GView]
 [plus-button.png]: images/plus-button.png
 [zoom-in.png]: images/magnifier-zoom-in.png
 [zoom-out.png]: images/magnifier-zoom-out.png
-[scale-in.png]: images/magnifier--plus.png
-[scale-out.png]: images/magnifier--minus.png
-[edit.png]: images/application--pencil.png
+[scale-in.png]: images/magnifier-plus.png
+[scale-out.png]: images/magnifier-minus.png
+[edit.png]: images/application-pencil.png
 [close.png]: images/cross-button.png
 [check.png]: images/tick-button.png
