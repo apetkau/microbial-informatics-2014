@@ -11,7 +11,8 @@ my $script_dir = $FindBin::Bin;
 
 my $cwd = getcwd;
 my $doc_dir = "$script_dir/../doc";
-my $lab_dir = "$script_dir/../labs";
+my $lab_dir_orig = "$script_dir/../labs";
+my $lab_dir = "$script_dir/labs";
 
 my %file_properties = (
 	"core-snp/README.md" => 'PetkauCoreSNPLab.pdf',
@@ -22,6 +23,14 @@ my $author = "Aaron Petkau";
 my $geometry = "margin=1in";
 my $highlight = "monochrome";
 my $template = "$script_dir/default.latex";
+my $dpi_to_convert = 144;
+
+# prepare directory with labs
+system("rm -r $lab_dir") if (-e $lab_dir);
+system("cp -r $lab_dir_orig $lab_dir");
+
+# prepare images by converting the dpi 
+system("find $lab_dir -iname '*.jpg' | xargs -I {} convert {} -units 'PixelsPerInch' -density $dpi_to_convert -resample '$dpi_to_convert' {}");
 
 for my $file (keys %file_properties)
 {
