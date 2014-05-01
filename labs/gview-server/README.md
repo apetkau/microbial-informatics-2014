@@ -25,7 +25,7 @@ This exercise will provide an introduction to loading a single GenBank file into
 1. **_Go to GView Server_**
   1. Go to http://server.gview.ca, you should see a page similar to the following.
 
-     ![main gview server][main-1]
+     ![main gview server][main-1.jpg]
 
   2. **_Select Analysis Type_**
     1. Set Analysis Type to Display genome features
@@ -34,7 +34,7 @@ This exercise will provide an introduction to loading a single GenBank file into
   2. Find */Course/MI_workshop_2014/day6/gview-server-annotations/reference/2010EL-1786-c1.gbk*
   3. Click **Continue**, you should be brought to a screen that looks like the following.
 
-     ![gview customize][lab1-1]
+     ![gview customize][lab1-1.jpg]
 
 4. **_Set Title_**
   1. Enter *2010EL-1786 Chromosome I* for the **Map title**.
@@ -47,19 +47,19 @@ This exercise will provide an introduction to loading a single GenBank file into
   1. In the section titled **Additional Customizations** find the row marked as *2010EL-1786-c1.gbk*.
   2. Click on the **Edit track styles** ![edit style][edit] icon.  Your screen should appear like the following.
 
-     ![edit appearance][lab1-2]
+     ![edit appearance][lab1-2.jpg]
 
   3. Find the **Feature colour** row and click on the coloured box.  From here, adjust the colour of the features to display.
   4. Click on the ![check][check] icon to close.  Click on the **ok** button to go back to the customize screen.
 8. **_Submit Data_**
   1. Click on **Complete** once all appearance customizations are finished.  You should see a screen similar to below.
 
-     ![complete][lab1-3]
+     ![complete][lab1-3.jpg]
 
 9. **_Wait for Results_**
   1. Click on the *Job ID* number to view the status and wait for the results.  Once complete you should be brought to a page that looks like the following.
 
-     ![gview results][lab1-4]
+     ![gview results][lab1-4.jpg]
 
 10. **_View Results_**
   1. You can click on the **Launch GView Webstart Circular** or **Launch GView Webstart Linear** links to view the results in GView.
@@ -98,7 +98,7 @@ A BLAST ATlas is used to depict the prescence and abscence of particular regions
 4. **_Upload Query Genomes_**
   1. Click on **Browse** next to **Select a sequence file**.
   2. Select */Course/MI_workshop_2014/day6/gview-server-annotations/other-genomes/2010EL-1749.gbk*.
-  3. Click on the **Plus** icon ![plus][plus-button] to add a new file to upload.
+  3. Click on the **Plus** icon ![plus][plus-button.png] to add a new file to upload.
   4. Click on **Browse** and select the file *VC-1.gbk*.
   5. Click on **Continue** when finished.  This should now upload all the selected genomes to GView Server.
 5. **_Adjust BLAST Parameters_**
@@ -110,7 +110,7 @@ A BLAST ATlas is used to depict the prescence and abscence of particular regions
   1. The next screen will give you a job id where your results can be found on completion.  Click on the link and wait for your analysis results to finish.
   2. On completion the results should look similar to below.  An example of the results can also be found at http://server.gview.ca/w/2014/L2.
 
-     ![lab2-atlas][lab2-1]
+     ![lab2-atlas][lab2-1.jpg]
 
 ### Questions
 
@@ -132,7 +132,7 @@ In order to construct a pan-genome BLAST atlas please proceed through the follow
 4. **_Upload Genomes_**
   1. Click on **Browse** next to **Select a sequence file**.
   2. Select */Course/MI_workshop_2014/day6/gview-server-annotations/reference/2010EL-1786-c1.gbk* (Chromosome I).
-  3. Click on the **Plus** icon ![plus][plus-button] to add a new file to upload.
+  3. Click on the **Plus** icon ![plus][plus-button.png] to add a new file to upload.
   4. Select *2010EL-1786-c2.gbk* (Chromosome II).
   5. Add the files *2010EL-1749.gbk* and *VC-1.gbk* using the same method.
   6. Click on **Continue** when finished.  This should now upload all the selected genomes to GView Server.
@@ -146,7 +146,7 @@ In order to construct a pan-genome BLAST atlas please proceed through the follow
   1. The next screen will give you a job id where your results can be found on completion.  Click on the link and wait for your analysis results to finish.
   2. On completion, your results should look similar to below.  An example of the results can be found at http://server.gview.ca/w/2014/L3.
 
-  ![pangenome atlas][lab3-1]
+  ![pangenome atlas][lab3-1.jpg]
 
 *Note: When constructing a BLAST Atlas, the files should be divided such that one file corresponds to one genome, and each file contains genes (not contigs).  These files can either be in __gbk__ or __fasta__ format.  For example:*
 
@@ -192,21 +192,21 @@ In this lab we will look at exploring the results of GView Server within [GView]
   1. Go to the results page for **Lab 3** or http://server.gview.ca/w/2014/L3.
   2. Find the Launch GView Webstart Circular link and click on it.  This should bring up a window asking you to open up the file gview-circular.jnlp.  Click Ok and wait for GView to finish loading.  When finished loading, you should get a window that looks like the following.
 
-    ![gview 1][lab4-1]
+    ![gview 1][lab4-1.jpg]
 
 2. **_Exploring the Genome_**
   1. Panning can be accomplished by clicking on and moving the screen.
-  2. Zooming can be accomplished by using the **mouse wheel**, going to **View > Zoom**, or using the ![zoom in][zoom-in] ![zoom out][zoom-out] ![scale in][scale-in] ![scale out][scale-out] icons.
+  2. Zooming can be accomplished by using the **mouse wheel**, going to **View > Zoom**, or using the ![zoom in][zoom-in.png] ![zoom out][zoom-out.png] ![scale in][scale-in.png] ![scale out][scale-out.png] icons.
   3. Elements (such as the Legend, Ruler, Labels) can be turned on/off by going to View and turning on/off what to view.
   4. Once you are satisfied with navigating in the genome viewer, you can proceed to the next step.
 3. **_Changing the Appearance_**
   1. Select **Style > Style Editor**.  In the Style Editor window the different style elements that can be changed are on the left.  You should see a screen that looks like the following.
 
-    ![gview 2][lab4-2]
+    ![gview 2][lab4-2.jpg]
 
   2. Find **Slots > Slot -1 > ((Type: "CDS" ...)** and click on it to expand the entry.  This contains settings for defining the style of slot -1 (the innermost slot).  To the right you should see the different parts of this set of features that can be changed.  This should look like the following.
 
-     ![gview slot -1][lab4-3]
+     ![gview slot -1][lab4-3.jpg]
 
   3. Find the box marked **Color** and click on it.  Adjust the color to whatever you see fit.
   4. When finished, click **Ok** on the color window, and then **Apply** in the style editor window.  You should see the color of the features displayed change.  Feel free to modify any other appearance settings at this point.
@@ -222,7 +222,7 @@ In this lab we will look at exploring the results of GView Server within [GView]
 
    The one downside to uploading large datasets is the longer time it takes to perform the analysis.  A pre-computed pan-genome analysis with the above set of files is displayed below and can be found at http://server.gview.ca/w/2014/L4Q1.
 
-   ![pangenome all][lab4-4]
+   ![pangenome all][lab4-4.jpg]
 
    Please load up this BLAST Atlas in GView and take some time to look at the data.  In order to make it easier to navigate, you may want to turn on lower quality rendering by selecting **View > Quality > Low**.
 
@@ -237,22 +237,22 @@ In this lab we will look at exploring the results of GView Server within [GView]
 [gview]: http://www.gview.ca
 [blast]: http://en.wikipedia.org/wiki/BLAST
 
-[main-1]: images/gview-server-main.jpg
-[lab1-1]: images/gview-server-customize.jpg
-[lab1-2]: images/lab1-appearance.jpg
-[lab1-3]: images/gview-complete.jpg
-[lab1-4]: images/gview-results-1.jpg
-[lab2-1]: images/lab2-atlas-1.jpg
-[lab3-1]: images/lab3-atlas-c1.jpg
-[lab4-1]: images/lab4-gview-1.jpg
-[lab4-2]: images/lab4-style-editor-2.jpg
-[lab4-3]: images/lab4-slot_-1_3.jpg
-[lab4-4]: images/lab4-pangenome-all.jpg
-[plus-button]: images/plus-button.png
-[zoom-in]: images/magnifier-zoom-in.png
-[zoom-out]: images/magnifier-zoom-out.png
-[scale-in]: images/magnifier--plus.png
-[scale-out]: images/magnifier--minus.png
-[edit]: images/application--pencil.png
-[close]: images/cross-button.png
-[check]: images/tick-button.png
+[main-1.jpg]: images/gview-server-main.jpg
+[lab1-1.jpg]: images/gview-server-customize.jpg
+[lab1-2.jpg]: images/lab1-appearance.jpg
+[lab1-3.jpg]: images/gview-complete.jpg
+[lab1-4.jpg]: images/gview-results-1.jpg
+[lab2-1.jpg]: images/lab2-atlas-1.jpg
+[lab3-1.jpg]: images/lab3-atlas-c1.jpg
+[lab4-1.jpg]: images/lab4-gview-1.jpg
+[lab4-2.jpg]: images/lab4-style-editor-2.jpg
+[lab4-3.jpg]: images/lab4-slot_-1_3.jpg
+[lab4-4.jpg]: images/lab4-pangenome-all.jpg
+[plus-button.png]: images/plus-button.png
+[zoom-in.png]: images/magnifier-zoom-in.png
+[zoom-out.png]: images/magnifier-zoom-out.png
+[scale-in.png]: images/magnifier--plus.png
+[scale-out.png]: images/magnifier--minus.png
+[edit.png]: images/application--pencil.png
+[close.png]: images/cross-button.png
+[check.png]: images/tick-button.png

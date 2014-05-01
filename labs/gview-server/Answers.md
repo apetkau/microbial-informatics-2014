@@ -8,9 +8,9 @@ Lab 2
 
 The following table shows a comparison of the BLAST atlas for both chromosomes.
 
-| Chromosome I                 | Chromosome II                |
-|:----------------------------:|:----------------------------:|
-| ![lab1a-atlas][lab2-atlas-1] | ![lab1b-atlas][lab2-atlas-2] |
+| Chromosome I                     | Chromosome II                        |
+|:--------------------------------:|:------------------------------------:|
+| ![lab1a-atlas][lab2-atlas-1.jpg] | ![lab1b-atlas][lab2-atlas-2.jpg]     |
 
 A few differences include:
 
@@ -25,9 +25,9 @@ Lab 3
 
 The following table shows a comparison of the BLAST Atlas and pan-genome BLAST Atlas.
 
-| BLAST Atlas                  | Pan-genome BLAST Atlas     |
-|:----------------------------:|:--------------------------:|
-| ![blast atlas][lab2-atlas-1] | ![pan atlas][lab3-atlas-1] |
+| BLAST Atlas                      | Pan-genome BLAST Atlas         |
+|:--------------------------------:|:------------------------------:|
+| ![blast atlas][lab2-atlas-1.jpg] | ![pan atlas][lab3-atlas-1.jpg] |
 
 The differences between the BLAST Atlas and the Pan-genome BLAST Atlas include:
 
@@ -38,9 +38,9 @@ The differences between the BLAST Atlas and the Pan-genome BLAST Atlas include:
 
 The following table shows a comparison of the pan-genome BLAST Atlas using both Chromosomes as the seed genome.
 
-| Seed: Chromosome I             | Seed: Chromosome II            |
-|:------------------------------:|:------------------------------:|
-| ![lab2-atlas-c1][lab3-atlas-1] | ![lab2-atlas-c2][lab3-atlas-2] |
+| Seed: Chromosome I                 | Seed: Chromosome II                    |
+|:----------------------------------:|:--------------------------------------:|
+| ![lab2-atlas-c1][lab3-atlas-1.jpg] | ![lab2-atlas-c2][lab3-atlas-2.jpg]     |
 
 The main difference is with the positions of features on the pan-genome.  Starting with a seed genome of Chromosome II places Chromosome II at the very beginning of the atlas (from position 0 kbp to 1000 kbp).
 
@@ -55,15 +55,15 @@ Lab 4
 
    1. The region around 2950 kbp.
 
-   ![2950][lab4-2950]
+   ![2950][lab4-2950.jpg]
 
    2. The region around 3940 kbp.
 
-   ![3940][lab4-3940]
+   ![3940][lab4-3940.jpg]
 
-[lab2-atlas-1]: images/lab2-atlas-1.jpg
-[lab2-atlas-2]: images/lab2-atlas-2.jpg
-[lab3-atlas-1]: images/lab3-atlas-c1.jpg
-[lab3-atlas-2]: images/lab3-atlas-c2.jpg
-[lab4-2950]: images/lab4-2950.jpg
-[lab4-3940]: images/lab4-3940.jpg
+[lab2-atlas-1.jpg]: images/lab2-atlas-1.jpg
+[lab2-atlas-2.jpg]: images/lab2-atlas-2.jpg
+[lab3-atlas-1.jpg]: images/lab3-atlas-c1.jpg
+[lab3-atlas-2.jpg]: images/lab3-atlas-c2.jpg
+[lab4-2950.jpg]: images/lab4-2950.jpg
+[lab4-3940.jpg]: images/lab4-3940.jpg
