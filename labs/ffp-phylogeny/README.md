@@ -6,8 +6,65 @@ This project contains a tutorial for clustering genomes by frequences of kmers u
 Introduction
 ============
 
-Tutorial
-========
+The Feature Frequence Profile method of phylogenetic comparison is a quick, alignment-free method for calculating a genetic distance between whole genomes and constructing a phylogenetic tree from these distances.  This method is described in in publications such as.
+
+* Sims GE, Jun SR, Wu GA, Kim SH. (2009) [Alignment-free genome comparison with feature frequency profiles (FFP) and optimal resolutions.](http://www.ncbi.nlm.nih.gov/pubmed/19188606) PNAS, 106,2677-82.
+* Sims GE and Kim SH (2011) [Whole-genome phylogeny of Escherichia coli/Shigella group by feature frequency profiles (FFPs).](http://www.pnas.org/content/108/20/8329.full) PNAS, 108, 8329-34.
+
+An overview of this method can be found in the following image.
+
+[![ffp overview](images/ffp-flow.jpg)](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2634796/figure/F5/)
+
+We will use the unblocked-FFP which is meant for smaller genomes.  The main steps of this method are.
+
+1. Count k-mer features in each genome for some specific value of k.
+
+   This counts k-mer frequencies in each genome and generates a vector storing the k-mer frequencies.  For example, with the below genomes.
+
+      >genome1
+      AATT
+
+      >genome2
+      AAGG
+
+   The following would be the 1-mer frequencies.
+
+      >genome1
+      A	4
+
+      >genome2
+      A 2 C 2
+   
+   The following would be the 2-mer frequencies.
+
+      >genome1
+      TT 2 AT 1
+
+      >genome2
+      TT 1 AG 1 CC 1
+
+   *Note: The k-mer frequency counts for reverse complemented k-mers (so for A and T in the 1-mer counts) are merged together.*
+
+2. Construct a distance matrix
+
+   This step constructs a distance matrix based on the relative proportion of k-mer frequency counts in each genome.  A distance of *0* would indicate no difference in any k-mer frequency profile for two genomes while a larger number indicates a greater distance.  For example, for the two genomes above we get the following distance matrices.
+
+   * For 1-mer counts.
+
+      genome1     0.00e+00 1.89e-01 
+      genome2     1.89e-01 0.00e+00
+
+   * For 2-mer counts.
+
+      genome1     0.00e+00 4.58e-01 
+      genome2     4.58e-01 0.00e+00
+
+3. Construct a distance-based phylogenetic tree using the distance matrix.  This can be accomplished using the Neighbor-joining method or UPGMA.
+
+The below lab goes through generating FFP phylogenies for the *V. Cholerae* data.
+
+Lab
+===
 
 Step 1: Construct Working Directory
 -----------------------------------
