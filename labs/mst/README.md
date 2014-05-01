@@ -157,7 +157,7 @@ Strain	emm type	Group carbohydrate	ST	Location	Collection
 1. Right click on the **Multi-Locus Sequence Typing** in the **Datasets** panel (you may have to expand **Lab2**).  From here you should see an option to Compute.  Within the Compute menu, click on **goeBURST**.
 2. Use **goeBURST distance** (the only option) for the distance and click on **Next**.  This should bring you to a screen that looks like the following.
 
-   ![goeburst level][lab2-1]
+   ![goeburst level][lab2-1.jpg]
 
 3. Leave the **Level** set to the default (*SLV*).  Click on **Finish** to start the analysis.
 
@@ -165,7 +165,7 @@ Strain	emm type	Group carbohydrate	ST	Location	Collection
 
 1. Once the analysis is complete, another item in the **Lab2** Datasets tree on the right titled *goeBURST (Level 1 ...)** should appear.  Double-click this item to view the goeBURST results.  This should bring up a screen that looks like the following.
 
-   ![goeburst level][lab2-2]
+   ![goeburst level][lab2-2.jpg]
 
 2. Any of the clonal complexes found are displayed in the main window (the number showing the sequence type).  Zooming in and out can be accomplished by right-clicking and dragging the mouse.  Different nodes in the graph can be dragged around to change the placement.
 3. The **Groups at...** panel shows a list of all the independent clonal groups found.  Clicking on an entry will display a different group.
@@ -183,5 +183,5 @@ Strain	emm type	Group carbohydrate	ST	Location	Collection
 [phyloviz]: http://www.phyloviz.net
 [mst-phyloviz-intro]: https://www.corefacility.ca/wiki/pub/BioinformaticsWorkshop/WebHome/Day6LabPetkauPhylovizgeoBURSTMay2014.pdf
 
-[lab2-1]: images/lab2-goeburst-level.jpg
-[lab2-2]: images/lab2-goeburst-level1.jpg
+[lab2-1.jpg]: images/lab2-goeburst-level.jpg
+[lab2-2.jpg]: images/lab2-goeburst-level1.jpg
