@@ -128,8 +128,7 @@ The above commands will create a directory __contigs/__ containing the assembled
 
 ```bash
 $ ls contigs
-2010EL-1749.fasta  2010EL-1796.fasta  2011EL-2317.fasta  3554-08.fasta  VC-10.fasta  VC-15.fasta  VC-19.fasta  VC-25.fasta  VC-6.fasta
-2010EL-1786.fasta  2010EL-1798.fasta  2012V-1001.fasta   C6706.fasta    VC-14.fasta  VC-18.fasta  VC-1.fasta   VC-26.fasta
+2010EL-1749.fasta  2010EL-1796.fasta  2011EL-2317.fasta  3554-08.fasta ...
 $ head contigs/2010EL-1749.fasta
 >NODE_1_length_53485_cov_3.80401_ID_1
 CTAAAAGGGGAGGGAACTGGATTTGTGTTCACTTGGAGTTTATTGCAGATTGTTGAGGGA
@@ -174,7 +173,8 @@ Note: Adding or modifying any of the genomes within the **contigs/** directory w
 In order to build the phylogeny the following command can be used:
 
 ```bash
-$ ffpry -l 5 contigs/*.fasta | ffpcol | ffprwn | ffpjsd -p genome_names.txt | ffptree > tree-5.txt
+$ ffpry -l 5 contigs/*.fasta | ffpcol | ffprwn | ffpjsd -p genome_names.txt | ffptree \
+   > tree-5.txt
 17 Taxa
 
 Cycle   Type    i       Length          Type    j       Length
@@ -206,7 +206,8 @@ Questions
 The constructed tree used a kmer length of 5 by default `ffpry -l 5`.  What effect do you think adjusing this value would have on the final result?  Please adjust this value to 10 by running:
 
 ```bash
-ffpry -l 10 contigs/*.fasta | ffpcol | ffprwn | ffpjsd -p genome_names.txt | ffptree > tree-10.txt
+$ ffpry -l 10 contigs/*.fasta | ffpcol | ffprwn | ffpjsd -p genome_names.txt | ffptree \
+   > tree-10.txt
 ```
 
 What effect does this have on the resulting tree?  Try adjusting to 15 and 20.
@@ -223,11 +224,12 @@ This shows the different 2-mer counts, 1988920 for combination RR, 1013697 for c
 It's possible to remove the compression to __R__ or __Y__ and leave the 4 state nucleotide encoding by using the `-d` parameter.  For example:
 
 	$ ffpry -d -l 2 contigs/2010EL-1749.fasta
-	TA      191171  TC      476051  TG      587034  TT      662771  AC      441843  AG      452107  AT   275766   CC      397991  CG      235525  GC      296088
+	TA      191171  TC      476051  TG      587034  TT      662771  AC ...
 
 For a given k-mer size, this will result in more information being generated.  To construct a tree with the nucleotide counts we can use (don't forget __-d__ in `ffpcol` as well):
 
-	$ ffpry -d -l 5 contigs/*.fasta | ffpcol -d | ffprwn | ffpjsd -p genome_names.txt | ffptree > tree-5-dna.txt
+	$ ffpry -d -l 5 contigs/*.fasta | ffpcol -d | ffprwn | ffpjsd -p genome_names.txt \
+	   | ffptree > tree-5-dna.txt
 
 Run this for a kmer size of 5 and 10.  What differences do you notice in the tree as well as the running time?
 
@@ -239,9 +241,7 @@ The Feature Frequency Profile method of constructing phylogenies can also be run
 $ cp /Course/MI_workshop_2014/day6/annotations-cholera.tar.gz ./
 $ tar -xvzf annotations-cholera.tar.gz
 $ ls annotations/
-2010EL-1749.faa  2010EL-1786.ffn  2010EL-1798.faa  2011EL-2317.ffn  3554-08.faa  C6706.ffn  VC-14.faa  VC-15.ffn  VC-19.faa  VC-1.ffn   VC-26.faa  VC-6.ffn
-2010EL-1749.ffn  2010EL-1796.faa  2010EL-1798.ffn  2012V-1001.faa   3554-08.ffn  VC-10.faa  VC-14.ffn  VC-18.faa  VC-19.ffn  VC-25.faa  VC-26.ffn
-2010EL-1786.faa  2010EL-1796.ffn  2011EL-2317.faa  2012V-1001.ffn   C6706.faa    VC-10.ffn  VC-15.faa  VC-18.ffn  VC-1.faa   VC-25.ffn  VC-6.faa
+2010EL-1749.faa  2010EL-1786.ffn  2010EL-1798.faa  2011EL-2317.ffn  3554-08.faa ...
 ```
 
 This extracts the annotations which were used in the previous annotations lab.  The amino acid sequence data are stored within the __.faa__ files.  For example:
@@ -280,7 +280,8 @@ In [Whole-genome phylogeny of Escherichia coli/Shigella group by feature frequen
 A similar **Core Feature** can be constructed by first filtering out k-mers using the `ffpfilt` program (which takes the place of `ffpcol`).  This can be accomplished with.
 
 ```bash
-$ ffpry -l 20 contigs/*.fasta | ffpfilt -l 0.05 -u 0.95 -e -s | ffprwn | ffpjsd -p genome_names.txt | ffptree > tree-core-20.txt
+$ ffpry -l 20 contigs/*.fasta | ffpfilt -l 0.05 -u 0.95 -e -s | ffprwn \
+   | ffpjsd -p genome_names.txt | ffptree > tree-core-20.txt
 ```
 
 #### Part A

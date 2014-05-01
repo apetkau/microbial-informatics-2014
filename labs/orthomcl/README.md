@@ -45,12 +45,10 @@ This will extract the annotated genomes into a directory __annotations-small/__.
 
 ```bash
 $ ls annotations-small/
-2010EL-1749.faa  2010EL-1786.ffn  2010EL-1798.faa  2011EL-2317.ffn  3554-08.faa  C6706.ffn         VC-10.ffn  VC-15.faa  VC-18.ffn  VC-1.faa   VC-25.ffn  VC-6.faa
-2010EL-1749.ffn  2010EL-1796.faa  2010EL-1798.ffn  2012V-1001.faa   3554-08.ffn  groups-small.txt  VC-14.faa  VC-15.ffn  VC-19.faa  VC-1.ffn   VC-26.faa  VC-6.ffn
-2010EL-1786.faa  2010EL-1796.ffn  2011EL-2317.faa  2012V-1001.ffn   C6706.faa    VC-10.faa         VC-14.ffn  VC-18.faa  VC-19.ffn  VC-25.faa  VC-26.ffn
+2010EL-1749.faa  2010EL-1786.ffn  2010EL-1798.faa  2011EL-2317.ffn  3554-08.faa  C6706.ffn ...
 ```
 
-The files __*.faa__ contains the genes as amino acid sequences.  The files __*.ffn__ contain the genes as nucleotide sequences.  For example:
+The files __.faa__ contains the genes as amino acid sequences.  The files __.ffn__ contain the genes as nucleotide sequences.  For example:
 
 ```bash
 $ head annotations-small/2010EL-1749.faa
@@ -146,7 +144,8 @@ Now we have constructed a database, called **orthomcl** which is located on the 
 All the information we supplied to construct the database in the previous step must be written into a configuration file for OrthoMCL to know how to connect to the database.  This can be accomplished with the following command:
 
 ```bash
-$ orthomcl-setup-database.pl --user orthomcl --password password --host localhost --database orthomcl > orthomcl.conf
+$ orthomcl-setup-database.pl --user orthomcl --password password --host localhost \
+   --database orthomcl > orthomcl.conf
 Connecting to database orthomcl on host localhost with user orthomcl ...OK
 ```
 
@@ -173,7 +172,7 @@ For more details on how to setup and install the OrthoMCL Pipeline please see th
 
 ### Step 4: Renaming input files
 
-The OrthoMCL Pipeline takes as input the __*.faa__ amino acid sequence files, but assumes its input files end with the __*.fasta__ extension.  To properly rename these files please use the following command.
+The OrthoMCL Pipeline takes as input the __.faa__ amino acid sequence files, but assumes its input files end with the __.fasta__ extension.  To properly rename these files please use the following command.
 
 ```bash
 $ prename 's/\.faa/\.fasta/' annotations-small/*.faa
@@ -183,9 +182,7 @@ This rename all the __*.faa__ files within the **annotations-small/** directory.
 
 ```bash
 $ ls annotations-small
-2010EL-1749.fasta  2010EL-1786.ffn    2010EL-1798.fasta  2011EL-2317.ffn   3554-08.fasta  C6706.ffn         VC-10.ffn    VC-15.fasta  VC-18.ffn    VC-1.fasta   VC-25.ffn    VC-6.fasta
-2010EL-1749.ffn    2010EL-1796.fasta  2010EL-1798.ffn    2012V-1001.fasta  3554-08.ffn    groups-small.txt  VC-14.fasta  VC-15.ffn    VC-19.fasta  VC-1.ffn     VC-26.fasta  VC-6.ffn
-2010EL-1786.fasta  2010EL-1796.ffn    2011EL-2317.fasta  2012V-1001.ffn    C6706.fasta    VC-10.fasta       VC-14.ffn    VC-18.fasta  VC-19.ffn    VC-25.fasta  VC-26.ffn
+2010EL-1749.fasta  2010EL-1786.ffn    2010EL-1798.fasta  2011EL-2317.ffn   3554-08.fasta ... 
 ```
 
 ### Step 5: Running OrthoMCL
@@ -193,7 +190,8 @@ $ ls annotations-small
 In order to run OrthoMCL please use the following command.
 
 ```bash
-$ orthomcl-pipeline -i annotations-small/ -o orthomcl-output-small -m orthomcl.conf --nocompliant
+$ orthomcl-pipeline -i annotations-small/ -o orthomcl-output-small -m orthomcl.conf \
+   --nocompliant
 Starting OrthoMCL pipeline on: Tue Apr 22 18:16:11 2014
 Git commit: 2467fdfe0976354f0ca42841fff777c74971f66e
 
@@ -205,7 +203,8 @@ Git commit: 2467fdfe0976354f0ca42841fff777c74971f66e
 If you get the message:
 
 ```
-Warning: some tables exist already in database dbi:mysql:orthomcl:localhost:mysql_local_infile, user=orthomcl, database_name=orthomcl. Do you want to remove (y/n)?
+Warning: some tables exist already in database dbi:mysql:orthomcl:localhost:mysql_local_infile, \
+user=orthomcl, database_name=orthomcl. Do you want to remove (y/n)?
 ```
 
 Please answer __yes__.  This will simply delete any old results stored in the database so that OrthoMCL can run properly.
@@ -215,8 +214,8 @@ When the pipeline is finished you should see the following output.
 ```
 Orthomcl Pipeline ended on Tue Apr 22 18:16:18 2014
 Took 0.12 minutes to complete
-Parameters used can be viewed in orthomcl.conf and /home/aaron/microbialinformatics2014/orthomcl-tutorial/orthomcl-output-small/log/run.properties
-Groups file can be found in /home/aaron/microbialinformatics2014/orthomcl-tutorial/orthomcl-output-small/groups/groups.txt
+Parameters used can be viewed in orthomcl.conf and /path/orthomcl-output-small/log/run.properties
+Groups file can be found in /path/orthomcl-output-small/groups/groups.txt
 ```
 
 ### Step 6: Example Results
@@ -272,7 +271,8 @@ __genome-groups.txt:__
 
 ```
 nepal: VC-25,VC-26,VC-14
-haiti: 2010EL-1749,2010EL-1786,2010EL-1796,2010EL-1798,2011EL-2317,2012V-1001,3554-08,VC-10,VC-15,VC-18,VC-19,VC-1,VC-6
+haiti: 2010EL-1749,2010EL-1786,2010EL-1796,2010EL-1798,2011EL-2317,2012V-1001,\
+3554-08,VC-10,VC-15,VC-18,VC-19,VC-1,VC-6
 c6706: C6706
 ```
 
@@ -281,7 +281,8 @@ An example __genome-groups.txt__ file has been included with the rest of the dat
 To run `nml_parse_orthomcl.pl` and generate a Venn Diagram, please do the following:
 
 ```bash
-$ nml_parse_orthomcl.pl -i orthomcl-output-small/groups/groups.txt -g genome-groups.txt -s --draw -o orthomcl-stats.txt --genes
+$ nml_parse_orthomcl.pl -i orthomcl-output-small/groups/groups.txt -g genome-groups.txt \
+   -s --draw -o orthomcl-stats.txt --genes
 ```
 
 This will generate two main files of interest: an image file named __genome-groups.txt.svg__ and some statistics about the results in __orthomcl-stats.txt__.
@@ -322,8 +323,8 @@ Total genes seen: 317
 
 'Core' gene sets that is contained: 17 genomes has 17 genes
 Found 2 for the following set: haiti
-2010EL-1749_02114,2010EL-1796_03119,2010EL-1798_02875,2011EL-2317_03311,2012V-1001_01554,3554-08_03049,VC-10_00387,VC-15_00297,VC-18_00534,VC-19_00302,VC-1_00125,VC-6_00154,Vch1786_I0090
-2010EL-1749_02115,2010EL-1796_03118,2010EL-1798_02876,2011EL-2317_03310,2012V-1001_01555,3554-08_03050,VC-10_00386,VC-15_00298,VC-18_00533,VC-19_00303,VC-1_00124,VC-6_00155,Vch1786_I0091
+2010EL-1749_02114,2010EL-1796_03119,2010EL-1798_02875,2011EL-2317_03311, ...
+2010EL-1749_02115,2010EL-1796_03118,2010EL-1798_02876,2011EL-2317_03310, ...
 Found 1 for the following set: c6706
 C6706_01322,C6706_01324
 ```

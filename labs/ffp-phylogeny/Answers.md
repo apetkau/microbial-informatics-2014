@@ -31,7 +31,8 @@ Question 3
 Constructing the amio acid sequence-based tree can be accomplished with the following.
 
 ```bash
-$ ffpaa -l 5 annotations/*.faa | ffpcol -a | ffprwn | ffpjsd -p genome_names_faa.txt | ffptree > tree-5-aa.txt
+$ ffpaa -l 5 annotations/*.faa | ffpcol -a | ffprwn | ffpjsd -p genome_names_faa.txt \
+   | ffptree > tree-5-aa.txt
 ```
 
 This generates a tree that should look similar to below.
