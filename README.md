@@ -1,7 +1,7 @@
 Microbial Informatics 2014 Labs
 ===============================
 
-Welcome to the Microbial Informatics 2014 labs.  This page contains a number of tutorials on performing data analysis on whole genome sequencing data for the [Microbial Informatics][workshop-2014] workshop hosted at the National Microbiology Laboratory in Winnipeg, Canada.
+Welcome to the Microbial Informatics 2014 labs.  This page contains a number of tutorials on performing data analysis on whole genome sequencing data for the [Microbial Informatics][workshop-2014] workshop hosted at the National Microbiology Laboratory in Winnipeg, Canada.  These labs can be accessed online at https://github.com/apetkau/microbial-informatics-2014.
 
 Introduction
 ------------
