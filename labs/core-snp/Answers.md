@@ -10,16 +10,15 @@ To change the minimum coverage from *2* to *5* please create a new file, *mappin
 %YAML 1.1
 ---
 min_coverage: 5
-freebayes_params: '--pvar 0 --ploidy 1 --left-align-indels --min-mapping-quality 30 --min-base-quality 30 --min-alternate-fraction 0.75'
-smalt_index: '-k 13 -s 6'
-smalt_map: '-n 1 -f samsoft -r -1 -y 0.5'
+...
 ```
 
 To re-run the phylogenetic pipeline please use the following commands.
 
 ```bash
-$ snp_phylogenomics_control --mode mapping --input-dir cholera-files-subsample/fastq/ --reference cholera-files-subsample/reference/2010EL-1786-c1_2
-000_2400kb.fasta --output output-10-subsample-5 --config mapping.5.conf
+$ snp_phylogenomics_control --mode mapping --input-dir cholera-files-subsample/fastq/ \
+   --reference cholera-files-subsample/reference/2010EL-1786-c1_2000_2400kb.fasta \
+   --output output-10-subsample-5 --config mapping.5.conf
 ```
 
 To find the total number of *valid* positions used please run.
