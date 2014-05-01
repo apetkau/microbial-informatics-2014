@@ -28,13 +28,7 @@ The data for these tutorials is a set of whole genome sequencing data from a num
 | VC-26        | Rupandehi district, Butawal municipality  | 2010  | [SRR308727][SRR308727]                                |
 | VC-6         | Banke district, Nepalgunj municipality    | 2010  | [SRR308703][SRR308703]                                |
 
-These labs will go through data analysis on these above strains.  In particular, we will go through analysis to generate figures from http://mbio.asm.org/content/4/4/e00398-13.abstract similar to below:
-
-* [Figure 1](http://mbio.asm.org/content/4/4/e00398-13/F1.expansion.html) ![figure 1](images/F1-thumb.jpg): In the Minimum Spanning Tree lab.
-* [Figure 2](http://mbio.asm.org/content/4/4/e00398-13/F2.expansion.html) ![figure 2](images/F2-thumb.jpg): In the GView Server lab.
-* [Figure S3](http://mbio.asm.org/content/suppl/2013/06/29/mBio.00398-13.DCSupplemental/mbo003131547sf04.pdf) ![figure s3](images/FS3-thumb.jpg): In the Core SNP Phylogenies lab.
-
-These tutorials will not reproduce the exact types of data analysis performed in the publications but should help in getting started working with microbial whole genome sequence data.
+These labs will go through data analysis on these above strains.  We will not reproduce the exact types of figures from the publications but the labs should help in getting started working with microbial whole genome sequence data.
 
 These labs assume that you are familar working within a Linux environment and using the command line.
 
