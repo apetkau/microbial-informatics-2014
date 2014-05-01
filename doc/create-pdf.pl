@@ -24,7 +24,7 @@ my %file_properties = (
 	'orthomcl/README.md' => 'Day6PetkauOrthoMCLLab.pdf',
 	'orthomcl/Answers.md' => 'Day6PetkauOrthoMCLAnswers.pdf',
 	'mst/README.md' => 'Day6PetkauMSTLab.pdf',
-	'mst/Answers.md' => 'Day6PetkauCoreMSTAnswers.pdf'
+	'mst/Answers.md' => 'Day6PetkauMSTAnswers.pdf'
 );
 
 my $author = "Aaron Petkau";
