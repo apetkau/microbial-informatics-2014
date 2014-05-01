@@ -53,11 +53,15 @@ Lab 4
 
 2. This unique region of 74 genes found in every genome except C6706 corresponds to a number of different regions in this BLAST Atlas.  These include:
 
-   1. The region around 2950 kbp.
+   1. The region around 200 kbp.
+
+   ![200][lab4-200.jpg]
+
+   2. The region around 2950 kbp.
 
    ![2950][lab4-2950.jpg]
 
-   2. The region around 3940 kbp.
+   3. The region around 3940 kbp.
 
    ![3940][lab4-3940.jpg]
 
@@ -67,3 +71,4 @@ Lab 4
 [lab3-atlas-2.jpg]: images/lab3-atlas-c2.jpg
 [lab4-2950.jpg]: images/lab4-2950.jpg
 [lab4-3940.jpg]: images/lab4-3940.jpg
+[lab4-200.jpg]: images/lab4-200.jpg
