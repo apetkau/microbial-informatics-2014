@@ -1,10 +1,10 @@
-GView Server Answers
-====================
+GView Server: Answers
+=====================
 
 Lab 2
 -----
 
-### Answer 1
+### Question 1
 
 The following table shows a comparison of the BLAST atlas for both chromosomes.
 
@@ -21,7 +21,7 @@ A few differences include:
 Lab 3
 -----
 
-### Answer 1
+### Question 1
 
 The following table shows a comparison of the BLAST Atlas and pan-genome BLAST Atlas.
 
@@ -34,7 +34,7 @@ The differences between the BLAST Atlas and the Pan-genome BLAST Atlas include:
 * Chromosome II of 2010EL-1786 is appended on the end of Chromosome I within the Pan-genome BLAST Atlas.
 * There is a small, extra region not found on Chromosome I or II of 2010EL-1786, but that is found on VC-1 that is appended on the end of Chromosome II.
 
-### Answer 2
+### Question 2
 
 The following table shows a comparison of the pan-genome BLAST Atlas using both Chromosomes as the seed genome.
 
@@ -47,23 +47,23 @@ The main difference is with the positions of features on the pan-genome.  Starti
 Lab 4
 -----
 
-### Answer 2
+### Question 2
 
 1. The 3269 genes that are part of the core genome set from the OrthoMCL analysis correspond to all the places in the pan-genome BLAST Atlas containing coloured blocks in every single slot.  Since most of the BLAST Atlas contains coloured blocks in every slot then both the pan-genome BLAST Atlas and the OrthoMCL analysis appear fairly consistent.
 
 2. This unique region of 74 genes found in every genome except C6706 corresponds to a number of different regions in this BLAST Atlas.  These include:
 
-   1. The region around 200 kbp.
+    1. The region around 200 kbp.
 
-   ![200][lab4-200.jpg]
+    ![200][lab4-200.jpg]
 
-   2. The region around 2950 kbp.
+    2. The region around 2950 kbp.
 
-   ![2950][lab4-2950.jpg]
+    ![2950][lab4-2950.jpg]
 
-   3. The region around 3940 kbp.
+    3. The region around 3940 kbp.
 
-   ![3940][lab4-3940.jpg]
+    ![3940][lab4-3940.jpg]
 
 [lab2-atlas-1.jpg]: images/lab2-atlas-1.jpg
 [lab2-atlas-2.jpg]: images/lab2-atlas-2.jpg

@@ -2,7 +2,7 @@ Ortholog Detection with OrthoMCL
 ================================
 
 Introduction
-============
+------------
 
 [OrthoMCL](http://genome.cshlp.org/content/13/9/2178.full) is a set of tools that can be used for identification of orthologous genes within a set of genomes.  An overview of OrthoMCL is as follows.
 
@@ -18,13 +18,12 @@ The first step involves performing BLAST of every gene against every other gene.
 
 Due to the complexity of running OrthoMCL, this tutorial will use the [OrthoMCL Pipeline](https://github.com/apetkau/orthomcl-pipeline) to help automate this process.  There are still a number of steps that must be performed which are listed below.
 
-Tutorial
-========
+Lab
+---
 
 The data for this tutorial includes a number of genes from a set of *V. Cholerae* genomes.  Due to the amount of time it takes to run OrthoMCL, the number of genes within each genome was reduced ahead of time to ~20.  For a description of running OrthoMCL on entire set of genes from each genome please see the [following](READMELargeDataset.md).
 
-Step 1: Obtaining input Data
-----------------------------
+### Step 1: Obtaining input Data
 
 First we create a directory to contain all the files that will be created from OrthoMCL.  This can be done as follows.
 
@@ -67,8 +66,7 @@ AGTTTCTTTTGGGCTTTGATCGCTTTCTTGATGGCGCTGATCAATTTCTGGTCAACACGG
 ...
 ```
 
-Step 2: Database Preparation
-----------------------------
+### Step 2: Database Preparation
 
 OrthoMCL requires the use of a database, such as [MySQL](http://www.mysql.com/), to do some of the analysis.  This requires a bit of manual setup.  In particular, we need to construct a location and a user in this database to store our data.  This can be done with the following commands.
 
@@ -143,8 +141,7 @@ Bye
 
 Now we have constructed a database, called **orthomcl** which is located on the current machine **localhost**, accessible by the user **orthomcl@localhost** with the password **password**.
 
-Step 3: Setup OrthoMCL Database Configuration File
---------------------------------------------------
+### Step 3: Setup OrthoMCL Database Configuration File
 
 All the information we supplied to construct the database in the previous step must be written into a configuration file for OrthoMCL to know how to connect to the database.  This can be accomplished with the following command:
 
@@ -174,8 +171,7 @@ For a more detailed description of this file please see the [OrthoMCL](http://or
 
 For more details on how to setup and install the OrthoMCL Pipeline please see the [install](https://github.com/apetkau/orthomcl-pipeline/blob/master/INSTALL.md) documentation.
 
-Step 4: Renaming input files
-----------------------------
+### Step 4: Renaming input files
 
 The OrthoMCL Pipeline takes as input the __*.faa__ amino acid sequence files, but assumes its input files end with the __*.fasta__ extension.  To properly rename these files please use the following command.
 
@@ -192,8 +188,7 @@ $ ls annotations-small
 2010EL-1786.fasta  2010EL-1796.ffn    2011EL-2317.fasta  2012V-1001.ffn    C6706.fasta    VC-10.fasta       VC-14.ffn    VC-18.fasta  VC-19.ffn    VC-25.fasta  VC-26.ffn
 ```
 
-Step 5: Running OrthoMCL
-------------------------
+### Step 5: Running OrthoMCL
 
 In order to run OrthoMCL please use the following command.
 
@@ -224,8 +219,7 @@ Parameters used can be viewed in orthomcl.conf and /home/aaron/microbialinformat
 Groups file can be found in /home/aaron/microbialinformatics2014/orthomcl-tutorial/orthomcl-output-small/groups/groups.txt
 ```
 
-Step 6: Example Results
------------------------
+### Step 6: Example Results
 
 If the pipeline does not run properly, some example results can be used for the below steps.  These can be obtained with the following commands.
 
@@ -236,8 +230,7 @@ $ tar -xvvzf orthomcl-output-small.tar.gz
 
 This will extract the output to a directory named __orthomcl-output-small/__.
 
-Step 7: Looking at the Results
-------------------------------
+### Step 7: Looking at the Results
 
 The output directory contains a number of different sub directories, log files, and analysis results.  This looks as follows.
 
@@ -269,8 +262,7 @@ $ grep -A1 '3554-08_01855' annotations-small/3554-08.fasta
 MDARLFDNTQTLRASVLCGLSFFWALIAFLMALINFWSTRLVELASLELVCAFYSLYIYS
 ```
 
-Step 8: Venn Diagram of Orthologs
----------------------------------
+### Step 8: Venn Diagram of Orthologs
 
 Looking at text files can be useful but sometimes you will want to get an overall picture of the results and make comparisons of genes among different groups of genomes.  This can be accomplished with a script `nml_parse_orthomcl.pl` which will construct a Venn Diagram of the genes in common among a group of genomes.
 
@@ -348,19 +340,22 @@ annotations-small/2010EL-1749.fasta:>2010EL-1749_02114 DNA polymerase V subunit 
 This shows the product of the gene (as annotated by prokka) and the file it was found within.
 
 Questions
-=========
+---------
 
-1. Repeat the `grep` command to search for the products of the other gene ids (such as **2010EL-1796_03119**, **VC-10_00387**, and **Vch1786_I0090**) in the first unique haiti gene set.  What are all these products?  Are they all the same?  Why or why not?
+### Question 1
+Repeat the `grep` command to search for the products of the other gene ids (such as **2010EL-1796_03119**, **VC-10_00387**, and **Vch1786_I0090**) in the first unique haiti gene set.  What are all these products?  Are they all the same?  Why or why not?
 
-2. The above steps only walked through running a small subsample of genes for each of the genomes due to time constraints.  To see what sort of results you would get with a full run through OrthoMCL please copy and extract the **example-large.tar.gz** flie.  This can be obtained with the commands.
+### Question 2
 
-   ```bash
-   $ cp /Course/MI_workshop_2014/day6/example-large.tar.gz ./
-   $ tar -xvzf example-large.tar.gz
-   ```
+The above steps only walked through running a small subsample of genes for each of the genomes due to time constraints.  To see what sort of results you would get with a full run through OrthoMCL please copy and extract the **example-large.tar.gz** flie.  This can be obtained with the commands.
 
-   This extracts the full dataset to a directory, **example-large/**, which contains the full set of annotations and an OrthoMCL groups.txt file from running OrthoMCL.  More information on how this dataset was run can be found at [READMELargeDataset.md](READMELargeDataset.md).
-   
-   Run the `nml_parse_orthomcl.pl` script on this dataset.  What does the Venn Diagram look like?  How many genes are within the core genome?
+```bash
+$ cp /Course/MI_workshop_2014/day6/example-large.tar.gz ./
+$ tar -xvzf example-large.tar.gz
+```
+
+This extracts the full dataset to a directory, **example-large/**, which contains the full set of annotations and an OrthoMCL groups.txt file from running OrthoMCL.  More information on how this dataset was run can be found at [READMELargeDataset.md](READMELargeDataset.md).
+
+Run the `nml_parse_orthomcl.pl` script on this dataset.  What does the Venn Diagram look like?  How many genes are within the core genome?
 
 [Answers](Answers.md)

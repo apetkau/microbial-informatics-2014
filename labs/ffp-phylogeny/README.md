@@ -4,7 +4,7 @@ Feature Frequency Profiling Phylogeny Tutorial
 This project contains a tutorial for clustering genomes by frequences of kmers using <http://sourceforge.net/projects/ffp-phylogeny/> software.  This uses a custom version of ffp-phylogeny available at <https://github.com/apetkau/ffp-3.19-custom>.
 
 Introduction
-============
+------------
 
 The Feature Frequence Profile method of phylogenetic comparison is a quick, alignment-free method for calculating a genetic distance between whole genomes and constructing a phylogenetic tree from these distances.  This method is described in in publications such as.
 
@@ -19,65 +19,64 @@ We will use the unblocked-FFP which is meant for smaller genomes.  The main step
 
 1. Count k-mer features in each genome for some specific value of k.
 
-   This counts k-mer frequencies in each genome and generates a vector storing the k-mer frequencies.  For example, with the below genomes.
+    This counts k-mer frequencies in each genome and generates a vector storing the k-mer frequencies.  For example, with the below genomes.
 
-   ```
-   >genome1
-   AATT
+    ```
+    >genome1
+    AATT
 
-   >genome2
-   AAGG
-   ```
+    >genome2
+    AAGG
+    ```
 
-   The following would be the 1-mer frequencies.
+    The following would be the 1-mer frequencies.
 
-   ```
-   >genome1
-   A 4
+    ```
+    >genome1
+    A 4
 
-   >genome2
-   A 2 C 2
-   ```
-   
-   The following would be the 2-mer frequencies.
+    >genome2
+    A 2 C 2
+    ```
+    
+    The following would be the 2-mer frequencies.
 
-   ```
-   >genome1
-   TT 2 AT 1
+    ```
+    >genome1
+    TT 2 AT 1
 
-   >genome2
-   TT 1 AG 1 CC 1
-   ```
+    >genome2
+    TT 1 AG 1 CC 1
+    ```
 
-   *Note: The k-mer frequency counts for reverse complemented k-mers (so for A and T in the 1-mer counts) are merged together.*
+    *Note: The k-mer frequency counts for reverse complemented k-mers (so for A and T in the 1-mer counts) are merged together.*
 
 2. Construct a distance matrix
 
-   This step constructs a distance matrix based on the relative proportion of k-mer frequency counts in each genome.  A distance of *0* would indicate no difference in any k-mer frequency profile for two genomes while a larger number indicates a greater distance.  For example, for the two genomes above we get the following distance matrices.
+    This step constructs a distance matrix based on the relative proportion of k-mer frequency counts in each genome.  A distance of *0* would indicate no difference in any k-mer frequency profile for two genomes while a larger number indicates a greater distance.  For example, for the two genomes above we get the following distance matrices.
 
-   For 1-mer counts.
+    For 1-mer counts.
 
-   ```
-   genome1     0.00e+00 1.89e-01 
-   genome2     1.89e-01 0.00e+00
-   ```
+    ```
+    genome1     0.00e+00 1.89e-01 
+    genome2     1.89e-01 0.00e+00
+    ```
 
-   For 2-mer counts.
+    For 2-mer counts.
 
-   ```
-   genome1     0.00e+00 4.58e-01 
-   genome2     4.58e-01 0.00e+00
-   ```
+    ```
+    genome1     0.00e+00 4.58e-01 
+    genome2     4.58e-01 0.00e+00
+    ```
 
 3. Construct a distance-based phylogenetic tree using the distance matrix.  This can be accomplished using the Neighbor-joining method or UPGMA.
 
 The below lab goes through generating FFP phylogenies for the *V. Cholerae* data.
 
 Lab
-===
+---
 
-Step 1: Construct Working Directory
------------------------------------
+### Step 1: Construct Working Directory
 
 To construct a working directory for this lab and obtain a copy of the instructions the following commands can be used.
 
@@ -88,8 +87,7 @@ $ ls
 Answers.md  images  README.md
 ```
 
-Step 2: Download Software
--------------------------
+### Step 2: Download Software
 
 Download software from <https://github.com/apetkau/ffp-3.19-custom> and install using the following steps:
 
@@ -117,8 +115,7 @@ Usage: ffpry [OPTION]... [FILE]...
 Try `ffpry --help' for more information
 ```
 
-Step 3: Input Files
--------------------
+### Step 3: Input Files
 
 The input files for this software are assembled genomes in FASTA format.  The input data for this tutorial can be obtained with the following commands.
 
@@ -139,8 +136,7 @@ CTAAAAGGGGAGGGAACTGGATTTGTGTTCACTTGGAGTTTATTGCAGATTGTTGAGGGA
 TAACGTGTTTATAGACATTTTAGAGTTAAAGCCTTAACTCTAAATCATTCGTTTCGGATT
 ```
 
-Step 4: Generate genome name list
----------------------------------
+### Step 4: Generate genome name list
 
 In order to build a tree using `ffp` a list of all the names of each genome must be provided, one genome per line.  These must be in the same order as is processed by the commands in **Step 5**.  Each name must be unique and can be no more than 50 characters (original version was no more than 10 characters).  This file can be generated with the following commands:
 
@@ -173,8 +169,7 @@ VC-6
 
 Note: Adding or modifying any of the genomes within the **contigs/** directory will require re-generating the **genome_names.txt** file.
 
-Step 5: Build Phylogeny
------------------------
+### Step 5: Build Phylogeny
 
 In order to build the phylogeny the following command can be used:
 
@@ -190,8 +185,7 @@ Cycle   Type    i       Length          Type    j       Length
 
 This command generates a neighbor-joining tree from the set of genomes and writes the tree to a file **tree-5.txt**.
 
-Step 6: View with FigTree
--------------------------
+### Step 6: View with FigTree
 
 In order to view the generated tree the following command can be used.
 
@@ -205,10 +199,9 @@ This should display a tree similar to below.
 
 
 Questions
-=========
+---------
 
-Question 1
-----------
+### Question 1
 
 The constructed tree used a kmer length of 5 by default `ffpry -l 5`.  What effect do you think adjusing this value would have on the final result?  Please adjust this value to 10 by running:
 
@@ -218,8 +211,7 @@ ffpry -l 10 contigs/*.fasta | ffpcol | ffprwn | ffpjsd -p genome_names.txt | ffp
 
 What effect does this have on the resulting tree?  Try adjusting to 15 and 20.
 
-Question 2
-----------
+### Question 2
 
 By default, the `ffpry` software will compress the nucleotide characters into one of two states: either a purine __R__ or pyrimidine __Y__.  This can be seen by examining the output of the `ffpry` program.
 
@@ -239,8 +231,7 @@ For a given k-mer size, this will result in more information being generated.  T
 
 Run this for a kmer size of 5 and 10.  What differences do you notice in the tree as well as the running time?
 
-Question 3
-----------
+### Question 3
 
 The Feature Frequency Profile method of constructing phylogenies can also be run on amino acid sequence data as well as nucleotide data.  This requires access to the genome annotations instead of the contigs.  These can be accessed by running.
 
@@ -279,8 +270,7 @@ $ ls annotations/*.faa | sed -e 's/^annotations\///' -e 's/\.faa$//' > genome_na
 
 Please use what you know to construct an amio acid ffp tree with a k-mer length of 5 using the files ``annotations/*.faa``.  What differences do you notice?
 
-Question 4
-----------
+### Question 4
 
 In [Whole-genome phylogeny of Escherichia coli/Shigella group by feature frequency profiles (FFPs)](http://www.pnas.org/content/108/20/8329.full) the authors discusses using this same FFP method to construct two different types of phylogenies (depicted in [Figure 1](http://www.pnas.org/content/108/20/8329/F1.expansion.html)).
 
@@ -293,11 +283,11 @@ A similar **Core Feature** can be constructed by first filtering out k-mers usin
 $ ffpry -l 20 contigs/*.fasta | ffpfilt -l 0.05 -u 0.95 -e -s | ffprwn | ffpjsd -p genome_names.txt | ffptree > tree-core-20.txt
 ```
 
-### Part A
+#### Part A
 
 Compare the **Core Feature** tree generated from this command to the **Phenetic phylogeny** tree generated with a k-mer length of 20 from **Question 1**.  Compare also to the [Core SNP](../core-snp/Answers.md) phylogeny from the previous lab **question 2**.  How do they differ?
 
-### Part B
+#### Part B
 
 Using the depiction of the core genome from the [pan-genome BLAST Atlas](../gview-server/README.md) constructed yesterday in **Question 1**, which regions would have been excluded from the **core feature** and **core SNP** trees?
 
