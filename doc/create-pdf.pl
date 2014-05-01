@@ -32,16 +32,21 @@ my $geometry = "margin=1in";
 my $highlight = "monochrome";
 my $template = "$script_dir/default.latex";
 my $dpi_to_convert = 144;
+my $command;
 
 # prepare directory with labs
 system("rm -r $lab_dir") if (-e $lab_dir);
 system("cp -r $lab_dir_orig $lab_dir");
 
 # prepare images by converting the dpi 
-system("find $lab_dir -iname '*.jpg' | xargs -I {} convert {} -units 'PixelsPerInch' -density $dpi_to_convert -resample '$dpi_to_convert' {}");
+$command = "find $lab_dir -iname '*.jpg' | xargs -I {} convert {} -units 'PixelsPerInch' -density $dpi_to_convert -resample '$dpi_to_convert' {}";
+print "$command\n";
+system($command);
 
 # prepare images to not be figures by adding '\' right after
-system("find $lab_dir -iname '*.md' | xargs -I {} sed -i -e 's/\\.jpg)\$/\\.jpg)\\\\/' -e 's/\\.jpg\\]\$/\\.jpg\\]\\\\/' {}");
+$command = "find $lab_dir -iname '*.md' | xargs -I {} sed -i -e 's/\\.jpg)\$/\\.jpg)\\\\/' -e 's/\\.jpg\\]\$/\\.jpg\\]\\\\/' {}";
+print "$command\n";
+system($command);
 
 for my $file (keys %file_properties)
 {
