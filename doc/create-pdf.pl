@@ -31,15 +31,16 @@ my $author = "Aaron Petkau";
 my $geometry = "margin=1in";
 my $highlight = "monochrome";
 my $template = "$script_dir/default.latex";
-my $dpi_to_convert = 144;
 my $command;
+my $density_scale = 0.5;
 
 # prepare directory with labs
 system("rm -r $lab_dir") if (-e $lab_dir);
 system("cp -r $lab_dir_orig $lab_dir");
 
 # prepare images by converting the dpi 
-$command = "find $lab_dir -iname '*.jpg' | xargs -I {} convert {} -units 'PixelsPerInch' -density $dpi_to_convert -resample '$dpi_to_convert' {}";
+#$command = "find $lab_dir -iname '*.jpg' | xargs -I {} convert {} -resample '$dpi_to_convert' {}";
+$command = "for i in `find labs/ -iname '*.jpg'`; do b=`identify -format \"\%x\" \$i`; units=`echo \$b | cut -d ' ' -f 2`; value=`echo \$b | cut -d ' ' -f 1`; newvalue=`echo $density_scale*\$value | bc`; convert \$i -units \$units -density \$value -resample \$newvalue \$i; done";
 print "$command\n";
 system($command);
 
