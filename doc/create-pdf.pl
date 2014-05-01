@@ -15,16 +15,16 @@ my $lab_dir_orig = "$script_dir/../labs";
 my $lab_dir = "$script_dir/labs";
 
 my %file_properties = (
-	'core-snp/README.md' => {'file'=>'Day7PetkauCoreSNPLab.pdf', 'title'=>'Core SNP Phylogenies'},
-	'core-snp/Answers.md' => {'file'=>'Day7PetkauCoreSNPAnswers.pdf', 'title'=>'Core SNP Phylogenies: Answers'},
-	'ffp-phylogeny/README.md' => {'file'=>'Day7PetkauFFPLab.pdf', 'title'=>'Feature Frequency Profile Phylogenies'},
-	'ffp-phylogeny/Answers.md' => {'file'=>'Day7PetkauFFPAnswers.pdf', 'title'=>'Feature Frequency Profile Phylogenies: Answers'},
-	'gview-server/README.md' => {'file'=>'Day6PetkauGViewServerLab.pdf', 'title'=>'Working with GView Server'},
-	'gview-server/Answers.md' => {'file'=>'Day6PetkauGViewServerAnswers.pdf', 'title'=>'Working with GView Server: Answers'},
-	'orthomcl/README.md' => {'file'=>'Day6PetkauOrthoMCLLab.pdf', 'title'=>'Ortholog detection with OrthoMCL'},
-	'orthomcl/Answers.md' => {'file'=>'Day6PetkauOrthoMCLAnswers.pdf', 'title'=>'Ortholog detection with OrthoMCL: Answers'},
-	'mst/README.md' => {'file'=>'Day6PetkauMSTLab.pdf', 'title'=>'Minimum Spanning Trees with PHYLOViZ'},
-	'mst/Answers.md' => {'file'=>'Day6PetkauMSTAnswers.pdf', 'title'=>'Minimum Spanning Trees with PHYLOViZ: Answers'}
+	'core-snp/README.md' => {'file'=>'Day7PetkauCoreSNPLab.pdf', 'title'=>'Core SNP Phylogenies', 'date'=>'May 15, 2014'},
+	'core-snp/Answers.md' => {'file'=>'Day7PetkauCoreSNPAnswers.pdf', 'title'=>'Core SNP Phylogenies: Answers', 'date'=>'May 15, 2014'},
+	'ffp-phylogeny/README.md' => {'file'=>'Day7PetkauFFPLab.pdf', 'title'=>'Feature Frequency Profile Phylogenies', 'date'=>'May 15, 2014'},
+	'ffp-phylogeny/Answers.md' => {'file'=>'Day7PetkauFFPAnswers.pdf', 'title'=>'Feature Frequency Profile Phylogenies: Answers', 'date'=>'May 15, 2014'},
+	'gview-server/README.md' => {'file'=>'Day6PetkauGViewServerLab.pdf', 'title'=>'Working with GView Server', 'date'=>'May 14, 2014'},
+	'gview-server/Answers.md' => {'file'=>'Day6PetkauGViewServerAnswers.pdf', 'title'=>'Working with GView Server: Answers', 'date'=>'May 14, 2014'},
+	'orthomcl/README.md' => {'file'=>'Day6PetkauOrthoMCLLab.pdf', 'title'=>'Ortholog detection with OrthoMCL', 'date'=>'May 14, 2014'},
+	'orthomcl/Answers.md' => {'file'=>'Day6PetkauOrthoMCLAnswers.pdf', 'title'=>'Ortholog detection with OrthoMCL: Answers', 'date'=>'May 14, 2014'},
+	'mst/README.md' => {'file'=>'Day6PetkauMSTLab.pdf', 'title'=>'Minimum Spanning Trees with PHYLOViZ', 'date'=>'May 14, 2014'},
+	'mst/Answers.md' => {'file'=>'Day6PetkauMSTAnswers.pdf', 'title'=>'Minimum Spanning Trees with PHYLOViZ: Answers', 'date'=>'May 14, 2014'}
 );
 
 my $author = "Aaron Petkau";
@@ -52,12 +52,14 @@ for my $file (keys %file_properties)
 {
 	my $name = $file_properties{$file}{'file'};
 	my $title = $file_properties{$file}{'title'};
+	my $date = $file_properties{$file}{'date'};
+	my $lab_title = "Lab: $title";
 	my $file_path = "$lab_dir/$file";
 	my $file_path_dir = dirname("$lab_dir/$file");
 
 	chdir $file_path_dir;
 
-	my $command = "pandoc --template=$template --toc --highlight-style $highlight -Vtitle=\"$title\" -Vauthor=\"$author\" -Vgeometry:$geometry -f markdown+pipe_tables -o $doc_dir/$name $file_path";
+	my $command = "pandoc --template=$template --toc --highlight-style $highlight -Vlabdate=\"$date\" -Vlab=\"$lab_title\" -Vtitle=\"$title\" -Vauthor=\"$author\" -Vgeometry:$geometry -f markdown+pipe_tables -o $doc_dir/$name $file_path";
 	print "$command\n";
 	system($command) == 0 || die "Could not run \"$command\"";
 

@@ -130,6 +130,11 @@ $if(lang)$
 \fi
 $endif$
 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{$lab$}
+\rhead{$labdate$}
+
 $if(title)$
 \title{$title$}
 $endif$
