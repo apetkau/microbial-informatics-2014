@@ -94,7 +94,7 @@ Please follow the below steps to generate a minimum spanning tree.
 
 1. Double-click on the **goeBURST Full MST** item in the **Datasets** panel.  This should open up a new tab on the right showing the minimum spanning tree.  You may have to click and drag (left-mouse) or zoom in or out (right-mouse-button) to get a good view.
 
-2. You can adjust the quality of the image by clicking on the **Options** button and selecting *High Quality*.  You can turn on the display of SNP distances between nodes in the tree by clicking on **Options** and selecting *Level labels*.  You can stop or start the animation of the tree by clicking on the **Play** or **Pause** ![play-pause](images/play-pause.png) buttons.  When finished you should see something similar to below.
+2. You can adjust the quality of the image by clicking on the **Options** button and selecting *High Quality*.  You can turn on the display of SNP distances between nodes in the tree by clicking on **Options** and selecting *Level labels*.  You can start or stop the animation of the tree by clicking on the **Play** or **Pause** ![play-pause](images/play-pause.png) buttons.  When finished you should see something similar to below.
 
     ![lab1-mst.jpg](images/lab1-mst.jpg)
 
