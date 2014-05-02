@@ -214,7 +214,7 @@ Lab 2: Viewing SNPs in IGV
     1. In IGV, click on **File > Load From File...**.
     2. Find and load one of the indexed VCF files, for example `2010EL-1749.vcf.gz`. You can use **CTRL+Click** to select multiple files at once.  This should result in a screen that looks like the following.
 
-    ![igv variant](images/igv-load-genome.jpg)
+    ![igv variant](images/igv-variant.jpg)
 
     3. Double-click the screen, or use the **-** and **+** buttons at the top to zoom in and out.  If no variants are visible, you may have to zoom in a bit more.
 
