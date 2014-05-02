@@ -169,6 +169,61 @@ A quick method to count the total number of 'valid' variants used to generate th
 	$ grep --count -P "\tvalid\t" output-10-subsample/pseudoalign/pseudoalign-positions.tsv
 	28
 
+Lab 2: Viewing SNPs in IGV
+--------------------------
+
+[IGV](http://www.broadinstitute.org/igv/) is a software application which can be used to load up VCF files as well as pileup (BAM) files into multiple tracks.  This can be useful to get a perspective on the location of the SNPs called.  In order to load up the VCF files in IGV the following steps can be used.
+
+1. **_Launch IGV_**
+    1. Open a new terminal and run the command `igv`.
+2. **_Load a Reference Genome_**
+    1. By default, IGV uses the human genome as a reference.  We wish to use 2010EL-1786-c1_2000_2400kb.fasta, as the reference.  In order to load a new reference, go to **Genomes > Load Genome From File ...**.
+    2. From here, find and load up the file **cholera-files-subsample/reference/2010EL-1786-c1_2000_2400kb.fasta**.  This should result in a screen that looks similar to below.
+
+    ![igv-load-genome](images/igv-load-genome.jpg)
+3. **_Index Variant VCF Files_**
+
+    IGV requires the variant (VCF) files to be compressed and indexed.  This can be accomplished using the tools `bgzip` and `tabix`.  To do this, please run the following in a terminal.
+
+    1. Switch to directory with VCF files.  This is either *output-10-subsample* for the files you ran, or *output-10-subsample-example* for the example files.
+
+        ```bash
+        $ cd output-10-subsample/vcf
+	$ ls
+	2010EL-1749.vcf  2010EL-1798.vcf  2012V-1001.vcf  C6706.vcf ...
+        ```
+
+    2. Run `bgzip` within a for loop to process all files at once.
+
+        ```bash
+        $ for i in *.vcf; do bgzip $i; done
+        $ ls
+        2010EL-1749.vcf.gz  2010EL-1798.vcf.gz  2012V-1001.vcf.gz  C6706.vcf.gz ...
+        ```
+
+    3. Run `tabix` within a for loop to index all files.
+
+        ```bash
+        $ for i in *.vcf.gz; do tabix -p vcf $i; done
+        $ ls
+        2010EL-1749.vcf.gz      2011EL-2317.vcf.gz      C6706.vcf.gz ...
+        2010EL-1749.vcf.gz.tbi  2011EL-2317.vcf.gz.tbi  C6706.vcf.gz.tbi ...
+        ```
+
+4. **_Load Indexed VCF Files_**
+    1. In IGV, click on **File > Load From File...**.
+    2. Find and load one of the indexed VCF files, for example `2010EL-1749.vcf.gz`. You can use **CTRL+Click** to select multiple files at once.  This should result in a screen that looks like the following.
+
+    ![igv variant](images/igv-load-genome.jpg)
+
+    3. Double-click the screen, or use the **-** and **+** buttons at the top to zoom in and out.  If no variants are visible, you may have to zoom in a bit more.
+
+5. **_Load Mapping Alignments_**
+    1. IGV can also load up the BAM files and display the alignments of all the reads.  To load a BAM file, go to **File > Load From File...**.  Find the  directory *output-10-subsample/bam*.  Load up one of the BAM files from this directory, for example *2010EL-1749.bam*. *Note: Although these BAM files have already been indexed by the SNP pipeline, in general IGV needs indexed BAM files.  Indexing can be done using the `samtools index` command.*
+    2. Once the BAM file is loaded, you should be able to drag & drop to re-arrange the order of the tracks.  You may need to zoom in before any read information is loaded from the BAM file.   Once everything is loaded up you should see a screen similar to the following.
+
+    ![igv load bam](images/igv-load-bam.jpg)
+
 Questions
 ---------
 
@@ -185,6 +240,6 @@ $ cp /Course/MI_workshop_2014/day7/output-10-example.tar.gz ./
 $ tar -xvvzf output-10-example.tar.gz
 ```
 
-This will extract the results into a directory __output-10-example/__.  Please examine the resulting whole genome phylgeny and the number of positions used to generate the phylogeny.  How does using the whole genome compare to only using a fragment of the genome?
+This will extract the results into a directory __output-10-example/__.  Please examine the resulting whole genome phylogeny and the number of positions used to generate the phylogeny.  How does using the whole genome compare to only using a fragment of the genome?
 
 [Answers](Answers.md)
