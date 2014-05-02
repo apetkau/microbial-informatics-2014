@@ -3,7 +3,8 @@ Ortholog Detection with OrthoMCL: Answers
 
 Question 1
 ----------
-1. The products for the other genes can be obtained with the following commands.
+
+The products for the other genes can be obtained with the following commands.
 
 ```bash
 $ grep '2010EL-1796_03119' annotations-small/*.fasta
