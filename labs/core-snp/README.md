@@ -2,15 +2,36 @@ Core SNP Phylogenomics
 ======================
 
 Introduction
-============
+------------
 
-Tutorial
-========
+Whole genome phylogenies are useful as a method for depicting the evolutionary relationships among a set of isolates or strains.  Unlike phylogenies based on a single gene or a small set of genes, whole genome phylogenies attempt to use data from the whole genome for constructing a phylogeny.  Some potential methods to generate whole genome phylogenies include:
 
-This document walks through how to run the [core phylogenomics pipeline](https://github.com/apetkau/core-phylogenomics) to generate a set of SNPs and a phylogenetic tree based on whole genome sequencing data.  This tutorial assumes you have have the pipeline installed and that you have some familiarity with working on the command line in Linux.
+* **Distance based**:  Generate a whole genome phylogeny from a distance matrix calculated based on whole genome data.  This will be explored a bit more in the [Feature Frequency Profiling Phylogeny](../ffp-phylogeny) lab later today.
+* **Core-gene based**:  Identify a set of orthologous genes within the core genome of a set of isolates (see the [OrthoMCL](../orthomcl) lab) and use these orthologous genes to generate a phylogeny.
+* **Reference mapping and variant calling**:  Perform reference mapping and variant calling from a set of sequencing reads to a reference genome and construct an alignment of variants.  Use this alignment to generate a whole genome phylogeny.
 
-Step 1: Constructing a Working Directory
-----------------------------------------
+This lab will explore the **reference mapping** approach using a [core phylogenomics pipeline](https://github.com/apetkau/core-phylogenomics) developed at the NML.  This pipeline takes as input sequencing reads in **FASTQ** format and a reference genome in **FASTA** format and then proceeds through the following stages.
+
+1. Pre-process Data
+2. Reference mapping using [SMALT](http://www.sanger.ac.uk/resources/software/smalt/).
+3. Variant calling using [FreeBayes](https://github.com/ekg/freebayes) and [SAMtools/BCFtools](http://samtools.sourceforge.net/mpileup.shtml).
+4. Merging and filtering variant calls.
+5. Aligning SNPs into an alignment SNP table.
+6. Building a Maximum Likelihood tree with [PhyML](http://www.atgc-montpellier.fr/phyml/).
+7. Examining tree with [FigTree](http://tree.bio.ed.ac.uk/software/figtree/).
+
+A number of other options for building a whole genome phylogeny using the **reference mapping** method include.
+
+* **Wombac**: <http://www.vicbioinformatics.com/software.wombac.shtml>
+* **CSI Phylogeny**: <http://cge.cbs.dtu.dk/services/CSIPhylogeny/>
+* **REALPHY**: <http://realphy.unibas.ch/fcgi/realphy>
+
+Lab 1: Building a Core SNP Phylogenomic Tree
+--------------------------------------------
+
+This lab walks through how to run the core phylogenomics pipeline to generate a set of SNPs and a phylogenetic tree based on whole genome sequencing data.  This tutorial assumes you have have the pipeline installed and that you have some familiarity with working on the command line in Linux.
+
+### Step 1: Constructing a Working Directory
 
 To construct and switch to a working directory and obtain a copy of these instructions the following commands can be used.
 
@@ -19,8 +40,7 @@ To construct and switch to a working directory and obtain a copy of these instru
 	$ ls
 	Answers.md  images  mapping.conf  READMELargePhylogeny.md  README.md
 
-Step 2: Obtaining input data
-----------------------------
+### Step 2: Obtaining input data
 
 The input data to the core phylogenomics pipeline consists of a reference genome (in FASTA format) and a set of sequencing reads (in FASTQ format).  The reference genome and sequencing reads are only a small section from the larger dataset which makes this overall pipeline a bit faster to run.  To see a walkthrough using the entire dataset please go to [READMELargePhylogeny.md](READMELargePhylogeny.md).
 
@@ -56,8 +76,7 @@ The second directory, __cholera-files-subsample/fastq/__, contains the sequencin
 
 For information on exactly how these files were generated please see [get_data.sh](../dataset/get_data.sh).
 
-Step 3: Running the Core SNP pipeline
--------------------------------------
+### Step 3: Running the Core SNP pipeline
 
 The command __snp_phylogenomics_control__ can used to generate a set of SNPs given the input data we just downloaded and build a whole genome phylogeny from a multiple alignment of these SNPs.  There are a number of different methods to building a whole genome phylogeny implemented in this pipeline but the method we will focus on for this tutorial is the reference mapping method.  
 
@@ -96,8 +115,7 @@ When finished, you should expect to see the following output:
 	stage: mapping-final took 0.00 minutes to complete
 	pipeline took 8.08 minutes to complete
 
-Step 4: Example Results (optional)
-----------------------------------
+### Step 4: Example Results (optional)
 
 If the pipeline fails to run, then the below steps can be performed with some example results that have already been computed.  These can be obtained with the commands.
 
@@ -106,8 +124,7 @@ If the pipeline fails to run, then the below steps can be performed with some ex
 
 This will extract the example data to a directory named **output-10-subsample-example/**.
 
-Step 5: Examine Results
------------------------
+### Step 5: Examine Results
 
 The main file you will want to check out is __output-10-subsample/phylogeny/pseudoalign.phy_phyml_tree.txt__, which is the computed phylogenetic tree.  This can be opened up using [FigTree](http://tree.bio.ed.ac.uk/software/figtree/) and should look similar to below.
 
@@ -151,15 +168,13 @@ A quick method to count the total number of 'valid' variants used to generate th
 	28
 
 Questions
-=========
+---------
 
-Question 1
-----------
+### Question 1
 
 The **minimum coverage** setting within the **mapping.conf** file can have a large effect on the total number of valid positions used to generate the tree.  Please try re-running the pipeline with a minimum coverage of *5*.  What effect does this have on the total number of *valid* variants used to generate the phylogenetic tree?  What effect does this have on the phylogenetic tree generated?
 
-Question 2
-----------
+### Question 2
 
 The above tutorial generates a phylogeny only from a 400kbp fragment of the whole genome.  It would be expected that a more complete picture can be obtained by extracting variants using the entire genome, but this takes more time to run.  An example set of results obtained from running the pipeline on the entire genome (see the walkthrough [here](READMELargePhylogeny.md) for more information) can be obtained by running the following.
     
