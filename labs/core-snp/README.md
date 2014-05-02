@@ -132,7 +132,9 @@ The main file you will want to check out is __output-10-subsample/phylogeny/pseu
 
 ![output-10-subsample.jpg](images/output-10-subsample.jpg)
 
-Also, the file __output-10-subsample/pseudoalign/matrix.csv__ which contains a matrix of core SNP distances among all the input isolates.
+In order to get the exact tree layout as depicted above, please root on C6706 by selecting C6706 and using the **Reroot** button, then going to **Trees > Order nodes** and order by *increasing*.
+
+Another file to take a look at is __output-10-subsample/pseudoalign/matrix.csv__ which contains a matrix of core SNP distances among all the input isolates.
 
 	$ column -t output-10-subsample/pseudoalign/matrix.csv
 	strain                      2010EL-1749  C6706  2010EL-1786-c1_2000_2400kb  2012V-1001 ...
