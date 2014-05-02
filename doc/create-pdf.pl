@@ -13,6 +13,7 @@ my $cwd = getcwd;
 my $doc_dir = "$script_dir/../doc";
 my $lab_dir_orig = "$script_dir/../labs";
 my $lab_dir = "$script_dir/labs";
+my $main_dir = "$script_dir/..";
 my $scale = "65%";
 
 my %file_properties = (
@@ -25,7 +26,8 @@ my %file_properties = (
 	'orthomcl/README.md' => {'file'=>'Day6PetkauOrthoMCLLab.pdf', 'title'=>'Ortholog detection with OrthoMCL', 'date'=>'May 14, 2014', 'day'=>'Day 6'},
 	'orthomcl/Answers.md' => {'file'=>'Day6PetkauOrthoMCLAnswers.pdf', 'title'=>'Ortholog detection with OrthoMCL: Answers', 'date'=>'May 14, 2014', 'day'=>'Day 6'},
 	'mst/README.md' => {'file'=>'Day6PetkauMSTLab.pdf', 'title'=>'Minimum Spanning Trees with PHYLOViZ', 'date'=>'May 14, 2014', 'day'=>'Day 6'},
-	'mst/Answers.md' => {'file'=>'Day6PetkauMSTAnswers.pdf', 'title'=>'Minimum Spanning Trees with PHYLOViZ: Answers', 'date'=>'May 14, 2014', 'day'=>'Day 6'}
+	'mst/Answers.md' => {'file'=>'Day6PetkauMSTAnswers.pdf', 'title'=>'Minimum Spanning Trees with PHYLOViZ: Answers', 'date'=>'May 14, 2014', 'day'=>'Day 6'},
+	'README.md' => {'file'=>'Day6PetkauIntroductionData.pdf', 'title'=>'Introduction to Lab Data', 'date'=>'May 14, 2014', 'day'=>'Day 6'}
 );
 
 my @gview_server_files = ('lab2-atlas-1.jpg','lab2-atlas-2.jpg','lab3-atlas-c1.jpg','lab3-atlas-c2.jpg');
@@ -66,8 +68,18 @@ for my $file (keys %file_properties)
 	my $date = $file_properties{$file}{'date'};
 	my $day = $file_properties{$file}{'day'};
 	my $lab_title = "$day: $title";
-	my $file_path = "$lab_dir/$file";
-	my $file_path_dir = dirname("$lab_dir/$file");
+	my $file_path;
+	my $file_path_dir;
+	if ($file eq 'README.md')
+	{
+		$file_path = "$main_dir/$file";
+		$file_path_dir = $main_dir;
+	}
+	else
+	{
+		$file_path = "$lab_dir/$file";
+		$file_path_dir = dirname("$lab_dir/$file");
+	}
 
 	chdir $file_path_dir;
 
