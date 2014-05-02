@@ -17,9 +17,9 @@ An overview of this method can be found in the following image.
 
 We will use the unblocked-FFP which is meant for smaller genomes.  The main steps of this method are.
 
-### Step 1: Use `ffpry` to count k-mer features in each genome for some specific value of k.
+### Step 1: Count k-mers
 
-This counts k-mer frequencies in each genome and generates a vector storing the k-mer frequencies.  For example, with the below genomes.
+This step uses `ffpry` to count k-mer frequencies in each genome and generates a vector storing the k-mer frequencies.  For example, with the below genomes.
 
 ```
 >genome1
@@ -51,7 +51,9 @@ TT 1 AG 1 CC 1
 
 *Note: The k-mer frequency counts for reverse complemented k-mers (so for A and T in the 1-mer counts) are merged together.*
 
-### Step 2: Use `ffpcol` and `ffprwn` to convert k-mer counts to relative frequencies for each genome.  This is accomplished by dividing the k-mer count for a genome by the sum of all k-mer counts in a genome.
+### Step 2: Relative k-mer counts
+
+This step uses `ffpcol` and `ffprwn` to convert k-mer counts to relative frequencies for each genome.  This is accomplished by dividing the k-mer count for a genome by the sum of all k-mer counts in a genome.
 
 * For 1-mer counts.
 
@@ -75,9 +77,9 @@ TT 1 AG 1 CC 1
     genome2     3.33e-01        0.00e+00        3.33e-01        3.33e-01
     ```
 
-### Step 3: Use `ffpjsd` to construct a distance matrix.
+### Step 3: Distance Matrix
 
-This step constructs a distance matrix based on all the relative k-mer frequencies in each genome using some distance metric (default is [Jensen-Shannon divergence](http://en.wikipedia.org/wiki/Jensen%E2%80%93Shannon_divergence)).  A distance of *0* would indicate no difference in any k-mer frequency profile for two genomes while a larger number indicates a greater distance.  For example, for the two genomes above we get the following distance matrices.
+This step uses `ffpjsd` to construct a distance matrix based on all the relative k-mer frequencies in each genome using some distance metric (default is [Jensen-Shannon divergence](http://en.wikipedia.org/wiki/Jensen%E2%80%93Shannon_divergence)).  A distance of *0* would indicate no difference in any k-mer frequency profile for two genomes while a larger number indicates a greater distance.  For example, for the two genomes above we get the following distance matrices.
 
 For 1-mer counts.
 
@@ -95,12 +97,14 @@ genome1     0.00e+00   4.58e-01
 genome2     4.58e-01   0.00e+00
 ```
 
-### Step 4: Use `ffptree` to construct a distance-based phylogenetic tree using the distance matrix.  This is accomplished using the Neighbor-joining (default) or UPGMA methods.
+### Step 4: Construct Tree
 
-The below lab goes through generating FFP phylogenies for the *V. Cholerae* data.
+This step uses `ffptree` to construct a distance-based phylogenetic tree using the distance matrix.  This is accomplished using the Neighbor-joining (default) or UPGMA methods.
 
 Lab
 ---
+
+The below steps go through generating FFP phylogenies for the *V. Cholerae* data.
 
 ### Step 1: Construct Working Directory
 
