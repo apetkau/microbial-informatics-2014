@@ -14,6 +14,7 @@ This lab will explore the **reference mapping** approach using a [core phylogeno
 
 ![pipeline overview](images/pipeline-overview.jpg)
 
+
 1. Pre-process Data (FASTQ sequencing reads and FASTA reference file).
 2. Reference mapping using [SMALT](http://www.sanger.ac.uk/resources/software/smalt/).
 3. Variant calling using [FreeBayes](https://github.com/ekg/freebayes) and [SAMtools/BCFtools](http://samtools.sourceforge.net/mpileup.shtml).
