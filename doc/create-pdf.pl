@@ -17,17 +17,17 @@ my $main_dir = "$script_dir/..";
 my $scale = "65%";
 
 my %file_properties = (
-	'core-snp/README.md' => {'file'=>'Day7PetkauCoreSNPLab.pdf', 'title'=>'Core SNP Phylogenies', 'date'=>'May 15, 2014', 'day'=>'Day 7'},
-	'core-snp/Answers.md' => {'file'=>'Day7PetkauCoreSNPAnswers.pdf', 'title'=>'Core SNP Phylogenies: Answers', 'date'=>'May 15, 2014', 'day'=>'Day 7'},
-	'ffp-phylogeny/README.md' => {'file'=>'Day7PetkauFFPLab.pdf', 'title'=>'Feature Frequency Profile Phylogenies', 'date'=>'May 15, 2014', 'day'=>'Day 7'},
-	'ffp-phylogeny/Answers.md' => {'file'=>'Day7PetkauFFPAnswers.pdf', 'title'=>'Feature Frequency Profile Phylogenies: Answers', 'date'=>'May 15, 2014', 'day'=>'Day 7'},
-	'gview-server/README.md' => {'file'=>'Day6PetkauGViewServerLab.pdf', 'title'=>'Working with GView Server', 'date'=>'May 14, 2014', 'day'=>'Day 6'},
-	'gview-server/Answers.md' => {'file'=>'Day6PetkauGViewServerAnswers.pdf', 'title'=>'Working with GView Server: Answers', 'date'=>'May 14, 2014', 'day'=>'Day 6'},
-	'orthomcl/README.md' => {'file'=>'Day6PetkauOrthoMCLLab.pdf', 'title'=>'Ortholog detection with OrthoMCL', 'date'=>'May 14, 2014', 'day'=>'Day 6'},
-	'orthomcl/Answers.md' => {'file'=>'Day6PetkauOrthoMCLAnswers.pdf', 'title'=>'Ortholog detection with OrthoMCL: Answers', 'date'=>'May 14, 2014', 'day'=>'Day 6'},
-	'mst/README.md' => {'file'=>'Day6PetkauMSTLab.pdf', 'title'=>'Minimum Spanning Trees with PHYLOViZ', 'date'=>'May 14, 2014', 'day'=>'Day 6'},
-	'mst/Answers.md' => {'file'=>'Day6PetkauMSTAnswers.pdf', 'title'=>'Minimum Spanning Trees with PHYLOViZ: Answers', 'date'=>'May 14, 2014', 'day'=>'Day 6'},
-	'README.md' => {'file'=>'Day6PetkauIntroductionData.pdf', 'title'=>'Introduction to Lab Data', 'date'=>'May 14, 2014', 'day'=>'Day 6'}
+	'core-snp/README.md' => {'file'=>'Day7PetkauCoreSNPLab2014.pdf', 'title'=>'Core SNP Phylogenies', 'date'=>'May 15, 2014', 'day'=>'Day 7'},
+	'core-snp/Answers.md' => {'file'=>'Day7PetkauCoreSNPAnswers2014.pdf', 'title'=>'Core SNP Phylogenies: Answers', 'date'=>'May 15, 2014', 'day'=>'Day 7'},
+	'ffp-phylogeny/README.md' => {'file'=>'Day7PetkauFFPLab2014.pdf', 'title'=>'Feature Frequency Profile Phylogenies', 'date'=>'May 15, 2014', 'day'=>'Day 7'},
+	'ffp-phylogeny/Answers.md' => {'file'=>'Day7PetkauFFPAnswers2014.pdf', 'title'=>'Feature Frequency Profile Phylogenies: Answers', 'date'=>'May 15, 2014', 'day'=>'Day 7'},
+	'gview-server/README.md' => {'file'=>'Day6PetkauGViewServerLab2014.pdf', 'title'=>'Working with GView Server', 'date'=>'May 14, 2014', 'day'=>'Day 6'},
+	'gview-server/Answers.md' => {'file'=>'Day6PetkauGViewServerAnswers2014.pdf', 'title'=>'Working with GView Server: Answers', 'date'=>'May 14, 2014', 'day'=>'Day 6'},
+	'orthomcl/README.md' => {'file'=>'Day6PetkauOrthoMCLLab2014.pdf', 'title'=>'Ortholog detection with OrthoMCL', 'date'=>'May 14, 2014', 'day'=>'Day 6'},
+	'orthomcl/Answers.md' => {'file'=>'Day6PetkauOrthoMCLAnswers2014.pdf', 'title'=>'Ortholog detection with OrthoMCL: Answers', 'date'=>'May 14, 2014', 'day'=>'Day 6'},
+	'mst/README.md' => {'file'=>'Day6PetkauMSTLab2014.pdf', 'title'=>'Minimum Spanning Trees with PHYLOViZ', 'date'=>'May 14, 2014', 'day'=>'Day 6'},
+	'mst/Answers.md' => {'file'=>'Day6PetkauMSTAnswers2014.pdf', 'title'=>'Minimum Spanning Trees with PHYLOViZ: Answers', 'date'=>'May 14, 2014', 'day'=>'Day 6'},
+	'README.md' => {'file'=>'Day6PetkauIntroductionData2014.pdf', 'title'=>'Introduction to Lab Data', 'date'=>'May 14, 2014', 'day'=>'Day 6'}
 );
 
 my @gview_server_files = ('lab2-atlas-1.jpg','lab2-atlas-2.jpg','lab3-atlas-c1.jpg','lab3-atlas-c2.jpg');
