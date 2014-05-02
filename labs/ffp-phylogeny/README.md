@@ -197,6 +197,7 @@ This should display a tree similar to below.
 
 ![tree-5.jpg](images/tree-5.jpg)
 
+In order to get the exact tree layout as depicted above, please root on C6706 using the ![reroot](images/reroot.png) button, then going to **Trees > Order nodes** and order by *increasing*.
 
 Questions
 ---------
