@@ -12,6 +12,8 @@ Whole genome phylogenies are useful as a method for depicting the evolutionary r
 
 This lab will explore the **reference mapping** approach using a [core phylogenomics pipeline](https://github.com/apetkau/core-phylogenomics) developed at the NML.  An introductory presentation on the pipeline can be found at [Core SNP Pipeline](https://www.corefacility.ca/wiki/pub/BioinformaticsWorkshop/WorkshopMay2014/Day7PetkauCoreSNPIntroduction2014.pdf), but the stages, in brief, are as follows.
 
+![pipeline overview](pipeline-overview.jpg)
+
 1. Pre-process Data (FASTQ sequencing reads and FASTA reference file).
 2. Reference mapping using [SMALT](http://www.sanger.ac.uk/resources/software/smalt/).
 3. Variant calling using [FreeBayes](https://github.com/ekg/freebayes) and [SAMtools/BCFtools](http://samtools.sourceforge.net/mpileup.shtml).
