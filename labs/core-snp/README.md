@@ -240,6 +240,14 @@ $ cp /Course/MI_workshop_2014/day7/output-10-example.tar.gz ./
 $ tar -xvvzf output-10-example.tar.gz
 ```
 
-This will extract the results into a directory __output-10-example/__.  Please examine the resulting whole genome phylogeny and the number of positions used to generate the phylogeny.  How does using the whole genome compare to only using a fragment of the genome?
+This will extract the results into a directory __output-10-example/__.
+
+#### Part A
+
+Please examine the resulting whole genome phylogeny and the number of positions used to generate the phylogeny.  How does using the whole genome compare to only using a fragment of the genome?
+
+#### Part B
+
+Please follow through indexing and loading up the VCF files for this dataset, _output-10-example/vcf_, in IGV.  How does this compare to the files from **Lab 2**?
 
 [Answers](Answers.md)

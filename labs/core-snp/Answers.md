@@ -40,6 +40,8 @@ The difference between the tree where the minimum coverage is 2 the tree where t
 Question 2
 ----------
 
+### Part A
+
 The phylogenetic tree generated from the whole genome looks as follows.
 
 ![output-10-tree.jpg](images/output-10-tree.jpg)
@@ -52,3 +54,19 @@ $ grep --count -P "\tvalid\t" output-10-example/pseudoalign/pseudoalign-position
 ```
 
 This is over 10x the number of positions used when mapping to the 400kbp fragment of the genome.  This is reflected in the phylogenetic tree, which shows a bit more separation between the samples.
+
+### Part B
+
+To index the VCF files, please run the following commands.
+
+```bash
+$ cd output-10-example/vcf
+$ for i in *.vcf; do bgzip $i; done
+$ for i in *.vcf.gz; do tabix -p vcf $i; done
+```
+
+Loading up these files in IGV will look as follows.
+
+![igv variant](images/igv-variant-q2b.jpg)
+
+The main difference from the files in **Lab 2** is that all variants across the genome are displayed here.
