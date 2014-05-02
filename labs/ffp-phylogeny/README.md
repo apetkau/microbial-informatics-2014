@@ -56,7 +56,7 @@ We will use the unblocked-FFP which is meant for smaller genomes.  The main step
     * For 1-mer counts.
 
         * Sum for **genome1** is 4 so every 1-mer in genome1 is divided by 4.
-        * Sum for **genome2** is 4 so every 1-mer in genome1 is divided by 4.
+        * Sum for **genome2** is 4 so every 1-mer in genome2 is divided by 4.
 
         ```
                     A               C
