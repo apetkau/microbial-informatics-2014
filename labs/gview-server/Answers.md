@@ -16,20 +16,20 @@ A few differences include:
 
 * Chromosome I is ~3 mbp in length where as Chromosome II is ~1 mbp in length.
 * VC-1 on Chromosome I has a small region around position 100 kbp which is missing when compared to 2010EL-1786 and 2010EL-1749.
-* Chromosome I contains a number of small gaps missing from all genomes (for example around 2150 kbp).  These correspond to RNA coding regions which were not selected to be displayed in the **Customize Appearance** screen.
+* Chromosome I contains a number of small gaps missing from all genomes (for example around 2150 kbp).  These correspond to RNA regions which were not selected to be displayed in the **Customize Appearance** screen.
 
 Lab 3
 -----
 
 ### Question 1
 
-The following table shows a comparison of the BLAST Atlas and pan-genome BLAST Atlas.
+The following table shows a comparison of the BLAST Atlas and the pan-genome BLAST Atlas.
 
 | BLAST Atlas                      | Pan-genome BLAST Atlas         |
 |:--------------------------------:|:------------------------------:|
 | ![blast atlas][lab2-atlas-1.jpg] | ![pan atlas][lab3-atlas-1.jpg] |
 
-The differences between the BLAST Atlas and the Pan-genome BLAST Atlas include:
+The differences between the BLAST Atlas and the pan-genome BLAST Atlas include:
 
 * Chromosome II of 2010EL-1786 is appended on the end of Chromosome I within the Pan-genome BLAST Atlas.
 * There is a small, extra region not found on Chromosome I or II of 2010EL-1786, but that is found on VC-1 that is appended on the end of Chromosome II.
