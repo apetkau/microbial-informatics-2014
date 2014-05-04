@@ -216,8 +216,8 @@ When the pipeline is finished you should see the following output.
 ```
 Orthomcl Pipeline ended on Tue Apr 22 18:16:18 2014
 Took 0.12 minutes to complete
-Parameters used can be viewed in orthomcl.conf and /path/orthomcl-output-small/log/run.properties
-Groups file can be found in /path/orthomcl-output-small/groups/groups.txt
+Parameters used can be viewed in orthomcl.conf and orthomcl-output-small/log/run.properties
+Groups file can be found in orthomcl-output-small/groups/groups.txt
 ```
 
 ### Step 6: Example Results
