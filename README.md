@@ -1,12 +1,12 @@
 Microbial Informatics 2014 Labs
 ===============================
 
-Welcome to the Microbial Informatics 2014 labs.  This page contains a number of tutorials on performing data analysis on whole genome sequencing data for the [Microbial Informatics][workshop-2014] workshop hosted at the National Microbiology Laboratory in Winnipeg, Canada.  These labs can be accessed online at https://github.com/apetkau/microbial-informatics-2014.
+Welcome to the Microbial Informatics 2014 labs.  This page contains a number of tutorials on performing data analysis on whole genome sequencing data for the [Microbial Informatics][workshop-2014] workshop hosted at the National Microbiology Laboratory in Winnipeg, Canada.  These labs can be accessed online at <https://github.com/apetkau/microbial-informatics-2014>.
 
 Introduction
 ------------
 
-The data for these tutorials is a set of whole genome sequencing data from a number of *V. Cholerae* strains from the [outbreak of cholera in Haiti][haiti-cholera] beginning in 2010 as well as a number of other *V. cholerae* strains included for comparison.  This data was previously published in http://mbio.asm.org/content/4/4/e00398-13.abstract and http://mbio.asm.org/content/2/4/e00157-11.abstract and is available on [NCBI's Sequence Read Archive](http://www.ncbi.nlm.nih.gov/sra/).  A table of the specific data used within this lab is given below.
+The data for these labs is a set of whole genome sequencing data from a number of *V. Cholerae* strains from the [outbreak of cholera in Haiti][haiti-cholera] beginning in 2010 as well as a number of other *V. cholerae* strains included for comparison.  This data was previously published in <http://mbio.asm.org/content/4/4/e00398-13.abstract> and <http://mbio.asm.org/content/2/4/e00157-11.abstract> and is available on NCBI's [Sequence Read Archive](http://www.ncbi.nlm.nih.gov/sra/).  A table of the specific data used within this lab is given below.
 
 | Strain       | Location                                  | Year  | NCBI Accession                                        |
 |:------------:|:-----------------------------------------:|:-----:|:-----------------------------------------------------:|
@@ -28,14 +28,14 @@ The data for these tutorials is a set of whole genome sequencing data from a num
 | VC-26        | Rupandehi district, Butawal municipality  | 2010  | [SRR308727][SRR308727]                                |
 | VC-6         | Banke district, Nepalgunj municipality    | 2010  | [SRR308703][SRR308703]                                |
 
-These labs will go through data analysis on these above strains.  We will not reproduce the exact types of figures from the publications but the labs should help in getting started working with microbial whole genome sequence data.
+These labs will go through data analysis on the above strains.  We will not reproduce the exact types of figures from the publications but the labs should help in getting started working with microbial whole genome sequence data.
 
-These labs assume that you are familar working within a Linux environment and using the command line.
+These labs assume that you are familar working within a Linux environment using the command line.
 
 Getting Lab Data
 ----------------
 
-In order to get the data needed to run the labs please run the following command.
+The data and instructions needed to run the labs can be obtained by running the following.
 
 ```bash
 $ git clone https://github.com/apetkau/microbial-informatics-2014.git
