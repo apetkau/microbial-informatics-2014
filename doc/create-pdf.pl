@@ -43,16 +43,16 @@ system("rm -r $lab_dir") if (-e $lab_dir);
 system("cp -r $lab_dir_orig $lab_dir");
 
 # resize gview server images even more so they fit on the page
-for my $file (@gview_server_files)
-{
-	my $image = "$lab_dir/gview-server/images/$file";
-	$command = "convert -resize 60% $image $image";
-	print "$command\n";
-	system("$command");
-}
+#for my $file (@gview_server_files)
+#{
+#	my $image = "$lab_dir/gview-server/images/$file";
+#	$command = "convert -resize 60% $image $image";
+#	print "$command\n";
+#	system("$command");
+#}
 
 # prepare images by converting the dpi 
-$command = "find $lab_dir -iname '*.jpg' | xargs -I {} convert {} -resize $scale {}";
+$command = "find $lab_dir -iname '*.jpg' | xargs -I {} mogrify -density 128 -units PixelsPerInch {}";
 print "$command\n";
 system($command);
 
