@@ -83,7 +83,7 @@ for my $file (keys %file_properties)
 
 	chdir $file_path_dir;
 
-	my $command = "pandoc --template=$template --highlight-style $highlight -Vlabdate=\"$date\" -Vlab=\"$lab_title\" -Vtitle=\"$title\" -Vauthor=\"$author\" -Vgeometry:$geometry -f markdown+pipe_tables -o $doc_dir/$name $file_path";
+	my $command = "pandoc --template=$template --toc --highlight-style $highlight -Vlabdate=\"$date\" -Vlab=\"$lab_title\" -Vtitle=\"$title\" -Vauthor=\"$author\" -Vgeometry:$geometry -f markdown+pipe_tables -o $doc_dir/$name $file_path";
 	print "$command\n";
 	system($command) == 0 || die "Could not run \"$command\"";
 
