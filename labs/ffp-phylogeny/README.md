@@ -120,8 +120,8 @@ genome2     4.58e-01   0.00e+00
 
 This step uses `ffptree` to construct a distance-based phylogenetic tree using the distance matrix.  This is accomplished using the Neighbor-joining (default) or UPGMA methods.
 
-Lab: Consructing an FFP Phylogeny
----------------------------------
+Lab: Constructing an FFP Phylogeny
+----------------------------------
 
 The below steps go through generating FFP phylogenies for the *V. Cholerae* data.  This uses a modified version (to support long sequence IDs) of the FFP software available at <https://github.com/apetkau/ffp-3.19-custom>.
 
