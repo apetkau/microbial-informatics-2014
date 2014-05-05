@@ -132,7 +132,7 @@ $endif$
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\lhead{$lab$}
+\lhead{$lab$ \\ A Petkau}
 \rhead{$labdate$}
 
 $if(title)$
