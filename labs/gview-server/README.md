@@ -221,7 +221,7 @@ In this lab we will look at exploring the results of GView Server within [GView]
 
 One downside to large datasets is the longer time it takes to perform the analysis.  A pre-computed pan-genome analysis with the above set of files is displayed below and can be found at <http://server.gview.ca/w/2014/L4Q1>.
 
-    ![pangenome all][lab4-4.jpg]
+![pangenome all][lab4-4.jpg]
 
 Please load up this BLAST Atlas in GView and take some time to look at the data.  In order to make it easier to navigate, you may want to turn on lower quality rendering by selecting **View > Quality > Low**.
 
