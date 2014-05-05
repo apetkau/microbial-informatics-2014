@@ -136,7 +136,7 @@ $endif$
 \rhead{$labdate$}
 
 $if(title)$
-\title{$title$ \\ \large{Microbial Whole Genome Sequence Analysis Workshop 2014}}
+\title{$title$ \\ \large{Microbial Whole Genome Sequence Analysis Workshop 2014} \\ \large{$labdate$}}
 $endif$
 $if(subtitle)$
 \subtitle{$subtitle$}
