@@ -16,7 +16,7 @@ An overview of this method can be found in the following flow chart.
 
 We will ignore the **block-FFP** method which is used for larger genomes and focus on the **unblocked-FFP** method.  The main steps of this method are as follows.
 
-### Step 1: Count k-mers
+### Step 1: Count k-mers with `ffpry`
 
 This step uses `ffpry` to count k-mer frequencies in each genome and generates a vector storing these k-mer frequencies (frequency profile).  For example, with the below genomes.
 
@@ -50,7 +50,7 @@ TT 1 AG 1 CC 1
 
 *Note: The k-mer frequency counts for reverse complemented k-mers (so for A and T in the 1-mer counts) are merged together.*
 
-### Step 2: Convert to frequency table
+### Step 2: Convert to frequency table with `ffpcol`
 
 This step uses `ffpcol` to convert the frequency vectors to a frequency table.
 
@@ -70,7 +70,7 @@ genome1     0     1     0     2
 genome2     1     0     1     1
 ```
 
-### Step 2: Normalize k-mer counts
+### Step 3: Normalize k-mer counts with `ffprwn`
 
 This step uses `ffprwn` to convert k-mer counts to normalized values for each genome.  This is accomplished by dividing the k-mer count for a genome (column in the frequency table) by the sum of all k-mers counted in each genome (sum of each row of the frequency table).
 
@@ -96,7 +96,7 @@ genome1     0.00e+00        3.33e-01        0.00e+00        6.67e-01
 genome2     3.33e-01        0.00e+00        3.33e-01        3.33e-01
 ```
 
-### Step 3: Distance Matrix
+### Step 4: Distance Matrix with `ffpjsd`
 
 This step uses `ffpjsd` to construct a pairwise distance matrix based on all the normalized k-mer frequencies in each genome using some distance metric (default is [Jensen-Shannon divergence](http://en.wikipedia.org/wiki/Jensen%E2%80%93Shannon_divergence)).  A distance of 0 would indicate no difference in any k-mer frequency profile for two genomes while a larger number indicates a greater distance.  For example, for the two genomes above we get the following distance matrices.
 
@@ -116,12 +116,12 @@ genome1     0.00e+00   4.58e-01
 genome2     4.58e-01   0.00e+00
 ```
 
-### Step 4: Construct Tree
+### Step 5: Construct Tree with `ffptree`
 
 This step uses `ffptree` to construct a distance-based phylogenetic tree using the distance matrix.  This is accomplished using the Neighbor-joining (default) or UPGMA methods.
 
-Lab
----
+Lab: Consructing an FFP Phylogeny
+---------------------------------
 
 The below steps go through generating FFP phylogenies for the *V. Cholerae* data.  This uses a modified version (to support long sequence IDs) of the FFP software available at <https://github.com/apetkau/ffp-3.19-custom>.
 
