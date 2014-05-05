@@ -107,39 +107,39 @@ This will log you into MySQL with an administrator account (no need for a passwo
 
 3. Give the user **'orthomcl'@'localhost'** permissions to modify the database **orthomcl**.
 
-   ```sql
-   mysql> grant all on orthomcl.* to 'orthomcl'@'localhost';
-   Query OK, 0 rows affected (0.00 sec)
-   ```
+    ```sql
+    mysql> grant all on orthomcl.* to 'orthomcl'@'localhost';
+    Query OK, 0 rows affected (0.00 sec)
+    ```
 
 4. Make sure permissions are properly updated.
 
-   ```sql
-   mysql> flush privileges;
-   Query OK, 0 rows affected (0.00 sec)
-   ```
+    ```sql
+    mysql> flush privileges;
+    Query OK, 0 rows affected (0.00 sec)
+    ```
 
 5. Show the list of all databases.  Please make sure the *orthomcl* database exists within this list.
 
-   ```sql
-   mysql> show databases;
-   +--------------------+
-   | Database           |
-   +--------------------+
-   | information_schema |
-   | mysql              |
-   | orthomcl           |
-   | performance_schema |
-   +--------------------+
-   4 rows in set (0.00 sec)
-   ```
+    ```sql
+    mysql> show databases;
+    +--------------------+
+    | Database           |
+    +--------------------+
+    | information_schema |
+    | mysql              |
+    | orthomcl           |
+    | performance_schema |
+    +--------------------+
+    4 rows in set (0.00 sec)
+    ```
 
 6. Exit MySQL.
 
-   ```sql
-   mysql> exit
-   Bye
-   ```
+    ```sql
+    mysql> exit
+    Bye
+    ```
 
 Now we have constructed a database, called **orthomcl** which is located on the current machine **localhost**, accessible by the user **orthomcl@localhost** with the password **password**.
 
