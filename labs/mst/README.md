@@ -1,42 +1,45 @@
-Minimum Spanning Tree and goeBURST with PHYLOViZ
-================================================
+Minimum Spanning Trees and goeBURST with PHYLOViZ
+=================================================
 
 Introduction
 ------------
 
-[PHYLOViZ](phyloviz) is a desktop application for performing analysis on sequence-based typing data (such as MLST, MLVA, or SNP data).  PHYLOViZ can calculate possible evolutionary relationships by using the [goeBURST][goeburst] algorithm and provides an interface for visualization of the results.  More information on phyloviz can be found at http://www.phyloviz.net/ and a short presentation introducing goeBURST can be found at [PHYLOViZ goeBURST Presentation][mst-phyloviz-intro].
+[PHYLOViZ](phyloviz) is a desktop application for performing analysis on sequence-based typing data (such as MLST, MLVA, or SNP data).  PHYLOViZ can calculate possible evolutionary relationships by using the [goeBURST][goeburst] algorithm and provides an interface for visualization of the results.  More information on phyloviz can be found at <http://www.phyloviz.net/> and a short presentation introducing goeBURST can be found at [Day6LabPetkauPhylovizgeoBURSTMay2014.pdf][mst-phyloviz-intro].
 
-Getting Data
-------------
-
-This tutorial will go through constructing a minimum spanning tree from SNP, MLST, and other typing data.  The software we will use for constructing these trees is [PHYLOViZ](http://www.phyloviz.net).
+Preparation
+-----------
 
 ### Constructing a Working Directory
 
 To construct a working directory and obtain a copy of these instructions the following commands can be used.
 
-	$ git clone https://github.com/apetkau/microbial-informatics-2014.git
-	$ cd microbial-informatics-2014/labs/mst/
-	$ ls
-	Answers.md  lab1-snp-profile.tsv  PrepareInput.md  sampleADfile.txt
-	images      lab1-snp-strains.tsv  README.md        sampleAPfile.txt
+```bash
+$ git clone https://github.com/apetkau/microbial-informatics-2014.git
+$ cd microbial-informatics-2014/labs/mst/
+$ ls
+Answers.md  lab1-snp-profile.tsv  PrepareInput.md  sampleADfile.txt
+images      lab1-snp-strains.tsv  README.md        sampleAPfile.txt
+```
 
 ### Starting Phyloviz
 
 In order to start PHYLOViZ the following command can be entered in a terminal.
 
-	$ phyloviz
+```bash
+$ phyloviz
+```
 
 This should launch PHYLOViZ which should look similar to the following.
 
 ![images/phyloviz-start.jpg](images/phyloviz-start.jpg)
 
+
 Lab 1: Minimum Spanning Tree with SNP Data
 ------------------------------------------
 
-This lab will walk you through building a minimum spanning tree using SNP data.  The SNP data we will be using was generated using the methods described in the tutorial on [Core SNP Phylogenies](https://github.com/apetkau/microbial-informatics-2014/tree/master/labs/core-snp).  In particular, the input file is the __pseudoalign-positions.tsv__ file, which was taken through the steps described at in [PrepareInput.md](PrepareInput.md).
+This lab will walk you through building a minimum spanning tree using SNP data.  The SNP data we will be using was generated using the methods described in the tutorial on [Core SNP Phylogenies](https://github.com/apetkau/microbial-informatics-2014/tree/master/labs/core-snp) lab which we will explore in more details tomorrow.  In particular, the SNP data comes from the file __pseudoalign-positions.tsv__ from the Core SNP Phylogenies lab.  More information on the necessary steps for converting this SNP data to a form PHYLOViZ can process is found within the document [PrepareInput.md](PrepareInput.md).
 
-Please follow the below steps to generate a minimum spanning tree.
+Please follow the below steps to generate a minimum spanning tree with this SNP data.
 
 ### Step 1: Load Dataset
 
@@ -46,7 +49,9 @@ Please follow the below steps to generate a minimum spanning tree.
 
     ![lab1-typing.jpg](images/lab1-typing.jpg)
 
-3. Click on **Browse...** and find the file *microbialinformatics2014/labs/mst/lab1-snp-profile.tsv*.  This file contains a set of sequence types (in column *ST*) defined based on the SNP data at different positions.  Click **Next** to continue.  This file looks similar to the following.
+3. Click on **Browse...** and find the file *microbialinformatics2014/labs/mst/lab1-snp-profile.tsv*.  This file contains a set of sequence types (in column *ST*) defined based on the SNP data at different positions.
+
+    This file looks similar to the following.
 
     ```	
     ST  gi|360034408|ref|NC_016445.1|_17885  gi|360034408|ref|NC_016445.1|_28297
@@ -59,13 +64,15 @@ Please follow the below steps to generate a minimum spanning tree.
 
     ![lab1-isolate.jpg](images/lab1-isolate.jpg)
 
-4. Click on **Browse...** and find the file *lab1-snp-strains.tsv*.  This file contains a mapping of the sequence types (in column *ST*) to strain ids.  Please make sure that the **Key** drop down menu is set to *ST* to indicate that this column contains the sequence types.  Click **Finish** to finish loading the data.  The file that was loaded looks similar to below.
-	
+    Click **Next** to continue.
+
+4. Click on **Browse...** and find the file *lab1-snp-strains.tsv*.  This file contains a mapping of the sequence types (in column *ST*) to strain IDs and other information.  Please make sure that the **Key** drop down menu is set to *ST* to indicate that this column contains the sequence types.  Click **Finish** to finish loading the data.  The file that was loaded looks similar to below.
+
     ```
-    ST  Strain
-    1   2010EL-1786
-    2   2010EL-1749
-    3   2010EL-1796
+    ST      Strain        Location   Year    NCBI Accession
+    1       2010EL-1786   Haiti      2010    NC_016445.1,NC_016446.1
+    2       2010EL-1749   Cameroon   2010    SRR773655
+    3       2010EL-1796   Haiti      2010    SRR771582
     ```
 
 ### Step 2: Examine Data
@@ -86,7 +93,7 @@ Please follow the below steps to generate a minimum spanning tree.
 
 2. Make sure the **Distance** is set to *goeBURST Distance* and click **Finish**.
 
-3. In the **Datasets** panel you should see a new item **goeBURST Full MST**.  If you do not see this item you may have to expand **Single-Nucleotide Polymorphism (SNP)**.
+3. In the **Datasets** panel you should see a new item **goeBURST Full MST**.  If you do not see this item you may have to expand the item **Single-Nucleotide Polymorphism (SNP)**.
 
     ![lab1-goeburst-dataset.jpg](images/lab1-goeburst-dataset.jpg)
 
@@ -100,21 +107,21 @@ Please follow the below steps to generate a minimum spanning tree.
 
 ### Step 5: Visualizing Data
 
-1. Double-click on the **Isolate Data** item under the **Datasets** panel to the left.  This should bring up a table of the isolate data that was loaded from the **lab1-snp-strains.tsv** file.
+1. Double-click on the **Isolate Data** item under the **Datasets** panel to the left.  This should bring up a table of the isolate data that was loaded from the *lab1-snp-strains.tsv* file.
 
-2. We can select which categories of data to annotate on the minimum spanning tree from this view.  To annotate the *Location* data on to the minimum spanning tree, select all rows from the *Location* column.  Click on the **View** button at the top right.  This should display a pie chart giving a breakdown of the locations at the bottom.
+2. We can select which categories of data to display on the minimum spanning tree from this view.  To display the **Location** data on to the minimum spanning tree, select all rows from the **Location** column.  Click on the **View** button at the top right.  This should display a pie chart giving a breakdown of the locations of each strain.
 
     ![lab1-visualizing-location.jpg](images/lab1-visualizing-location.jpg)
 
-3. Double-click on the **goeBURST Full MST** item in the **Datasets** panel.  This should bring you back to the minimum spanning tree view.  This should now be colored based on the location of each sequence type.
+3. Double-click on the **goeBURST Full MST** item in the **Datasets** panel.  This should bring you back to the minimum spanning tree view.  This should now be coloured based on the location of each sequence type.
 
     ![lab1-mst-location.jpg](images/lab1-mst-location.jpg)
 
 ### Questions
 
-1. Using a similar procedure as in *Step 5* annotate the minimum spanning tree with the year of collection instead of the location.  You will have to reset the selection from the **Isolate Data** table in **Step 5.1** by clicking on the **Reset** button.  Then you can select the **Year** column in the table to view.  Which is the most common year represented?  Which is the least common year?
+1. Using a similar procedure as in **Step 5** please display the year of collection data on the minimum spanning tree.  You will have to reset the selection from the **Isolate Data** table in **Step 5.1** by clicking on the **Reset** button.  You can then select the **Year** column in the table to view.  Which is the most common year represented?  Which is the least common year?
 
-2. The *Level* selection can be used to define the maximum level nodes can be connected to be part of the same tree.  For the figure we generated, this can be interpreted as the maximum SNP distance to be considered part of the same group or cluster.  Adjust the level to 20 and to 15.   Which are the main isolates that are left out at each level cutoff?
+2. The **Level** selection can be used to define the maximum distance between nodes to be considered part of the same tree.  For the data we have been working with, this can be interpreted as the maximum SNP distance to be considered part of the same group or cluster.  Adjust the level to 20 and to 15.   Which are the main isolates that are left out at each level cutoff?
 
 [Answers](Answers.md)
 
@@ -125,26 +132,24 @@ Lab 2: MLST Data in PHYLOViZ
 
 1. Click on **File > Load Dataset**.
 2. Name this dataset *Lab2*.  Set the Dataset Type to *MLST*.  When finished, click Next.
-3. Click on **Browse ...** and find the file *microbialinformatics2014/labs/mst/sampleAPfile.txt*.  This file contains a set of sequence types (in column ST) and the allelic profile data used to define that type.  The contents of the file look as below.
+3. Click on **Browse ...** and find the file *microbialinformatics2014/labs/mst/sampleAPfile.txt*.  This file contains a set of sequence types (in column *ST*) and the allelic profile data used to define that type.  The contents of the file look as below.
 
     ```
-    ST	gki	gtr	murI	mutS	recP	xpt	yqiZ
-    1	10	6	6	6	12	13	8
-    2	5	4	4	1	2	15	2
-    3	5	3	4	1	6	2	1
+    ST   gki  gtr  murI  mutS  recP  xpt  yqiZ
+    1    10   6    6     6     12    13   8
+    2    5    4    4     1     2     15   2
+    3    5    3    4     1     6     2    1
     ```
 
 4. Click on **Next** to continue.
-5. Click on **Browse ...** and find the file *microbialinformatics2014/labs/mst/sampleADfile.txt*.  This file contains data from a number of isolates including the sequence type (stored in column ST).
+5. Click on **Browse ...** and find the file *microbialinformatics2014/labs/mst/sampleADfile.txt*.  This file contains data from a number of isolates including the sequence type (stored in column *ST*).
 
     ```
-    Strain	emm type	Group carbohydrate	ST	Location	Collection
-    168554	stG485	G	47	Portugal	UL
-    171712	stG480	G	38	Portugal	UL
-    220269	stG2078	G	15	Portugal	UL
-    223754	stC839	C	3	Portugal	UL
-    230631	stG480	G	8	Portugal	UL
-    231995	stC74a	G	29	Portugal	UL
+    Strain     emm type  Group carbohydrate  ST  Location   Collection
+    168554     stG485    G                   47  Portugal   UL
+    171712     stG480    G                   38  Portugal   UL
+    220269     stG2078   G                   15  Portugal   UL
+    223754     stC839    C                   3   Portugal   UL
     ```
 
 6. Set the **Key** to be the sequence type (*ST*) column.
@@ -165,15 +170,13 @@ Lab 2: MLST Data in PHYLOViZ
 
     ![goeburst level][lab2-2.jpg]
 
-2. Any of the clonal complexes found are displayed in the main window (the number showing the sequence type).  Zooming in and out can be accomplished by right-clicking and dragging the mouse.  Different nodes in the graph can be dragged around to change the placement.
-3. The **Groups at...** panel shows a list of all the independent clonal groups found.  Clicking on an entry will display a different group.
-4. The **Options** button gives a number of different options.  In particular, selecting *High Quality* will make the image look nicer and selecting **Level Labels** will put the distance labels on each of the edges.
+2. All the detected clusters are displayed in the main window.  These are separated into groups and the **Groups at...** panel shows a list of all the independent groups found.  Clicking on an entry will display a different group.
 
 ### Questions
 
 1. You should be able to use a similar method as in **Lab 1: Step 5** to visualize associated isolate data on the goeBURST image.  Please do this now for the **Location** data.  Also try this out with the other combinations of data.
 
-2. Re-run the goeBURST algorithm on this data at a *DLV*, *TLV*, and *Full MST* level.  How do the results differ?
+2. Re-run the goeBURST algorithm on this data at a *DLV*, *TLV*, and *Full MST* level.  How do the results compare?
 
 [Answers](Answers.md)
 
