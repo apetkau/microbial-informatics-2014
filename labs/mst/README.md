@@ -182,7 +182,7 @@ Lab 2: MLST Data in PHYLOViZ
 
 [goeburst]: http://www.biomedcentral.com/1471-2105/10/152
 [phyloviz]: http://www.phyloviz.net
-[mst-phyloviz-intro]: https://www.corefacility.ca/wiki/pub/BioinformaticsWorkshop/WebHome/Day6LabPetkauPhylovizgeoBURSTMay2014.pdf
+[mst-phyloviz-intro]: https://www.corefacility.ca/wiki/pub/BioinformaticsWorkshop/WorkshopMay2014/Day6LabPetkauPhylovizgeoBURSTMay2014.pdf
 
 [lab2-1.jpg]: images/lab2-goeburst-level.jpg
 [lab2-2.jpg]: images/lab2-goeburst-level1.jpg
