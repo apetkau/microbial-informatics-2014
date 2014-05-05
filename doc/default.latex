@@ -130,6 +130,8 @@ $if(lang)$
 \fi
 $endif$
 
+\pagenumbering{gobble}
+
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \lhead{$lab$ \\ A Petkau}
