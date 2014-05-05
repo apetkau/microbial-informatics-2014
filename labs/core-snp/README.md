@@ -119,7 +119,7 @@ Parameters:
 
 When finished, you should expect to see the following output:
 
-```bash
+```
 ================
 = Output Files =
 ================
