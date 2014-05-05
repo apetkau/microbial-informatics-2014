@@ -216,7 +216,7 @@ IGV requires the variant (VCF) files to be compressed and indexed.  This can be 
     2010EL-1749.vcf.gz  2010EL-1798.vcf.gz  2012V-1001.vcf.gz  C6706.vcf.gz ...
     ```
 
-    This can be read to say for every file ending in **.vcf**, store the name in some location called **i** `for i in \*.vcf`.  Then, run **bgzip** on these files `bgzip $i`.  This will take each file, for example **2010EL-1749.vcf** and compress it using `bgzip` to **2010EL-1749.vcf.gz**.
+    This can be read to say for every file ending in **.vcf**, store the name in some location called **i**, `for i in *.vcf`.  Then, run **bgzip** on these files `bgzip $i`.  This will take each file, for example **2010EL-1749.vcf** and compress it using `bgzip` to **2010EL-1749.vcf.gz**.
 
 3. Run `tabix` within a loop to index all files.
 
@@ -232,7 +232,7 @@ IGV requires the variant (VCF) files to be compressed and indexed.  This can be 
 ###Step 4: Load Indexed VCF Files
 
 1. In IGV, click on **File > Load From File...**.
-2. Find and load one of the indexed VCF files, for example *2010EL-1749.vcf.gz.  This should result in a screen that looks like the following.
+2. Find and load one of the indexed VCF files, for example *2010EL-1749.vcf.gz*.  This should result in a screen that looks like the following.
 
     ![igv variant](images/igv-variant.jpg)
 
@@ -242,7 +242,9 @@ IGV requires the variant (VCF) files to be compressed and indexed.  This can be 
 
 IGV can also be used to load up the BAM files and display the alignments of all the reads.  To load a BAM file please do the following.
 
-1. Go to **File > Load From File...**.  Find the directory *output-10-subsample/bam*.  Load up one of the BAM files from this directory, for example *2010EL-1749.bam*. *Note: Although these BAM files have already been indexed by the SNP pipeline, in general IGV needs indexed BAM files.  Indexing can be done using the `samtools index` command.*
+1. Go to **File > Load From File...**.  Find the directory *output-10-subsample/bam*.  Load up one of the BAM files from this directory, for example **2010EL-1749.bam**.
+
+    *Note: Although these BAM files have already been indexed by the SNP pipeline, in general IGV needs indexed BAM files.  Indexing can be done using the `samtools index` command.*
 2. Once the BAM file is loaded, you should be able to drag & drop to re-arrange the order of the tracks.  You may need to zoom in before any read information is loaded from the BAM file.   Once everything is loaded up you should see a screen similar to the following.
 
     ![igv load bam](images/igv-load-bam.jpg)
