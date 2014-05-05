@@ -48,7 +48,7 @@ The second directory, __files-cov-10/__, contains the sequencing reads for all t
 	egfggggggggggggdfccefffffcdfccffaffg
 	...
 
-For information on exactly how these files were generated please see [get_data.sh](../dataset/get_data.sh).
+For information on exactly how these files were generated please see [get_data.sh](../../dataset).
 
 Step 3: Running the Core SNP pipeline
 -------------------------------------

@@ -83,7 +83,7 @@ GATAACTACGATTCGTTTACTTACAACCTGTACCAA
 ...
 ```
 
-For information on exactly how these files were generated please see the [Dataset](../dataset/) section.
+For information on exactly how these files were generated please see the [Dataset](../../dataset/) section.
 
 ### Step 3: Running the Core SNP Pipeline
 
