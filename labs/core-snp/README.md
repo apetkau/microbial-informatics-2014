@@ -263,6 +263,8 @@ Please examine the resulting whole genome phylogeny and the number of positions 
 
 #### Part B
 
-Please follow through indexing and loading up the VCF files for this dataset, _output-10-example/vcf_, in IGV.  How does this compare to the files from **Lab 2**?  *Note: You can use CTRL+Click to select multiple files at once.*
+Please follow through indexing and loading up the VCF files for this dataset, _output-10-example/vcf_, in IGV.  How does this compare to the files from **Lab 2**?
+
+*Note: You can use CTRL+Click to select multiple files at once.*
 
 [Answers](Answers.md)
