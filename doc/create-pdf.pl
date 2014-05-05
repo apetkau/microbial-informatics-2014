@@ -17,8 +17,8 @@ my $main_dir = "$script_dir/..";
 my $scale = "65%";
 
 my %file_properties = (
-	'core-snp/README.md' => {'file'=>'Day7PetkauCoreSNPLab2014.pdf', 'title'=>'Core SNP Phylogenies', 'date'=>'May 15, 2014', 'day'=>'Day 7'},
-	'core-snp/Answers.md' => {'file'=>'Day7PetkauCoreSNPAnswers2014.pdf', 'title'=>'Core SNP Phylogenies: Answers', 'date'=>'May 15, 2014', 'day'=>'Day 7'},
+	'core-snp/README.md' => {'file'=>'Day7PetkauCoreSNPLab2014.pdf', 'title'=>'Whole Genome SNP Phylogenomics', 'date'=>'May 15, 2014', 'day'=>'Day 7'},
+	'core-snp/Answers.md' => {'file'=>'Day7PetkauCoreSNPAnswers2014.pdf', 'title'=>'Whole Genome SNP Phylogenomics: Answers', 'date'=>'May 15, 2014', 'day'=>'Day 7'},
 	'ffp-phylogeny/README.md' => {'file'=>'Day7PetkauFFPLab2014.pdf', 'title'=>'Feature Frequency Profile Phylogenies', 'date'=>'May 15, 2014', 'day'=>'Day 7'},
 	'ffp-phylogeny/Answers.md' => {'file'=>'Day7PetkauFFPAnswers2014.pdf', 'title'=>'Feature Frequency Profile Phylogenies: Answers', 'date'=>'May 15, 2014', 'day'=>'Day 7'},
 	'gview-server/README.md' => {'file'=>'Day6PetkauGViewServerLab2014.pdf', 'title'=>'Working with GView Server', 'date'=>'May 14, 2014', 'day'=>'Day 6'},
