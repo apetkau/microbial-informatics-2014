@@ -50,7 +50,7 @@ TT 1 AG 1 CC 1
 
 *Note: The k-mer frequency counts for reverse complemented k-mers (so for A and T in the 1-mer counts) are merged together.*
 
-### Step 2: Convert to frequency table with `ffpcol`
+### Step 2: Convert to Frequency Table with `ffpcol`
 
 This step uses `ffpcol` to convert the frequency vectors to a frequency table.
 
@@ -70,7 +70,7 @@ genome1     0     1     0     2
 genome2     1     0     1     1
 ```
 
-### Step 3: Normalize k-mer counts with `ffprwn`
+### Step 3: Normalize k-mer Counts with `ffprwn`
 
 This step uses `ffprwn` to convert k-mer counts to normalized values for each genome.  This is accomplished by dividing the k-mer count for a genome (column in the frequency table) by the sum of all k-mers counted in each genome (sum of each row of the frequency table).
 
@@ -85,12 +85,12 @@ genome1     1.00e+00        0.00e+00
 genome2     5.00e-01        5.00e-01
 ```
 
-For 2-mer counts
+For 2-mer counts.
 
 * k-mer count sum for **genome1** is 3 so every 2-mer is divided by 3.
 * k-mer count sum for **genome2** is 3 so every 2-mer is divided by 3.
 
- ```
+```
             AG              AT              CC              TT
 genome1     0.00e+00        3.33e-01        0.00e+00        6.67e-01
 genome2     3.33e-01        0.00e+00        3.33e-01        3.33e-01
