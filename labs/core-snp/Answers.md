@@ -1,5 +1,5 @@
-Core SNP Phylogenies: Answers
-=============================
+Whole Genome SNP Phylogenomics: Answers
+=======================================
 
 Question 1
 ----------
@@ -21,7 +21,7 @@ $ snp_phylogenomics_control --mode mapping --input-dir cholera-files-subsample/f
    --output output-10-subsample-5 --config mapping.5.conf
 ```
 
-To find the total number of *valid* positions used please run.
+To find the total number of **valid** positions used please run.
 
 ```bash
 $ grep --count -P "\tvalid\t" output-10-subsample-5/pseudoalign/pseudoalign-positions.tsv
@@ -35,7 +35,7 @@ The following table compares both phylogenetic trees generated with the differen
 | 2                | 28              | ![output-10-subsample.jpg](images/output-10-subsample.jpg)     |
 | 5                | 10              | ![output-10-subsample-5.jpg](images/output-10-subsample-5.jpg) |
 
-The difference between the tree where the minimum coverage is 2 the tree where the minimum coverage is 5 is that with a minimum coverage of 5 the tree looks a bit flatter since there are less positions avaiable to differentiate some of the samples.
+The difference between the tree where the minimum coverage is 2 and the tree where the minimum coverage is 5 is that with a minimum coverage of 5 the tree appears a bit flatter since there are less positions avaiable to differentiate some of the samples.
 
 Question 2
 ----------
