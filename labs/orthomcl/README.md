@@ -180,7 +180,7 @@ The OrthoMCL Pipeline takes as input the __.faa__ amino acid sequence files, but
 $ prename 's/\.faa/\.fasta/' annotations-small/*.faa
 ```
 
-This substitutes `s/` the __.faa__ part of the file names `\.faa/` with __.fasta__ `\.fasta/` for every __.faa__ file within the **annotations-small/** directory `annotations-small/*.faa`.  The directory should know look like:
+This substitutes `s/` the __.faa__ part of the file names `\.faa/` with __.fasta__ `\.fasta/` for every __.faa__ file within the **annotations-small/** directory `annotations-small/*.faa`.  The directory should now look like:
 
 ```bash
 $ ls annotations-small
