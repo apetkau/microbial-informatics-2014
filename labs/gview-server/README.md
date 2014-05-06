@@ -219,11 +219,11 @@ In this lab we will look at exploring the results of GView Server within [GView]
 
 1. The pan-genome BLAST Atlas in **Lab 3** was constructed using only three separate genomes.  It's possible to add as many genomes as you want by simply adding more files in the **Upload Genomes** screen.  A quick method to add a large number of files is to compress all the files first within a **zip** or **tar** archive.  An example of such a set of files is at */Course/MI_workshop_2014/day6/gview-server-annotations/other-genomes-ffn.tar.gz* (compressed file containing annotations for all genomes in ffn format).
 
-One downside to large datasets is the longer time it takes to perform the analysis.  A pre-computed pan-genome analysis with the above set of files is displayed below and can be found at <http://server.gview.ca/w/2014/L4Q1>.
+    One downside to large datasets is the longer time it takes to perform the analysis.  A pre-computed pan-genome analysis with the above set of files is displayed below and can be found at <http://server.gview.ca/w/2014/L4Q1>.
 
-![pangenome all][lab4-4.jpg]
+    ![pangenome all][lab4-4.jpg]
 
-Please load up this BLAST Atlas in GView and take some time to look at the data.  In order to make it easier to navigate, you may want to turn on lower quality rendering by selecting **View > Quality > Low**.
+    Please load up this BLAST Atlas in GView and take some time to look at the data.  In order to make it easier to navigate, you may want to turn on lower quality rendering by selecting **View > Quality > Low**.
 
 2. The exact same dataset from the previous question was used in **Question 2** from the [OrthoMCL](../orthomcl/README.md) lab.    In reference to the resulting [Venn Diagram](../orthomcl/Answers.md) from this lab, please answer the following.
 
