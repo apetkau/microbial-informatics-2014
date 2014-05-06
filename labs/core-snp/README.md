@@ -196,6 +196,7 @@ Lab 2: Viewing SNPs in IGV
 
 ![igv-load-genome](images/igv-load-genome.jpg)
 
+
 ### Step 3: Index Variant VCF Files
 
 IGV requires the variant (VCF) files to be compressed and indexed.  This can be accomplished using the tools `bgzip` and `tabix`.  To do this, please run the following in a terminal.
@@ -229,7 +230,7 @@ IGV requires the variant (VCF) files to be compressed and indexed.  This can be 
 
     This will take each file, for example **2010EL-1749.vcf.gz** and index it using `tabix` which creates a new file **2010EL-1749.vcf.tbi**.
 
-###Step 4: Load Indexed VCF Files
+### Step 4: Load Indexed VCF Files
 
 1. In IGV, click on **File > Load From File...**.
 2. Find and load one of the indexed VCF files, for example *2010EL-1749.vcf.gz*.  This should result in a screen that looks like the following.
