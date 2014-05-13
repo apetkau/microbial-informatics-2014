@@ -17,8 +17,8 @@ Each of these analysis types use BLAST to perform comparisons among a set of gen
 
 Some alternatives to GView Server for generating BLAST Atlases include:
 
-* *BRIG*: <http://brig.sourceforge.net/>
-* *CGView Server*: <http://stothard.afns.ualberta.ca/cgview_server/>
+* **BRIG**: <http://brig.sourceforge.net/>
+* **CGView Server**: <http://stothard.afns.ualberta.ca/cgview_server/>
 
 In this lab, we will focus on using GView Server to perform a number of different analysis types and how to modify the results in GView.
 
