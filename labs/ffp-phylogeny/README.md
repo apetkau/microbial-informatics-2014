@@ -10,6 +10,11 @@ The Feature Frequency Profile method of phylogenomic comparison is a quick, dist
 * Sims GE, Jun SR, Wu GA, Kim SH. (2009) [Alignment-free genome comparison with feature frequency profiles (FFP) and optimal resolutions.](http://www.ncbi.nlm.nih.gov/pubmed/19188606) PNAS, 106,2677-82.
 * Sims GE and Kim SH (2011) [Whole-genome phylogeny of Escherichia coli/Shigella group by feature frequency profiles (FFPs).](http://www.pnas.org/content/108/20/8329.full) PNAS, 108, 8329-34.
 
+An online webserver which incorporates this software along with a few other methods of generating phylogenies can be found at:
+
+* <http://www.herbbol.org:8000/agp/default/index>
+* <http://www.ncbi.nlm.nih.gov/pubmed/23389766>
+
 An overview of this method can be found in the following flow chart.
 
 [![ffp overview](images/ffp-flow.jpg)](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2634796/figure/F5/)
