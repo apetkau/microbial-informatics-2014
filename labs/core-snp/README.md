@@ -25,6 +25,7 @@ A number of other options for building a whole genome phylogeny using the **refe
 
 * **Wombac**: <http://www.vicbioinformatics.com/software.wombac.shtml>
 * **CSI Phylogeny**: <http://cge.cbs.dtu.dk/services/CSIPhylogeny/>
+* **GenoBox**: <https://github.com/srcbs/GenoBox>
 * **REALPHY**: <http://realphy.unibas.ch/fcgi/realphy>
 
 Lab 1: Building a Core SNP Phylogenomic Tree
