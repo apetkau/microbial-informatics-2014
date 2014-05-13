@@ -15,7 +15,12 @@ Introduction
 
 Each of these analysis types use BLAST to perform comparisons among a set of genomes.  Results for each analysis type are displayed using [GView][gview], a circular and linear genome viewer.  GView can be used to make modifications to the appearance of the results and export the genome map to an image file.
 
-In this lab, we will go through a number of different analysis types using GView Server and how to modify the results in GView.
+Some alternatives to GView Server for generating BLAST Atlases include:
+
+* *BRIG*: <http://brig.sourceforge.net/>
+* *CGView Server*: <http://stothard.afns.ualberta.ca/cgview_server/>
+
+In this lab, we will focus on using GView Server to perform a number of different analysis types and how to modify the results in GView.
 
 Lab 1: Viewing Genomes
 ----------------------
