@@ -20,7 +20,7 @@ The first step involves performing BLAST search of every gene against every othe
 
 The clusters detected by MCL are printed out to a file and can be interpreted as the most likely sets of orthologs or paralogs.
 
-OrthoMCL is only one such set of tools to identify orthologs, with one alternative being [OMA](http://omabrowser.org/standalone/).  This lab will focus on ortholog identification with OrthoMCL, and in particular the usage of the [OrthoMCL Pipeline](https://github.com/apetkau/orthomcl-pipeline) which will help automate running OrthoMCL.
+OrthoMCL is only one such set of tools to identify orthologs, with an alternative being [OMA](http://omabrowser.org/standalone/).  This lab will focus on ortholog identification with OrthoMCL, and in particular the usage of the [OrthoMCL Pipeline](https://github.com/apetkau/orthomcl-pipeline) which will help automate running OrthoMCL.
 
 Lab
 ---
