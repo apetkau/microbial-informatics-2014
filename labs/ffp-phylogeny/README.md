@@ -221,7 +221,7 @@ VC-26
 VC-6
 ```
 
-*Note: Adding or modifying any of the genomes within the **contigs/** directory will require re-generating the **genome_names.txt** file.*
+*Note: Adding or modifying any of the genomes within the __contigs/__ directory will require re-generating the __genome_names.txt__ file.*
 
 ### Step 5: Build Phylogeny
 
