@@ -229,7 +229,7 @@ IGV requires the variant (VCF) files to be compressed and indexed.  This can be 
     2010EL-1749.vcf.gz.tbi  2011EL-2317.vcf.gz.tbi  C6706.vcf.gz.tbi ...
     ```
 
-    This will take each file, for example **2010EL-1749.vcf.gz** and index it using `tabix` which creates a new file **2010EL-1749.vcf.tbi**.
+    This will take each file, for example **2010EL-1749.vcf.gz** and index it using `tabix` which creates a new file **2010EL-1749.vcf.gz.tbi**.
 
 ### Step 4: Load Indexed VCF Files
 
