@@ -32,10 +32,12 @@ These labs will go through data analysis on the above strains.  We will not repr
 
 These labs assume that you are familar working within a Linux environment using the command line.
 
-Getting Lab Data
+Running the Labs
 ----------------
 
-The data and instructions needed to run the labs can be obtained by running the following.
+All necessary software to run these labs is provided in the form of a customized Ubuntu virtual machine.  You will need to install software such as [Oracle Virtual Box](https://www.virtualbox.org/) in order to run the virtual machine.  Please see the [Workshop Software](https://www.corefacility.ca/wiki/bin/view/BioinformaticsWorkshop/Software2014) instructions for more details.
+
+Once the virtual machine is running, the instructions for these labs can be obtained by running the following.
 
 ```bash
 $ git clone https://github.com/apetkau/microbial-informatics-2014.git
