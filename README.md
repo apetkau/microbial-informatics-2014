@@ -35,9 +35,23 @@ These labs assume that you are familar working within a Linux environment using 
 Running the Labs
 ----------------
 
+### Virtual Machine
+
 All necessary software to run these labs is provided in the form of a customized Ubuntu virtual machine.  You will need to install software such as [Oracle Virtual Box](https://www.virtualbox.org/) in order to run the virtual machine.  Please see the [Workshop Software](https://www.corefacility.ca/wiki/bin/view/BioinformaticsWorkshop/Software2014) instructions for more details.
 
-Once the virtual machine is running, the instructions for these labs can be obtained by running the following.
+### Data
+
+The data for these labs is provided separately in the file **microbial-informatics-2014-data.tar.bz2** and can be downloaded from https://share.corefacility.ca/public.php?service=files&t=2fb62f38f4828897ca24efe8fc181a0c.  This is approximetly 1.1 GB.  Please download this file from within the Virtual Machine.  Once downloaded, the data can be extracted to a directory, **Course/** with the following command.
+
+```bash
+$ tar -xvvjf microbial-informatics-2014-data.tar.bz2
+```
+
+For the remainder of these labs, please adjust any references to **/Course** with the directory that was just extracted.  For example, if the files were extacted within the **Downloads** directory and a command is given to copy files from **/Course** please copy the files from **~/Downloads/Course**.
+
+### Instructions
+
+Once the virtual machine is running and the data is downloaded, the instructions for these labs can be obtained by running the following.
 
 ```bash
 $ git clone https://github.com/apetkau/microbial-informatics-2014.git
