@@ -37,6 +37,8 @@ Running the Labs
 
 ### Virtual Machine
 
+*July 31, 2020: Note the virtual machines are no longer available.*
+
 All necessary software to run these labs is provided in the form of a customized Ubuntu virtual machine.  You will need to install software such as [Oracle Virtual Box](https://www.virtualbox.org/) in order to run the virtual machine.  Please see the [Workshop Software](https://www.corefacility.ca/wiki/bin/view/BioinformaticsWorkshop/Software2014) instructions for more details.
 
 ### Data
